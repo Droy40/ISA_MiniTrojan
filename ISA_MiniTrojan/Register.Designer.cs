@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.panelDepan = new System.Windows.Forms.Panel();
+            this.buttonUploadKTP = new System.Windows.Forms.Button();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.labelGender = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxNoKTP = new System.Windows.Forms.TextBox();
             this.labelUsername = new System.Windows.Forms.Label();
             this.textBoxNoHp = new System.Windows.Forms.TextBox();
             this.labelNoHp = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.labelNama = new System.Windows.Forms.Label();
             this.labelRegister = new System.Windows.Forms.Label();
             this.panelBlkng = new System.Windows.Forms.Panel();
-            this.buttonRegister = new System.Windows.Forms.Button();
-            this.buttonUploadKTP = new System.Windows.Forms.Button();
             this.panelDepan.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             this.panelDepan.Controls.Add(this.labelGender);
             this.panelDepan.Controls.Add(this.textBoxPassword);
             this.panelDepan.Controls.Add(this.labelPassword);
-            this.panelDepan.Controls.Add(this.textBoxUsername);
+            this.panelDepan.Controls.Add(this.textBoxNoKTP);
             this.panelDepan.Controls.Add(this.labelUsername);
             this.panelDepan.Controls.Add(this.textBoxNoHp);
             this.panelDepan.Controls.Add(this.labelNoHp);
@@ -77,6 +77,29 @@
             this.panelDepan.Name = "panelDepan";
             this.panelDepan.Size = new System.Drawing.Size(603, 388);
             this.panelDepan.TabIndex = 6;
+            // 
+            // buttonUploadKTP
+            // 
+            this.buttonUploadKTP.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.buttonUploadKTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUploadKTP.Location = new System.Drawing.Point(292, 249);
+            this.buttonUploadKTP.Name = "buttonUploadKTP";
+            this.buttonUploadKTP.Size = new System.Drawing.Size(156, 30);
+            this.buttonUploadKTP.TabIndex = 51;
+            this.buttonUploadKTP.Text = "UPLOAD KTP";
+            this.buttonUploadKTP.UseVisualStyleBackColor = false;
+            // 
+            // buttonRegister
+            // 
+            this.buttonRegister.BackColor = System.Drawing.Color.Yellow;
+            this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegister.Location = new System.Drawing.Point(458, 344);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(129, 30);
+            this.buttonRegister.TabIndex = 50;
+            this.buttonRegister.Text = "REGISTER";
+            this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // label1
             // 
@@ -146,13 +169,13 @@
             this.labelPassword.TabIndex = 15;
             this.labelPassword.Text = "Password :";
             // 
-            // textBoxUsername
+            // textBoxNoKTP
             // 
-            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(259, 184);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(223, 27);
-            this.textBoxUsername.TabIndex = 14;
+            this.textBoxNoKTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNoKTP.Location = new System.Drawing.Point(259, 184);
+            this.textBoxNoKTP.Name = "textBoxNoKTP";
+            this.textBoxNoKTP.Size = new System.Drawing.Size(223, 27);
+            this.textBoxNoKTP.TabIndex = 14;
             // 
             // labelUsername
             // 
@@ -231,7 +254,7 @@
             // labelRegister
             // 
             this.labelRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
-            this.labelRegister.Font = new System.Drawing.Font("Magneto", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.labelRegister.Location = new System.Drawing.Point(2, 2);
             this.labelRegister.Name = "labelRegister";
@@ -250,28 +273,6 @@
             this.panelBlkng.Name = "panelBlkng";
             this.panelBlkng.Size = new System.Drawing.Size(618, 402);
             this.panelBlkng.TabIndex = 7;
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.BackColor = System.Drawing.Color.Yellow;
-            this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegister.Location = new System.Drawing.Point(458, 344);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(129, 30);
-            this.buttonRegister.TabIndex = 50;
-            this.buttonRegister.Text = "REGISTER";
-            this.buttonRegister.UseVisualStyleBackColor = false;
-            // 
-            // buttonUploadKTP
-            // 
-            this.buttonUploadKTP.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.buttonUploadKTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUploadKTP.Location = new System.Drawing.Point(292, 249);
-            this.buttonUploadKTP.Name = "buttonUploadKTP";
-            this.buttonUploadKTP.Size = new System.Drawing.Size(156, 30);
-            this.buttonUploadKTP.TabIndex = 51;
-            this.buttonUploadKTP.Text = "UPLOAD KTP";
-            this.buttonUploadKTP.UseVisualStyleBackColor = false;
             // 
             // Register
             // 
@@ -298,7 +299,7 @@
         private System.Windows.Forms.Label labelGender;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.TextBox textBoxNoKTP;
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.TextBox textBoxNoHp;
         private System.Windows.Forms.Label labelNoHp;

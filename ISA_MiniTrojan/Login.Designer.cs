@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panelDepan = new System.Windows.Forms.Panel();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.linkLabelRegister = new System.Windows.Forms.LinkLabel();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
-            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelUsername = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
             this.panelBlkng = new System.Windows.Forms.Panel();
-            this.buttonLogin = new System.Windows.Forms.Button();
             this.panelDepan.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,13 +47,25 @@
             this.panelDepan.Controls.Add(this.linkLabelRegister);
             this.panelDepan.Controls.Add(this.textBoxPassword);
             this.panelDepan.Controls.Add(this.labelPassword);
-            this.panelDepan.Controls.Add(this.textBoxUsername);
+            this.panelDepan.Controls.Add(this.textBoxEmail);
             this.panelDepan.Controls.Add(this.labelUsername);
             this.panelDepan.Controls.Add(this.labelLogin);
             this.panelDepan.Location = new System.Drawing.Point(185, 55);
             this.panelDepan.Name = "panelDepan";
             this.panelDepan.Size = new System.Drawing.Size(430, 339);
             this.panelDepan.TabIndex = 6;
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.BackColor = System.Drawing.Color.Yellow;
+            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.Location = new System.Drawing.Point(141, 297);
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Size = new System.Drawing.Size(129, 30);
+            this.buttonLogin.TabIndex = 44;
+            this.buttonLogin.Text = "LOGIN";
+            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // linkLabelRegister
             // 
@@ -86,28 +98,28 @@
             this.labelPassword.TabIndex = 19;
             this.labelPassword.Text = "Password :";
             // 
-            // textBoxUsername
+            // textBoxEmail
             // 
-            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(171, 111);
-            this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(231, 27);
-            this.textBoxUsername.TabIndex = 18;
+            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(171, 111);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(231, 27);
+            this.textBoxEmail.TabIndex = 18;
             // 
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelUsername.Location = new System.Drawing.Point(42, 113);
+            this.labelUsername.Location = new System.Drawing.Point(80, 112);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(112, 22);
+            this.labelUsername.Size = new System.Drawing.Size(71, 22);
             this.labelUsername.TabIndex = 17;
-            this.labelUsername.Text = "Username :";
+            this.labelUsername.Text = "Email :";
             // 
             // labelLogin
             // 
-            this.labelLogin.Font = new System.Drawing.Font("Magneto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.labelLogin.Location = new System.Drawing.Point(87, 16);
             this.labelLogin.Name = "labelLogin";
@@ -123,17 +135,6 @@
             this.panelBlkng.Name = "panelBlkng";
             this.panelBlkng.Size = new System.Drawing.Size(440, 353);
             this.panelBlkng.TabIndex = 7;
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.BackColor = System.Drawing.Color.Yellow;
-            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.Location = new System.Drawing.Point(141, 297);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(129, 30);
-            this.buttonLogin.TabIndex = 44;
-            this.buttonLogin.Text = "LOGIN";
-            this.buttonLogin.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
@@ -157,7 +158,7 @@
         private System.Windows.Forms.LinkLabel linkLabelRegister;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Panel panelBlkng;
