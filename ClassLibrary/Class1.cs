@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Class
+namespace ClassLibrary
 {
-    public class Koneksi
+    public class Class1
     {
-        private MySqlConnection koneksiDB;
     }
 }
