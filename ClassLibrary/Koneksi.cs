@@ -27,8 +27,10 @@ namespace ClassLibrary
 
             string strCon = "Server =" + DbServer + ";Database=" + DbName + ";Uid=" + DbUsername + ";Pwd=" + DbPassword;
 
-            koneksiDB = new MySqlConnection();
-            koneksiDB.ConnectionString = strCon;
+            koneksiDB = new MySqlConnection
+            {
+                ConnectionString = strCon
+            };
 
             this.Connect();
         }

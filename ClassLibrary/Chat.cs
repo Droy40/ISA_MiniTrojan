@@ -65,5 +65,47 @@ namespace ClassLibrary
             }
             return listChat ;
         }
+        private static int GenerateId()
+        {
+            string sql = "select max(id) from chats";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            if (hasil.Read() == true)
+            {
+                return int.Parse(hasil.GetValue(0).ToString()) + 1;
+            }
+            return 1;
+        }
+        public static bool TambahChatKonsumen(User konsumen, String pesan)
+        {
+            int id = GenerateId();
+            string sql = "insert into chats(id, konsumen, date, pesan, is_konsumen_penerima) " +
+                         "values ('" + id + "','" + konsumen.Id + "', now() ,'" + pesan + "','0')";
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDiubah == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static bool TambahChatAdmin(User konsumen, User admin, String pesan)
+        {
+            int id = GenerateId();
+            string sql = "insert into chats(id, konsumen, admin ,date, pesan, is_konsumen_penerima) " +
+                         "values ('" + id + "','" + konsumen.Id + "','" + admin.Id + "', now() ,'" + pesan + "','1')";
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDiubah == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
