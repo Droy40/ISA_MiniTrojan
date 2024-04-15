@@ -9,7 +9,7 @@ namespace ClassLibrary
 {
     public class LoginLog
     {
-        User userLog;
+        private User userLog;
         private DateTime date;
         private bool status;
 

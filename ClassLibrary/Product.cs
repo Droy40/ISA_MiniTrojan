@@ -10,7 +10,7 @@ namespace ClassLibrary
 {
     public class Product
     {
-        private string id;
+        private int id;
         private string name;
         private string description;
         private double price;
@@ -18,7 +18,7 @@ namespace ClassLibrary
         private string photo_path;
 
 
-        public Product(string id, string name, string description, double price, int stock, string photo_path)
+        public Product(int id, string name, string description, double price, int stock, string photo_path)
         {
             this.Id = id;
             this.Name = name;
@@ -36,7 +36,7 @@ namespace ClassLibrary
             this.Stock = 0;
             this.Photo_path = "";
         }
-        public string Id { get => id; set => id = value; }
+        public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Description { get => description; set => description = value; }
         public double Price { get => price; set => price = value; }
@@ -103,7 +103,7 @@ namespace ClassLibrary
             while(hasil.Read() == true)
             {
                 Product product = new Product();
-                product.Id = hasil.GetValue(0).ToString();
+                product.Id = int.Parse(hasil.GetValue(0).ToString());
                 product.Name = hasil.GetValue(1).ToString();
                 product.Description = hasil.GetValue(2).ToString();
                 product.Price = double.Parse(hasil.GetValue(3).ToString());

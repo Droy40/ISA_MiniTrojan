@@ -10,43 +10,48 @@ namespace ClassLibrary
     public class User
     {
         private int id;
-        private string name;
-        private string password;
-        private string noHp;
         private string email;
-        private string gender;
-        private string noKtp;
-        private string imgKtp;
+        private string username;
+        private string password;
+        private string nama;
+        private string saldo;
+        private string role;
+        private string foto_ktp;
+        private bool is_enable;
+        
 
-        public User(int id, string name, string password, string email, string gender, string noKtp, string imgKtp)
-        {
-            Id = id;
-            Name = name;
-            Password = password;
-            Email = email;
-            Gender = gender;
-            NoKtp = noKtp;
-            ImgKtp = imgKtp;
-        }
         public User()
         {
-            Id = 1;
-            Name = "";
-            Password = "";
+            Id = 0;
             Email = "";
-            Gender = "";
-            NoKtp = "";
-            ImgKtp = "";
+            Username = "";
+            Password = "";
+            Nama = "";
+            Saldo = 0;
+            Role = "";
+            Is_enable = false;
+        }
+
+        public User(int id, string email, string username, string password, string nama, string saldo, string role, bool is_enable, List<Transaksi> listOfTransaction)
+        {
+            Id = id;
+            Email = email;
+            Username = username;
+            Password = password;
+            Nama = nama;
+            Saldo = saldo;
+            Role = role;
+            Is_enable = is_enable;
         }
 
         public int Id { get => id; set => id = value; }
-        public string Name { get => name; set => name = value; }
-        public string Password { get => password; set => password = value; }
-        public string NoHp { get => noHp; set => noHp = value; }
         public string Email { get => email; set => email = value; }
-        public string Gender { get => gender; set => gender = value; }
-        public string NoKtp { get => noKtp; set => noKtp = value; }
-        public string ImgKtp { get => imgKtp; set => imgKtp = value; }
+        public string Username { get => username; set => username = value; }
+        public string Password { get => password; set => password = value; }
+        public string Nama { get => nama; set => nama = value; }
+        public string Saldo { get => saldo; set => saldo = value; }
+        public string Role { get => role; set => role = value; }
+        public bool Is_enable { get => is_enable; set => is_enable = value; }
 
         public static User CekLogin(string email, string password)
         {
@@ -90,6 +95,36 @@ namespace ClassLibrary
             {
                 return true;
             }
+        }
+
+        public static List<User> BacaData(string filter = "", string nilai = "")
+        {
+            string sql;
+            if(filter == "")
+            {
+                sql = "select * from users";
+            }
+            else
+            {
+                sql = "select * from users" +
+                      " where " + filter + " like '%'" + nilai + "%'";
+            }
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<Users> listUser = new List<Users>();
+            while(hasil.Read() == true)
+            {
+                User user = new User();
+                user.Id = int.Parse(hasil.GetValue(0).toString());
+                user.Email = hasil.GetValue(1).ToString();
+                user.Username = hasil.GetValue(2).ToString();
+                user.Password = "";
+                user.Nama = hasil.GetValue(4).ToString();
+                user.Saldo = hasil.GetValue(5).ToString();
+                user.Role = hasil.GetValue(6).ToString();
+                user.Is_enable = hasil.GetValue(7).ToString();
+                listUser.add(user);
+            }
+            return listUser;
         }
     }
 }
