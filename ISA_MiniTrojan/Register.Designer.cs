@@ -32,14 +32,11 @@
             this.buttonUploadKTP = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
-            this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.labelGender = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.textBoxNoKTP = new System.Windows.Forms.TextBox();
             this.labelUsername = new System.Windows.Forms.Label();
-            this.textBoxNoHp = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.labelNoHp = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
@@ -59,14 +56,11 @@
             this.panelDepan.Controls.Add(this.buttonUploadKTP);
             this.panelDepan.Controls.Add(this.buttonRegister);
             this.panelDepan.Controls.Add(this.label1);
-            this.panelDepan.Controls.Add(this.radioButtonFemale);
-            this.panelDepan.Controls.Add(this.radioButtonMale);
-            this.panelDepan.Controls.Add(this.labelGender);
             this.panelDepan.Controls.Add(this.textBoxPassword);
             this.panelDepan.Controls.Add(this.labelPassword);
             this.panelDepan.Controls.Add(this.textBoxNoKTP);
             this.panelDepan.Controls.Add(this.labelUsername);
-            this.panelDepan.Controls.Add(this.textBoxNoHp);
+            this.panelDepan.Controls.Add(this.textBoxUsername);
             this.panelDepan.Controls.Add(this.labelNoHp);
             this.panelDepan.Controls.Add(this.textBoxEmail);
             this.panelDepan.Controls.Add(this.labelEmail);
@@ -82,7 +76,7 @@
             // 
             this.buttonUploadKTP.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.buttonUploadKTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUploadKTP.Location = new System.Drawing.Point(292, 249);
+            this.buttonUploadKTP.Location = new System.Drawing.Point(295, 215);
             this.buttonUploadKTP.Name = "buttonUploadKTP";
             this.buttonUploadKTP.Size = new System.Drawing.Size(156, 30);
             this.buttonUploadKTP.TabIndex = 51;
@@ -106,53 +100,16 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(73, 252);
+            this.label1.Location = new System.Drawing.Point(76, 215);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 22);
             this.label1.TabIndex = 48;
             this.label1.Text = "Upload KTP :";
             // 
-            // radioButtonFemale
-            // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonFemale.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButtonFemale.Location = new System.Drawing.Point(388, 152);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(91, 24);
-            this.radioButtonFemale.TabIndex = 19;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.Text = "Female";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonMale
-            // 
-            this.radioButtonMale.AutoSize = true;
-            this.radioButtonMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMale.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButtonMale.Location = new System.Drawing.Point(259, 152);
-            this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(70, 24);
-            this.radioButtonMale.TabIndex = 18;
-            this.radioButtonMale.TabStop = true;
-            this.radioButtonMale.Text = "Male";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
-            // 
-            // labelGender
-            // 
-            this.labelGender.AutoSize = true;
-            this.labelGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGender.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelGender.Location = new System.Drawing.Point(74, 150);
-            this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(88, 22);
-            this.labelGender.TabIndex = 17;
-            this.labelGender.Text = "Gender :";
-            // 
             // textBoxPassword
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(259, 217);
+            this.textBoxPassword.Location = new System.Drawing.Point(259, 182);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(223, 27);
             this.textBoxPassword.TabIndex = 16;
@@ -163,7 +120,7 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelPassword.Location = new System.Drawing.Point(74, 219);
+            this.labelPassword.Location = new System.Drawing.Point(74, 184);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(109, 22);
             this.labelPassword.TabIndex = 15;
@@ -172,7 +129,7 @@
             // textBoxNoKTP
             // 
             this.textBoxNoKTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNoKTP.Location = new System.Drawing.Point(259, 184);
+            this.textBoxNoKTP.Location = new System.Drawing.Point(259, 149);
             this.textBoxNoKTP.Name = "textBoxNoKTP";
             this.textBoxNoKTP.Size = new System.Drawing.Size(223, 27);
             this.textBoxNoKTP.TabIndex = 14;
@@ -182,19 +139,19 @@
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelUsername.Location = new System.Drawing.Point(74, 186);
+            this.labelUsername.Location = new System.Drawing.Point(74, 151);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(92, 22);
             this.labelUsername.TabIndex = 13;
             this.labelUsername.Text = "No KTP :";
             // 
-            // textBoxNoHp
+            // textBoxUsername
             // 
-            this.textBoxNoHp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNoHp.Location = new System.Drawing.Point(259, 116);
-            this.textBoxNoHp.Name = "textBoxNoHp";
-            this.textBoxNoHp.Size = new System.Drawing.Size(223, 27);
-            this.textBoxNoHp.TabIndex = 12;
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.Location = new System.Drawing.Point(259, 116);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(223, 27);
+            this.textBoxUsername.TabIndex = 12;
             // 
             // labelNoHp
             // 
@@ -203,9 +160,9 @@
             this.labelNoHp.ForeColor = System.Drawing.SystemColors.Control;
             this.labelNoHp.Location = new System.Drawing.Point(74, 118);
             this.labelNoHp.Name = "labelNoHp";
-            this.labelNoHp.Size = new System.Drawing.Size(84, 22);
+            this.labelNoHp.Size = new System.Drawing.Size(112, 22);
             this.labelNoHp.TabIndex = 11;
-            this.labelNoHp.Text = "No. Hp :";
+            this.labelNoHp.Text = "Username :";
             // 
             // textBoxEmail
             // 
@@ -294,14 +251,11 @@
 
         private System.Windows.Forms.Panel panelDepan;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButtonFemale;
-        private System.Windows.Forms.RadioButton radioButtonMale;
-        private System.Windows.Forms.Label labelGender;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox textBoxNoKTP;
         private System.Windows.Forms.Label labelUsername;
-        private System.Windows.Forms.TextBox textBoxNoHp;
+        private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label labelNoHp;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelEmail;

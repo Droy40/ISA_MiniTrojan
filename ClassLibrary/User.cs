@@ -53,21 +53,76 @@ namespace ClassLibrary
         public string Role { get => role; set => role = value; }
         public bool Is_enable { get => is_enable; set => is_enable = value; }
 
-        public static User CekLogin(string email, string password)
-        {
-            Koneksi k = new Koneksi();
-            string sql = "select email, password from users" +
-                         " where email ='" + email + " 'AND password = SHA2('" + password + "',512)";
+        public static int CekLoginUsername(string username)
+        {            
+            string sql = "select * from users" +
+                         " where username ='" + username + "';";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            while(hasil.Read()) 
+            if(hasil.Read()) 
             {
-                User user = new User();
-                user.Name = hasil.GetValue(0).ToString();
-                user.Password = hasil.GetValue(1).ToString();
-                return user;
+                if (hasil.GetValue(7) == "0")
+                {
+                    throw new Exception("Akun tidak aktif");
+                }
+                else
+                {
+                    int idUser = hasil.GetInt16(0);
+                    int sisaPercobaan = LoginLog.CekPercobaanLogin(idUser);
+                    return sisaPercobaan;
+                }
             }
-            return null;
+            throw new Exception("username tidak ditemukan");
+        }
+        public static User CekLoginPassword(string username, string password)
+        {
+            string sql = "select * from users" +
+                         " where username = '" +  username + "'";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            
+            if(hasil.Read())
+            {
+                // cek status disable/enable akun user
+                if(hasil.GetValue(7) == "0")
+                {
+                    throw new Exception("Akun tidak aktif");
+                }
+
+                //cek sisa percobaan login
+                int sisaPercobaan = LoginLog.CekPercobaanLogin(hasil.GetInt16(0));
+                if(sisaPercobaan == 0)
+                {
+                    throw new Exception("Akun tidak aktif");
+                }
+
+                User user = new User();
+                user.Id = int.Parse(hasil.GetValue(0).ToString());
+                user.Email = hasil.GetValue(1).ToString();
+                user.Username = hasil.GetValue(2).ToString();
+                user.Nama = hasil.GetValue(4).ToString();
+                user.Saldo = hasil.GetValue(5).ToString();
+                user.Role = hasil.GetValue(6).ToString();
+                user.Is_enable = hasil.GetBoolean(7);
+                
+                //cek password yg diinput dan catat percobaan login ke loginlog
+                LoginLog loginLog = new LoginLog();
+                if (hasil.GetValue(3) == password)
+                {
+                    loginLog.User = user;
+                    loginLog.Status = true;
+                    LoginLog.TambahData(loginLog);
+
+                    return user;
+                }
+                else
+                {
+                    loginLog.User = user;
+                    loginLog.Status = false;
+                    LoginLog.TambahData(loginLog);
+                    throw new Exception("Password salah");
+                }
+            }
+            throw new Exception("username tidak ditemukan");
         }
         private static int GenerateIdUser()
         {
@@ -83,9 +138,9 @@ namespace ClassLibrary
         public static bool TambahData(User u)
         {
             u.Id = GenerateIdUser();
-            string sql = "insert into users(id, name, password, email, gender, noktp, imgktp) " +
-                         "values ('" + u.Id + "','" + u.Name + "',SHA2('" + u.Password + "',512),'" +
-                         "','" + u.Email + "','" + u.Gender + "','" + u.NoKtp + "','" + u.ImgKtp;
+            string sql = "insert into users(id, email, username, password, nama, saldo, role, is_enable) " +
+                         "values ('" + u.Id + "','" + u.Email + "', '" + u.Username + "', SHA2('" + u.Password + "',512),'" +
+                         "','" + u.Nama + "','" + u.Saldo + "','" + u.Role + "','" + u.Is_enable + "')";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if(jumlahDiubah == 0)
             {
@@ -110,19 +165,19 @@ namespace ClassLibrary
                       " where " + filter + " like '%'" + nilai + "%'";
             }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-            List<Users> listUser = new List<Users>();
+            List<User> listUser = new List<User>();
             while(hasil.Read() == true)
             {
                 User user = new User();
-                user.Id = int.Parse(hasil.GetValue(0).toString());
+                user.Id = int.Parse(hasil.GetValue(0).ToString());
                 user.Email = hasil.GetValue(1).ToString();
                 user.Username = hasil.GetValue(2).ToString();
-                user.Password = "";
                 user.Nama = hasil.GetValue(4).ToString();
                 user.Saldo = hasil.GetValue(5).ToString();
                 user.Role = hasil.GetValue(6).ToString();
-                user.Is_enable = hasil.GetValue(7).ToString();
-                listUser.add(user);
+                user.Is_enable = hasil.GetBoolean(7);
+
+                listUser.Add(user);
             }
             return listUser;
         }

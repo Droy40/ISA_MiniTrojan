@@ -30,22 +30,23 @@
         {
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.buttonBuy = new System.Windows.Forms.Button();
             this.labelSinopsis = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.labelTotalSaldo = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.labelHargaAkhir = new System.Windows.Forms.Label();
-            this.labelDiskonHarga = new System.Windows.Forms.Label();
-            this.labelHargaTotal = new System.Windows.Forms.Label();
-            this.labelSaldo = new System.Windows.Forms.Label();
             this.labelTotalAkhir = new System.Windows.Forms.Label();
-            this.labelDiskon = new System.Windows.Forms.Label();
+            this.labelDiskonHarga = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
+            this.labelHargaTotal = new System.Windows.Forms.Label();
+            this.labelDiskon = new System.Windows.Forms.Label();
+            this.labelSaldo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxHarga = new System.Windows.Forms.TextBox();
             this.labelHargaTiket = new System.Windows.Forms.Label();
             this.labelSisa = new System.Windows.Forms.Label();
             this.labelJumlahKursi = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.comboBoxJudul = new System.Windows.Forms.ComboBox();
             this.labelJenisStudio = new System.Windows.Forms.Label();
             this.labelCinema = new System.Windows.Forms.Label();
-            this.labelTanggal = new System.Windows.Forms.Label();
             this.labelJudul = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -61,8 +61,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.textBoxHarga = new System.Windows.Forms.TextBox();
-            this.buttonBuy = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -106,6 +104,17 @@
             this.panel9.Size = new System.Drawing.Size(426, 216);
             this.panel9.TabIndex = 10;
             // 
+            // buttonBuy
+            // 
+            this.buttonBuy.BackColor = System.Drawing.Color.Yellow;
+            this.buttonBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuy.Location = new System.Drawing.Point(294, 181);
+            this.buttonBuy.Name = "buttonBuy";
+            this.buttonBuy.Size = new System.Drawing.Size(129, 30);
+            this.buttonBuy.TabIndex = 43;
+            this.buttonBuy.Text = "BUY";
+            this.buttonBuy.UseVisualStyleBackColor = false;
+            // 
             // labelSinopsis
             // 
             this.labelSinopsis.AutoSize = true;
@@ -116,17 +125,6 @@
             this.labelSinopsis.Size = new System.Drawing.Size(70, 18);
             this.labelSinopsis.TabIndex = 42;
             this.labelSinopsis.Text = "Deskripsi";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(11, 8);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(137, 18);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Deskripsi Barang";
             // 
             // labelTotalSaldo
             // 
@@ -139,6 +137,17 @@
             this.labelTotalSaldo.TabIndex = 40;
             this.labelTotalSaldo.Text = "Rp 00,-";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(11, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(137, 18);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Deskripsi Barang";
+            // 
             // labelHargaAkhir
             // 
             this.labelHargaAkhir.AutoSize = true;
@@ -149,39 +158,6 @@
             this.labelHargaAkhir.Size = new System.Drawing.Size(63, 18);
             this.labelHargaAkhir.TabIndex = 39;
             this.labelHargaAkhir.Text = "Rp 00.-";
-            // 
-            // labelDiskonHarga
-            // 
-            this.labelDiskonHarga.AutoSize = true;
-            this.labelDiskonHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDiskonHarga.ForeColor = System.Drawing.Color.White;
-            this.labelDiskonHarga.Location = new System.Drawing.Point(135, 120);
-            this.labelDiskonHarga.Name = "labelDiskonHarga";
-            this.labelDiskonHarga.Size = new System.Drawing.Size(63, 18);
-            this.labelDiskonHarga.TabIndex = 38;
-            this.labelDiskonHarga.Text = "Rp 00,-";
-            // 
-            // labelHargaTotal
-            // 
-            this.labelHargaTotal.AutoSize = true;
-            this.labelHargaTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHargaTotal.ForeColor = System.Drawing.Color.White;
-            this.labelHargaTotal.Location = new System.Drawing.Point(135, 87);
-            this.labelHargaTotal.Name = "labelHargaTotal";
-            this.labelHargaTotal.Size = new System.Drawing.Size(63, 18);
-            this.labelHargaTotal.TabIndex = 30;
-            this.labelHargaTotal.Text = "Rp 00,-";
-            // 
-            // labelSaldo
-            // 
-            this.labelSaldo.AutoSize = true;
-            this.labelSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSaldo.ForeColor = System.Drawing.Color.White;
-            this.labelSaldo.Location = new System.Drawing.Point(17, 187);
-            this.labelSaldo.Name = "labelSaldo";
-            this.labelSaldo.Size = new System.Drawing.Size(61, 18);
-            this.labelSaldo.TabIndex = 37;
-            this.labelSaldo.Text = "Saldo :";
             // 
             // labelTotalAkhir
             // 
@@ -194,16 +170,16 @@
             this.labelTotalAkhir.TabIndex = 36;
             this.labelTotalAkhir.Text = "Total Akhir :";
             // 
-            // labelDiskon
+            // labelDiskonHarga
             // 
-            this.labelDiskon.AutoSize = true;
-            this.labelDiskon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDiskon.ForeColor = System.Drawing.Color.White;
-            this.labelDiskon.Location = new System.Drawing.Point(17, 120);
-            this.labelDiskon.Name = "labelDiskon";
-            this.labelDiskon.Size = new System.Drawing.Size(71, 18);
-            this.labelDiskon.TabIndex = 35;
-            this.labelDiskon.Text = "Diskon :";
+            this.labelDiskonHarga.AutoSize = true;
+            this.labelDiskonHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDiskonHarga.ForeColor = System.Drawing.Color.White;
+            this.labelDiskonHarga.Location = new System.Drawing.Point(135, 120);
+            this.labelDiskonHarga.Name = "labelDiskonHarga";
+            this.labelDiskonHarga.Size = new System.Drawing.Size(63, 18);
+            this.labelDiskonHarga.TabIndex = 38;
+            this.labelDiskonHarga.Text = "Rp 00,-";
             // 
             // labelTotal
             // 
@@ -215,6 +191,39 @@
             this.labelTotal.Size = new System.Drawing.Size(56, 18);
             this.labelTotal.TabIndex = 34;
             this.labelTotal.Text = "Total :";
+            // 
+            // labelHargaTotal
+            // 
+            this.labelHargaTotal.AutoSize = true;
+            this.labelHargaTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHargaTotal.ForeColor = System.Drawing.Color.White;
+            this.labelHargaTotal.Location = new System.Drawing.Point(135, 87);
+            this.labelHargaTotal.Name = "labelHargaTotal";
+            this.labelHargaTotal.Size = new System.Drawing.Size(63, 18);
+            this.labelHargaTotal.TabIndex = 30;
+            this.labelHargaTotal.Text = "Rp 00,-";
+            // 
+            // labelDiskon
+            // 
+            this.labelDiskon.AutoSize = true;
+            this.labelDiskon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDiskon.ForeColor = System.Drawing.Color.White;
+            this.labelDiskon.Location = new System.Drawing.Point(17, 120);
+            this.labelDiskon.Name = "labelDiskon";
+            this.labelDiskon.Size = new System.Drawing.Size(71, 18);
+            this.labelDiskon.TabIndex = 35;
+            this.labelDiskon.Text = "Diskon :";
+            // 
+            // labelSaldo
+            // 
+            this.labelSaldo.AutoSize = true;
+            this.labelSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaldo.ForeColor = System.Drawing.Color.White;
+            this.labelSaldo.Location = new System.Drawing.Point(17, 187);
+            this.labelSaldo.Name = "labelSaldo";
+            this.labelSaldo.Size = new System.Drawing.Size(61, 18);
+            this.labelSaldo.TabIndex = 37;
+            this.labelSaldo.Text = "Saldo :";
             // 
             // panel2
             // 
@@ -256,7 +265,6 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
             this.panel6.Controls.Add(this.textBoxHarga);
-            this.panel6.Controls.Add(this.dateTimePicker1);
             this.panel6.Controls.Add(this.labelHargaTiket);
             this.panel6.Controls.Add(this.labelSisa);
             this.panel6.Controls.Add(this.labelJumlahKursi);
@@ -264,22 +272,18 @@
             this.panel6.Controls.Add(this.comboBoxJudul);
             this.panel6.Controls.Add(this.labelJenisStudio);
             this.panel6.Controls.Add(this.labelCinema);
-            this.panel6.Controls.Add(this.labelTanggal);
             this.panel6.Controls.Add(this.labelJudul);
             this.panel6.Location = new System.Drawing.Point(5, 5);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(426, 195);
             this.panel6.TabIndex = 9;
             // 
-            // dateTimePicker1
+            // textBoxHarga
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(94, 45);
-            this.dateTimePicker1.MinDate = new System.DateTime(2024, 1, 3, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 32;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 1, 4, 18, 54, 0, 0);
+            this.textBoxHarga.Location = new System.Drawing.Point(94, 52);
+            this.textBoxHarga.Name = "textBoxHarga";
+            this.textBoxHarga.Size = new System.Drawing.Size(196, 22);
+            this.textBoxHarga.TabIndex = 33;
             // 
             // labelHargaTiket
             // 
@@ -350,22 +354,11 @@
             this.labelCinema.AutoSize = true;
             this.labelCinema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCinema.ForeColor = System.Drawing.Color.White;
-            this.labelCinema.Location = new System.Drawing.Point(23, 75);
+            this.labelCinema.Location = new System.Drawing.Point(19, 52);
             this.labelCinema.Name = "labelCinema";
             this.labelCinema.Size = new System.Drawing.Size(63, 18);
             this.labelCinema.TabIndex = 24;
             this.labelCinema.Text = "Harga :";
-            // 
-            // labelTanggal
-            // 
-            this.labelTanggal.AutoSize = true;
-            this.labelTanggal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTanggal.ForeColor = System.Drawing.Color.White;
-            this.labelTanggal.Location = new System.Drawing.Point(11, 44);
-            this.labelTanggal.Name = "labelTanggal";
-            this.labelTanggal.Size = new System.Drawing.Size(77, 18);
-            this.labelTanggal.TabIndex = 1;
-            this.labelTanggal.Text = "Tanggal :";
             // 
             // labelJudul
             // 
@@ -438,24 +431,6 @@
             this.pictureBox7.TabIndex = 20;
             this.pictureBox7.TabStop = false;
             // 
-            // textBoxHarga
-            // 
-            this.textBoxHarga.Location = new System.Drawing.Point(98, 75);
-            this.textBoxHarga.Name = "textBoxHarga";
-            this.textBoxHarga.Size = new System.Drawing.Size(196, 22);
-            this.textBoxHarga.TabIndex = 33;
-            // 
-            // buttonBuy
-            // 
-            this.buttonBuy.BackColor = System.Drawing.Color.Yellow;
-            this.buttonBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBuy.Location = new System.Drawing.Point(294, 181);
-            this.buttonBuy.Name = "buttonBuy";
-            this.buttonBuy.Size = new System.Drawing.Size(129, 30);
-            this.buttonBuy.TabIndex = 43;
-            this.buttonBuy.Text = "BUY";
-            this.buttonBuy.UseVisualStyleBackColor = false;
-            // 
             // Shoping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -511,7 +486,6 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label labelHargaTiket;
         private System.Windows.Forms.Label labelSisa;
         private System.Windows.Forms.Label labelJumlahKursi;
@@ -519,7 +493,6 @@
         private System.Windows.Forms.ComboBox comboBoxJudul;
         private System.Windows.Forms.Label labelJenisStudio;
         private System.Windows.Forms.Label labelCinema;
-        private System.Windows.Forms.Label labelTanggal;
         private System.Windows.Forms.Label labelJudul;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;

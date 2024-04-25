@@ -9,30 +9,37 @@ namespace ClassLibrary
 {
     public class LoginLog
     {
-        private User userLog;
+        private int id;
+        private User user;
         private DateTime date;
         private bool status;
 
-        public LoginLog(User userLog, DateTime date, bool status)
+        public LoginLog(int id, User user, DateTime date, bool status)
         {
-            UserLog = userLog;
+            Id = 0;
+            User = user;
             Date = date;
             Status = status;
         }
         public LoginLog()
         {
-            UserLog = null;
+            Id = 0
+            User = new User();
             Date = new DateTime();
-            Status = false;        }
+            Status = false; 
+        }
 
-        public User UserLog { get => userLog; set => userLog = value; }
+        public int Id { get => id; set => id = value; }
+        public User User { get => user; set => user = value; }
         public DateTime Date { get => date; set => date = value; }
         public bool Status { get => status; set => status = value; }
 
+
         public static bool TambahData(LoginLog l)
         {
-            string sql = "insert into login_log " +
-                         "values('" + l.UserLog.Id + "','" + l.Date + "','" + l.Status + "')";
+            int status = (l.status) ? 1 : 0;
+            string sql = "insert into login_log(user_id, date, status) " +
+                         "values('" + l.UserLog.Id + "',now(),'" + l.Status + "')";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sql);
             if(jumlahDataBerubah == 0)
@@ -71,6 +78,19 @@ namespace ClassLibrary
                 listLoginLog.Add(l);
             }
             return listLoginLog;
+        }
+
+        public static int CekPercobaanLogin(int idUser)
+        {
+            string sql = "select count(*) from (select * from login_log where user_id = '" + idUser + "' order by date desc limit 3) where status = '0'";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read())
+            {
+                int sisaPercobaan = 3 - hasil.GetInt16(0);
+                return sisaPercobaan;
+            }
+
+            return 3;
         }
     }
 }

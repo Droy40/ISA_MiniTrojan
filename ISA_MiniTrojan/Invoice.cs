@@ -16,5 +16,10 @@ namespace ISA_MiniTrojan
         {
             InitializeComponent();
         }
+
+        private void Invoice_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

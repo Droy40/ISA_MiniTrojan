@@ -107,6 +107,7 @@
             this.Controls.Add(this.labelNoInvoice);
             this.Name = "Invoice";
             this.Text = "Invoice";
+            this.Load += new System.EventHandler(this.Invoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
