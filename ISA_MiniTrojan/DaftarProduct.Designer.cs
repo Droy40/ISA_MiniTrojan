@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaftarProduct));
-            this.dataGridViewInvoice = new System.Windows.Forms.DataGridView();
+            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -37,23 +37,23 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelRegister = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridViewInvoice
+            // dataGridViewProduct
             // 
-            this.dataGridViewInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInvoice.Location = new System.Drawing.Point(22, 124);
-            this.dataGridViewInvoice.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewInvoice.Name = "dataGridViewInvoice";
-            this.dataGridViewInvoice.RowHeadersWidth = 51;
-            this.dataGridViewInvoice.RowTemplate.Height = 24;
-            this.dataGridViewInvoice.Size = new System.Drawing.Size(430, 239);
-            this.dataGridViewInvoice.TabIndex = 30;
-            this.dataGridViewInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInvoice_CellContentClick);
+            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduct.Location = new System.Drawing.Point(22, 124);
+            this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewProduct.Name = "dataGridViewProduct";
+            this.dataGridViewProduct.RowHeadersWidth = 51;
+            this.dataGridViewProduct.RowTemplate.Height = 24;
+            this.dataGridViewProduct.Size = new System.Drawing.Size(430, 239);
+            this.dataGridViewProduct.TabIndex = 30;
+            this.dataGridViewProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInvoice_CellContentClick);
             // 
             // label1
             // 
@@ -157,12 +157,12 @@
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.dataGridViewInvoice);
+            this.Controls.Add(this.dataGridViewProduct);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DaftarProduct";
             this.Text = "DaftarProduct";
             this.Load += new System.EventHandler(this.DaftarProduct_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
@@ -173,7 +173,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewInvoice;
+        private System.Windows.Forms.DataGridView dataGridViewProduct;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.TextBox textBox1;

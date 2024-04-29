@@ -27,27 +27,27 @@ namespace ISA_MiniTrojan
         {
             utama = (Dashboard)this.MdiParent;
             List<Product> listHasil = Product.BacaData();
-            dataGridViewHasil.Rows.Clear();
-            foreach (Studio f in listHasil)
+            dataGridViewProduct.Rows.Clear();
+            foreach (Product p in listHasil)
             {
-                dataGridViewHasil.Rows.Add(f.Nama, f.Kapasitas, f.Jenis.Nama, f.Cinema.NamaCabang, f.HargaWeekday, f.HargaWeekend);
+                dataGridViewProduct.Rows.Add();
             }
 
-            if (dataGridViewHasil.ColumnCount == 7)
+            if (dataGridViewProduct.ColumnCount == 7)
             {
                 DataGridViewButtonColumn btnDel = new DataGridViewButtonColumn();
                 btnDel.HeaderText = "AKSI";
                 btnDel.Text = "HAPUS";
                 btnDel.Name = "buttonHapusGrid";
                 btnDel.UseColumnTextForButtonValue = true;
-                dataGridViewHasil.Columns.Add(btnDel);
+                dataGridViewProduct.Columns.Add(btnDel);
 
                 DataGridViewButtonColumn btnUbah = new DataGridViewButtonColumn();
                 btnUbah.HeaderText = "AKSI";
                 btnUbah.Text = "UBAH";
                 btnUbah.Name = "buttonUbahGrid";
                 btnUbah.UseColumnTextForButtonValue = true;
-                dataGridViewHasil.Columns.Add(btnUbah);
+                dataGridViewProduct.Columns.Add(btnUbah);
             }
         }
     }
