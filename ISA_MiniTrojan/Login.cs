@@ -24,7 +24,7 @@ namespace ISA_MiniTrojan
             try
             {
                 
-                bool tmp = User.CekLoginUsername(textBoxEmail.Text);
+                int tmp = User.CekLoginUsername(textBoxEmail.Text);
                 if(tmp)
                 {
                     labelUsername.Visible = false;

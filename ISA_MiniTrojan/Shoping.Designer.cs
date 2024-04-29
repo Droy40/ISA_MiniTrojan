@@ -47,19 +47,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBoxHarga = new System.Windows.Forms.TextBox();
-            this.labelHargaTiket = new System.Windows.Forms.Label();
-            this.labelSisa = new System.Windows.Forms.Label();
-            this.labelJumlahKursi = new System.Windows.Forms.Label();
-            this.labelHarga = new System.Windows.Forms.Label();
-            this.comboBoxJudul = new System.Windows.Forms.ComboBox();
-            this.labelJenisStudio = new System.Windows.Forms.Label();
             this.labelCinema = new System.Windows.Forms.Label();
             this.labelJudul = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -68,11 +62,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
@@ -238,6 +231,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
             this.panel8.Controls.Add(this.pictureBox12);
+            this.panel8.Controls.Add(this.pictureBox2);
             this.panel8.Location = new System.Drawing.Point(3, 4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(293, 437);
@@ -264,13 +258,8 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
+            this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.textBoxHarga);
-            this.panel6.Controls.Add(this.labelHargaTiket);
-            this.panel6.Controls.Add(this.labelSisa);
-            this.panel6.Controls.Add(this.labelJumlahKursi);
-            this.panel6.Controls.Add(this.labelHarga);
-            this.panel6.Controls.Add(this.comboBoxJudul);
-            this.panel6.Controls.Add(this.labelJenisStudio);
             this.panel6.Controls.Add(this.labelCinema);
             this.panel6.Controls.Add(this.labelJudul);
             this.panel6.Location = new System.Drawing.Point(5, 5);
@@ -284,70 +273,6 @@
             this.textBoxHarga.Name = "textBoxHarga";
             this.textBoxHarga.Size = new System.Drawing.Size(196, 22);
             this.textBoxHarga.TabIndex = 33;
-            // 
-            // labelHargaTiket
-            // 
-            this.labelHargaTiket.AutoSize = true;
-            this.labelHargaTiket.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHargaTiket.ForeColor = System.Drawing.Color.White;
-            this.labelHargaTiket.Location = new System.Drawing.Point(188, 166);
-            this.labelHargaTiket.Name = "labelHargaTiket";
-            this.labelHargaTiket.Size = new System.Drawing.Size(70, 18);
-            this.labelHargaTiket.TabIndex = 31;
-            this.labelHargaTiket.Text = "00 Kursi";
-            // 
-            // labelSisa
-            // 
-            this.labelSisa.AutoSize = true;
-            this.labelSisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSisa.ForeColor = System.Drawing.Color.White;
-            this.labelSisa.Location = new System.Drawing.Point(264, 139);
-            this.labelSisa.Name = "labelSisa";
-            this.labelSisa.Size = new System.Drawing.Size(116, 18);
-            this.labelSisa.TabIndex = 30;
-            this.labelSisa.Text = "(sisa 00 kursi)";
-            // 
-            // labelJumlahKursi
-            // 
-            this.labelJumlahKursi.AutoSize = true;
-            this.labelJumlahKursi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJumlahKursi.ForeColor = System.Drawing.Color.White;
-            this.labelJumlahKursi.Location = new System.Drawing.Point(188, 139);
-            this.labelJumlahKursi.Name = "labelJumlahKursi";
-            this.labelJumlahKursi.Size = new System.Drawing.Size(70, 18);
-            this.labelJumlahKursi.TabIndex = 29;
-            this.labelJumlahKursi.Text = "00 Kursi";
-            // 
-            // labelHarga
-            // 
-            this.labelHarga.AutoSize = true;
-            this.labelHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHarga.ForeColor = System.Drawing.Color.White;
-            this.labelHarga.Location = new System.Drawing.Point(95, 166);
-            this.labelHarga.Name = "labelHarga";
-            this.labelHarga.Size = new System.Drawing.Size(63, 18);
-            this.labelHarga.TabIndex = 28;
-            this.labelHarga.Text = "Harga :";
-            // 
-            // comboBoxJudul
-            // 
-            this.comboBoxJudul.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxJudul.FormattingEnabled = true;
-            this.comboBoxJudul.Location = new System.Drawing.Point(94, 14);
-            this.comboBoxJudul.Name = "comboBoxJudul";
-            this.comboBoxJudul.Size = new System.Drawing.Size(256, 24);
-            this.comboBoxJudul.TabIndex = 25;
-            // 
-            // labelJenisStudio
-            // 
-            this.labelJenisStudio.AutoSize = true;
-            this.labelJenisStudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJenisStudio.ForeColor = System.Drawing.Color.White;
-            this.labelJenisStudio.Location = new System.Drawing.Point(95, 139);
-            this.labelJenisStudio.Name = "labelJenisStudio";
-            this.labelJenisStudio.Size = new System.Drawing.Size(56, 18);
-            this.labelJenisStudio.TabIndex = 24;
-            this.labelJenisStudio.Text = "Studio";
             // 
             // labelCinema
             // 
@@ -371,15 +296,22 @@
             this.labelJudul.TabIndex = 0;
             this.labelJudul.Text = "Barang :";
             // 
-            // pictureBox6
+            // pictureBox2
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Location = new System.Drawing.Point(415, 359);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(207, 186);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 19;
-            this.pictureBox6.TabStop = false;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Location = new System.Drawing.Point(37, 105);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(207, 186);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(94, 15);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(196, 22);
+            this.textBox1.TabIndex = 34;
             // 
             // pictureBox5
             // 
@@ -411,16 +343,6 @@
             this.pictureBox3.TabIndex = 16;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 191);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(207, 186);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
@@ -440,11 +362,9 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox7);
             this.Name = "Shoping";
             this.Text = "Shoping";
@@ -457,11 +377,10 @@
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
@@ -486,21 +405,15 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label labelHargaTiket;
-        private System.Windows.Forms.Label labelSisa;
-        private System.Windows.Forms.Label labelJumlahKursi;
-        private System.Windows.Forms.Label labelHarga;
-        private System.Windows.Forms.ComboBox comboBoxJudul;
-        private System.Windows.Forms.Label labelJenisStudio;
         private System.Windows.Forms.Label labelCinema;
         private System.Windows.Forms.Label labelJudul;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button buttonBuy;
+        private System.Windows.Forms.TextBox textBoxHarga;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Button buttonBuy;
-        private System.Windows.Forms.TextBox textBoxHarga;
     }
 }

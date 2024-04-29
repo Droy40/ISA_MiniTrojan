@@ -18,7 +18,7 @@ namespace ClassLibrary
         private string role;
         private string foto_ktp;
         private bool is_enable;
-        
+
 
         public User()
         {
@@ -44,14 +44,46 @@ namespace ClassLibrary
             Is_enable = is_enable;
         }
 
-        public int Id { get => id; set => id = value; }
-        public string Email { get => email; set => email = value; }
-        public string Username { get => username; set => username = value; }
-        public string Password { get => password; set => password = value; }
-        public string Nama { get => nama; set => nama = value; }
-        public string Saldo { get => saldo; set => saldo = value; }
-        public string Role { get => role; set => role = value; }
-        public bool Is_enable { get => is_enable; set => is_enable = value; }
+        public int Id 
+        { 
+            get => id; 
+            set => id = value; 
+        }
+        public string Email 
+        { 
+            get => AES.Decrypt(email, AES.key);
+            set => email = AES.Encrypt(value, AES.key);
+        }
+        public string Username 
+        { 
+            get => AES.Decrypt(username, AES.key); 
+            set => username = AES.Encrypt(value, AES.key); 
+        }
+        public string Password 
+        { 
+            get => AES.Decrypt(password, AES.key); 
+            set => password = AES.Encrypt(value, AES.key); 
+        }
+        public string Nama 
+        { 
+            get => AES.Decrypt(nama, AES.key); 
+            set => nama = AES.Encrypt(value, AES.key); 
+        }
+        public string Saldo 
+        { 
+            get => AES.Decrypt(saldo, AES.key); 
+            set => saldo = AES.Encrypt(value, AES.key); 
+        }
+        public string Role 
+        { 
+            get => AES.Decrypt(role, AES.key); 
+            set => role = AES.Encrypt(value, AES.key); 
+        }
+        public bool Is_enable 
+        { 
+            get => is_enable; 
+            set => is_enable = value; 
+        }
 
         public static int CekLoginUsername(string username)
         {            

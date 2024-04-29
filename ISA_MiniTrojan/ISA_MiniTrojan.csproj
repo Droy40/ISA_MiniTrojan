@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DaftarProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaftarProduct.Designer.cs">
+      <DependentUpon>DaftarProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DaftarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaftarUser.Designer.cs">
+      <DependentUpon>DaftarUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +74,12 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>DbSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProduk.Designer.cs">
+      <DependentUpon>EditProduk.cs</DependentUpon>
     </Compile>
     <Compile Include="Invoice.cs">
       <SubType>Form</SubType>
@@ -83,11 +107,23 @@
     <Compile Include="Report.Designer.cs">
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
+    <Compile Include="RiwayatTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiwayatTransaksi.Designer.cs">
+      <DependentUpon>RiwayatTransaksi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Shoping.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Shoping.Designer.cs">
       <DependentUpon>Shoping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahProduk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahProduk.Designer.cs">
+      <DependentUpon>TambahProduk.cs</DependentUpon>
     </Compile>
     <Compile Include="TopUp.cs">
       <SubType>Form</SubType>
@@ -95,8 +131,17 @@
     <Compile Include="TopUp.Designer.cs">
       <DependentUpon>TopUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DaftarProduct.resx">
+      <DependentUpon>DaftarProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DaftarUser.resx">
+      <DependentUpon>DaftarUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProduk.resx">
+      <DependentUpon>EditProduk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice.resx">
       <DependentUpon>Invoice.cs</DependentUpon>
@@ -112,6 +157,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
@@ -119,8 +165,14 @@
     <EmbeddedResource Include="Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RiwayatTransaksi.resx">
+      <DependentUpon>RiwayatTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Shoping.resx">
       <DependentUpon>Shoping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahProduk.resx">
+      <DependentUpon>TambahProduk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TopUp.resx">
       <DependentUpon>TopUp.cs</DependentUpon>
@@ -129,6 +181,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>DbSettings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -147,6 +200,9 @@
       <Project>{3b89705a-8471-44bb-b79a-309518cf6bf4}</Project>
       <Name>ClassLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundFix.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

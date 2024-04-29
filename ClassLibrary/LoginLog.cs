@@ -23,7 +23,7 @@ namespace ClassLibrary
         }
         public LoginLog()
         {
-            Id = 0
+            Id = 0;
             User = new User();
             Date = new DateTime();
             Status = false; 
@@ -39,7 +39,7 @@ namespace ClassLibrary
         {
             int status = (l.status) ? 1 : 0;
             string sql = "insert into login_log(user_id, date, status) " +
-                         "values('" + l.UserLog.Id + "',now(),'" + l.Status + "')";
+                         "values('" + l.User.Id + "',now(),'" + l.Status + "')";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sql);
             if(jumlahDataBerubah == 0)
@@ -72,7 +72,7 @@ namespace ClassLibrary
                 User u = new User();
                 u.Id = int.Parse(hasil.GetValue(0).ToString());
                 LoginLog l = new LoginLog();
-                l.UserLog = u;
+                l.User = u;
                 l.Date = DateTime.Parse(hasil.GetValue(1).ToString());
                 l.Status = Boolean.Parse(hasil.GetValue(2).ToString());
                 listLoginLog.Add(l);

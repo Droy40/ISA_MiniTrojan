@@ -31,12 +31,12 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonTopUp = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnChatAdmin = new System.Windows.Forms.Button();
             this.btnBasket = new System.Windows.Forms.Button();
             this.btnInvoice = new System.Windows.Forms.Button();
             this.btnShoping = new System.Windows.Forms.Button();
-            this.buttonTopUp = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,22 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 450);
             this.panelMenu.TabIndex = 4;
+            // 
+            // buttonTopUp
+            // 
+            this.buttonTopUp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTopUp.FlatAppearance.BorderSize = 0;
+            this.buttonTopUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTopUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.buttonTopUp.ForeColor = System.Drawing.Color.White;
+            this.buttonTopUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTopUp.Location = new System.Drawing.Point(0, 376);
+            this.buttonTopUp.Name = "buttonTopUp";
+            this.buttonTopUp.Size = new System.Drawing.Size(200, 60);
+            this.buttonTopUp.TabIndex = 16;
+            this.buttonTopUp.Text = "Top Up";
+            this.buttonTopUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonTopUp.UseVisualStyleBackColor = true;
             // 
             // btnReport
             // 
@@ -151,25 +167,9 @@
             this.btnShoping.Name = "btnShoping";
             this.btnShoping.Size = new System.Drawing.Size(200, 60);
             this.btnShoping.TabIndex = 1;
-            this.btnShoping.Text = "Shoping";
+            this.btnShoping.Text = "Tambah Produk";
             this.btnShoping.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnShoping.UseVisualStyleBackColor = true;
-            // 
-            // buttonTopUp
-            // 
-            this.buttonTopUp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonTopUp.FlatAppearance.BorderSize = 0;
-            this.buttonTopUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTopUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonTopUp.ForeColor = System.Drawing.Color.White;
-            this.buttonTopUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonTopUp.Location = new System.Drawing.Point(0, 376);
-            this.buttonTopUp.Name = "buttonTopUp";
-            this.buttonTopUp.Size = new System.Drawing.Size(200, 60);
-            this.buttonTopUp.TabIndex = 16;
-            this.buttonTopUp.Text = "Top Up";
-            this.buttonTopUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonTopUp.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 

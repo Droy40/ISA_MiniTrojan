@@ -10,6 +10,7 @@ namespace ClassLibrary
 {
     public class AES
     {
+        public static string key = "3A7F1D8E92B0C4F5E678A9BD0CEF2A4D";
         public static string Encrypt(string plainText, string key)
         {
             using (Aes aesAlg = Aes.Create())
