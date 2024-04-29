@@ -28,6 +28,7 @@ namespace ISA_MiniTrojan
             utama = (Dashboard)this.MdiParent;
             List<Product> listHasil = Product.BacaData();
             dataGridViewHasil.Rows.Clear();
+            foreach (Studio f in listHasil)
             {
                 dataGridViewHasil.Rows.Add(f.Nama, f.Kapasitas, f.Jenis.Nama, f.Cinema.NamaCabang, f.HargaWeekday, f.HargaWeekend);
             }
