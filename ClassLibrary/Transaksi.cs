@@ -83,19 +83,19 @@ namespace ClassLibrary
                 Transaksi t = new Transaksi();
                 t.Id = hasil.GetInt32(0);
                 t.Date = DateTime.Parse(hasil.GetValue(1).ToString());
-                t.Total = double.parse(hasil.GetValue(2) .ToString());
+                t.Total = double.Parse(hasil.GetValue(2) .ToString());
                 
                 User tampung = new User();
-                tampung.Id = int.Parse(hasil.GetValue(3).toString());
+                tampung.Id = int.Parse(hasil.GetValue(3).ToString());
                 tampung.Email = hasil.GetValue(4).ToString();
                 tampung.Username = hasil.GetValue(5).ToString();
                 tampung.Password = "";
                 tampung.Nama = hasil.GetValue(6).ToString();
-                tampung.Saldo = hasil.GetValue(7).ToString();
+                tampung.Saldo = hasil.GetInt32(7);
                 tampung.Role = hasil.GetValue(8).ToString();
-                tampung.Is_enable = hasil.GetValue(9).ToString();
+                tampung.Is_enable = (hasil.GetInt32(9) == 1)?true:false;
                 t.User = tampung;
-                listTransaksi.add(t); 
+                listTransaksi.Add(t); 
             }
             return listTransaksi;
         }

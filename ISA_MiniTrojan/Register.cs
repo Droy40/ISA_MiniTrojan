@@ -29,7 +29,7 @@ namespace ISA_MiniTrojan
                 u.Password = textBoxPassword.Text;
 
                 //u.ImgKtp = upload ktp
-                if ()
+                
                 User.TambahData(u);
                 MessageBox.Show("Register Berhasil");
                 this.Close();                    

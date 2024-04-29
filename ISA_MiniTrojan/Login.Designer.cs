@@ -65,6 +65,7 @@
             this.buttonBack.TabIndex = 47;
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // textBoxPassword
             // 
@@ -109,6 +110,7 @@
             this.linkLabelRegister.TabIndex = 21;
             this.linkLabelRegister.TabStop = true;
             this.linkLabelRegister.Text = "Register";
+            this.linkLabelRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRegister_LinkClicked);
             // 
             // textBoxUser
             // 

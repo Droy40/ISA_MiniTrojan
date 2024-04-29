@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
 namespace ClassLibrary
@@ -29,7 +28,7 @@ namespace ClassLibrary
         }
         public Product()
         {
-            this.Id = "";
+            this.Id = 0;
             this.Name = "";
             this.Description = "";
             this.Price = 0;
@@ -43,16 +42,16 @@ namespace ClassLibrary
         public int Stock { get => stock; set => stock = value; }
         public string Photo_path { get => photo_path; set => photo_path = value; }
 
-        private static string GenerateIdProduct()
+        private static int GenerateIdProduct()
         {
             string sql = "select max(id) from products";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             if(hasil.Read() == true)
             {
-                return hasil.GetValue(0).ToString() +1;
+                return hasil.GetInt32(0) +1;
             }
-            return "";
+            return 1;
 
         }
 
