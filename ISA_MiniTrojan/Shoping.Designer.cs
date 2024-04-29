@@ -57,9 +57,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.comboBoxBarang = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDownJumlah = new System.Windows.Forms.NumericUpDown();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -113,7 +110,7 @@
             this.buttonBuy.TabIndex = 43;
             this.buttonBuy.Text = "BUY";
             this.buttonBuy.UseVisualStyleBackColor = false;
-            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
+//            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
             // 
             // labelDeskripsi
             // 
@@ -319,7 +316,7 @@
             this.textBoxHarga.Name = "textBoxHarga";
             this.textBoxHarga.Size = new System.Drawing.Size(196, 22);
             this.textBoxHarga.TabIndex = 33;
-            this.textBoxHarga.TextChanged += new System.EventHandler(this.textBoxHarga_TextChanged);
+            //this.textBoxHarga.TextChanged += new System.EventHandler(this.textBoxHarga_TextChanged);
             // 
             // labelCinema
             // 
