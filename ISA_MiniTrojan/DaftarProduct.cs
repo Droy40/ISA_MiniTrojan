@@ -30,10 +30,10 @@ namespace ISA_MiniTrojan
             dataGridViewProduct.Rows.Clear();
             foreach (Product p in listHasil)
             {
-                dataGridViewProduct.Rows.Add();
+                dataGridViewProduct.Rows.Add(p.Id, p.Name, p.Price, p.Stock);
             }
 
-            if (dataGridViewProduct.ColumnCount == 7)
+            if (dataGridViewProduct.ColumnCount == 4)
             {
                 DataGridViewButtonColumn btnDel = new DataGridViewButtonColumn();
                 btnDel.HeaderText = "AKSI";

@@ -37,6 +37,10 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelRegister = new System.Windows.Forms.Label();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnHarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
@@ -46,6 +50,11 @@
             // dataGridViewProduct
             // 
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
+            this.ColumnNama,
+            this.ColumnHarga,
+            this.ColumnStock});
             this.dataGridViewProduct.Location = new System.Drawing.Point(22, 124);
             this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
@@ -147,6 +156,30 @@
             this.labelRegister.Text = "Daftar Produk";
             this.labelRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Id";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            // 
+            // ColumnNama
+            // 
+            this.ColumnNama.HeaderText = "Nama Produk";
+            this.ColumnNama.Name = "ColumnNama";
+            this.ColumnNama.ReadOnly = true;
+            // 
+            // ColumnHarga
+            // 
+            this.ColumnHarga.HeaderText = "Harga";
+            this.ColumnHarga.Name = "ColumnHarga";
+            this.ColumnHarga.ReadOnly = true;
+            // 
+            // ColumnStock
+            // 
+            this.ColumnStock.HeaderText = "Stock Barang";
+            this.ColumnStock.Name = "ColumnStock";
+            this.ColumnStock.ReadOnly = true;
+            // 
             // DaftarProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,5 +214,9 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelRegister;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStock;
     }
 }
