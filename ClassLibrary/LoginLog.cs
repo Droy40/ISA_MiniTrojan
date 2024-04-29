@@ -38,8 +38,17 @@ namespace ClassLibrary
         public static bool TambahData(LoginLog l)
         {
             int status = (l.status) ? 1 : 0;
-            string sql = "insert into login_log(user_id, date, status) " +
-                         "values('" + l.User.Id + "' ,now(),'" + l.Status + "')";
+            string sql;
+            if (l.status)
+            {
+                sql = "insert into login_log(users_id, date, status) " +
+                             "values('" + l.User.Id + "' ,now(),'" + status + "')";
+            }
+            else
+            {
+                sql = "insert into login_log(users_id, date, status) " +
+                             "values((select id from users where username ='" + l.User.username + "') ,now(),'" + status + "')";
+            }
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sql);
             if(jumlahDataBerubah == 0)
@@ -82,7 +91,7 @@ namespace ClassLibrary
 
         public static int CekPercobaanLogin(string username)
         {
-            string sql = "select count(*) from (select * from login_log inner join users on users.id = login_log.users_id where users.username = '" + username + "' order by date desc limit 3) where status = '0'";
+            string sql = "select count(*) as jumlah from (select ll.id, u.username ,ll.status from login_log as ll inner join users as u on u.id = ll.users_id where u.username = '" + username + "' order by date desc limit 3) as log where status = '0'";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             if (hasil.Read())
             {

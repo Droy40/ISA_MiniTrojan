@@ -10,15 +10,15 @@ namespace ClassLibrary
 {
     public class User
     {
-        private int id;
-        private string email;
-        private string username;
-        private string password;
-        private string nama;
-        private string saldo;
-        private string role;
-        private string foto_ktp;
-        private bool is_enable;
+        public int id;
+        public string email;
+        public string username;
+        public string password;
+        public string nama;
+        public string saldo;
+        public string role;
+        public string foto_ktp;
+        public bool is_enable;
         
         public User()
         {
@@ -86,21 +86,38 @@ namespace ClassLibrary
         }
 
         public static bool CekLoginUsername(string username)
-        {            
-            
-            if(LoginLog.CekPercobaanLogin(username) > 0) 
+        {
+            string sql = "select * from users where username =  '" + username+ "'";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            if(hasil.Read() == true)
             {
-                return true;                
+                if (hasil.GetBoolean(7) == true)
+                {
+                    if (LoginLog.CekPercobaanLogin(username) > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception("Akun tidak aktif");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Akun tidak aktif");
+                }
             }
             else
             {
-                throw new Exception("Akun tidak aktif");
+                throw new Exception("Username tidak ditemukan");
             }
-            throw new Exception("username tidak ditemukan");
         }
         public static User CekLoginUsernamePassword(string username, string password)
         {
-            if (LoginLog.CekPercobaanLogin(username) > 0)
+
+            int sisaPercobaan = LoginLog.CekPercobaanLogin(username);
+            if (sisaPercobaan > 0)
             {
                 string sql = "select * from users where username = '" + username + "' and password = '" + password + "'";
                 MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
@@ -125,7 +142,12 @@ namespace ClassLibrary
                 }
                 else
                 {
-                    lg.User.Username = username;
+                    if (sisaPercobaan == 1)
+                    {
+                        string sql2 = "update users set is_enable = 0 where username = '" + username + "'";
+                        Koneksi.JalankanPerintahDML(sql2);
+                    }
+                    lg.User.username = username;
                     lg.Status = false;
                     LoginLog.TambahData(lg);
                     throw new Exception("Password salah");

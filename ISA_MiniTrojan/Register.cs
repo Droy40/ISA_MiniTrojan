@@ -27,6 +27,7 @@ namespace ISA_MiniTrojan
                 u.Username = textBoxUsername.Text;
                 u.Nama = textBoxNama.Text;
                 u.Password = textBoxPassword.Text;
+                u.Role = "Konsumen"; 
 
                 //u.ImgKtp = upload ktp
                 
