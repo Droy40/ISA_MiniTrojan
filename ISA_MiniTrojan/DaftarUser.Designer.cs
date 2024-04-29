@@ -32,12 +32,18 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewInvoice = new System.Windows.Forms.DataGridView();
+            this.dataGridViewUser = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelRegister = new System.Windows.Forms.Label();
             this.pictureBoxBack = new System.Windows.Forms.PictureBox();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
             this.SuspendLayout();
@@ -46,21 +52,23 @@
             // 
             this.guna2Panel1.AutoRoundedCorners = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderRadius = 24;
+            this.guna2Panel1.BorderRadius = 19;
             this.guna2Panel1.Controls.Add(this.textBox1);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(23, 98);
+            this.guna2Panel1.Location = new System.Drawing.Point(17, 80);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(573, 51);
+            this.guna2Panel1.Size = new System.Drawing.Size(430, 41);
             this.guna2Panel1.TabIndex = 42;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(271, 11);
+            this.textBox1.Location = new System.Drawing.Point(203, 9);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 27);
+            this.textBox1.Size = new System.Drawing.Size(191, 23);
             this.textBox1.TabIndex = 19;
             // 
             // label1
@@ -68,29 +76,39 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label1.Location = new System.Drawing.Point(21, 14);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 22);
+            this.label1.Size = new System.Drawing.Size(143, 18);
             this.label1.TabIndex = 18;
             this.label1.Text = "Search Username";
             // 
-            // dataGridViewInvoice
+            // dataGridViewUser
             // 
-            this.dataGridViewInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInvoice.Location = new System.Drawing.Point(23, 162);
-            this.dataGridViewInvoice.Name = "dataGridViewInvoice";
-            this.dataGridViewInvoice.RowHeadersWidth = 51;
-            this.dataGridViewInvoice.RowTemplate.Height = 24;
-            this.dataGridViewInvoice.Size = new System.Drawing.Size(573, 294);
-            this.dataGridViewInvoice.TabIndex = 41;
+            this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
+            this.ColumnUsername,
+            this.ColumnEmail,
+            this.ColumnNama,
+            this.ColumnSaldo,
+            this.ColumnStatus});
+            this.dataGridViewUser.Location = new System.Drawing.Point(17, 132);
+            this.dataGridViewUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewUser.Name = "dataGridViewUser";
+            this.dataGridViewUser.RowHeadersWidth = 51;
+            this.dataGridViewUser.RowTemplate.Height = 24;
+            this.dataGridViewUser.Size = new System.Drawing.Size(430, 239);
+            this.dataGridViewUser.TabIndex = 41;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.panel3.Controls.Add(this.labelRegister);
-            this.panel3.Location = new System.Drawing.Point(154, 17);
+            this.panel3.Location = new System.Drawing.Point(116, 14);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(318, 60);
+            this.panel3.Size = new System.Drawing.Size(238, 49);
             this.panel3.TabIndex = 40;
             // 
             // labelRegister
@@ -99,9 +117,10 @@
             this.labelRegister.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelRegister.Location = new System.Drawing.Point(5, 6);
+            this.labelRegister.Location = new System.Drawing.Point(4, 5);
+            this.labelRegister.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRegister.Name = "labelRegister";
-            this.labelRegister.Size = new System.Drawing.Size(307, 48);
+            this.labelRegister.Size = new System.Drawing.Size(231, 39);
             this.labelRegister.TabIndex = 34;
             this.labelRegister.Text = "Daftar Akun";
             this.labelRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,31 +130,69 @@
             this.pictureBoxBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxBack.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBack.Image")));
-            this.pictureBoxBack.Location = new System.Drawing.Point(23, 471);
+            this.pictureBoxBack.Location = new System.Drawing.Point(17, 383);
+            this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxBack.Name = "pictureBoxBack";
-            this.pictureBoxBack.Size = new System.Drawing.Size(51, 48);
+            this.pictureBoxBack.Size = new System.Drawing.Size(38, 39);
             this.pictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBack.TabIndex = 43;
             this.pictureBoxBack.TabStop = false;
             // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Id";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            // 
+            // ColumnUsername
+            // 
+            this.ColumnUsername.HeaderText = "Username";
+            this.ColumnUsername.Name = "ColumnUsername";
+            this.ColumnUsername.ReadOnly = true;
+            // 
+            // ColumnEmail
+            // 
+            this.ColumnEmail.HeaderText = "Email";
+            this.ColumnEmail.Name = "ColumnEmail";
+            this.ColumnEmail.ReadOnly = true;
+            // 
+            // ColumnNama
+            // 
+            this.ColumnNama.HeaderText = "Nama";
+            this.ColumnNama.Name = "ColumnNama";
+            this.ColumnNama.ReadOnly = true;
+            // 
+            // ColumnSaldo
+            // 
+            this.ColumnSaldo.HeaderText = "Saldo";
+            this.ColumnSaldo.Name = "ColumnSaldo";
+            this.ColumnSaldo.ReadOnly = true;
+            // 
+            // ColumnStatus
+            // 
+            this.ColumnStatus.HeaderText = "Status";
+            this.ColumnStatus.Name = "ColumnStatus";
+            this.ColumnStatus.ReadOnly = true;
+            // 
             // DaftarUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(621, 549);
+            this.ClientSize = new System.Drawing.Size(466, 446);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.dataGridViewInvoice);
+            this.Controls.Add(this.dataGridViewUser);
             this.Controls.Add(this.panel3);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DaftarUser";
             this.Text = "DaftarUser";
             this.Load += new System.EventHandler(this.DaftarUser_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
             this.ResumeLayout(false);
@@ -148,8 +205,14 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridViewInvoice;
+        private System.Windows.Forms.DataGridView dataGridViewUser;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelRegister;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSaldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
     }
 }
