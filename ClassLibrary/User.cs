@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace ClassLibrary
             Username = "";
             Password = "";
             Nama = "";
-            Saldo = "";
+            Saldo = 0;
             Role = "";
             Is_enable = false;
         }
@@ -75,8 +76,8 @@ namespace ClassLibrary
         }
         public string Role 
         { 
-            get => AES.Decrypt(role, AES.key); 
-            set => role = AES.Encrypt(value, AES.key); 
+            get => role; 
+            set => role = value; 
         }
         public bool Is_enable 
         { 
@@ -101,7 +102,35 @@ namespace ClassLibrary
         {
             if (LoginLog.CekPercobaanLogin(username) > 0)
             {
-                LoginLog
+                string sql = "select * from users where username = '" + username + "' and password = '" + password + "'";
+                MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+                LoginLog lg = new LoginLog();
+                if (hasil.Read() == true)
+                {
+                    User u = new User();
+                    u.Id = int.Parse(hasil.GetValue(0).ToString());
+                    u.email = hasil.GetValue(1).ToString();
+                    u.username = hasil.GetValue(2).ToString();
+                    u.Password = hasil.GetValue(3).ToString();
+                    u.nama = hasil.GetValue(4).ToString();
+                    u.saldo = hasil.GetValue(5).ToString();
+                    u.role = hasil.GetValue(6).ToString();
+                    u.Is_enable = hasil.GetBoolean(7);
+
+                    lg.User = u;
+                    lg.Status = true;
+
+                    LoginLog.TambahData(lg);
+                    return u;
+                }
+                else
+                {
+                    lg.User.Username = username;
+                    lg.Status = false;
+                    LoginLog.TambahData(lg);
+                    throw new Exception("Password salah");
+                }
+
             }
             else
             {
@@ -116,6 +145,10 @@ namespace ClassLibrary
 
             if (hasil.Read() == true)
             {
+                if(hasil.GetValue(0) == DBNull.Value)
+                {
+                    return 1;
+                }
                 return int.Parse(hasil.GetValue(0).ToString()) + 1;
             }
             return 1;
@@ -123,9 +156,10 @@ namespace ClassLibrary
         public static bool TambahData(User u)
         {
             u.Id = GenerateIdUser();
+            string isEnable = (u.is_enable == true) ? "1" : "0";
             string sql = "insert into users(id, email, username, password, nama, saldo, role, is_enable) " +
-                         "values ('" + u.Id + "','" + u.Email + "', '" + u.Username + "', SHA2('" + u.Password + "',512),'" +
-                         "','" + u.Nama + "','" + u.Saldo + "','" + u.Role + "','" + u.Is_enable + "')";
+                         "values ('" + u.id + "','" + u.email + "', '" + u.username + "','" + u.password +
+                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + isEnable  + "')";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if(jumlahDiubah == 0)
             {
@@ -158,7 +192,7 @@ namespace ClassLibrary
                 user.Email = hasil.GetValue(1).ToString();
                 user.Username = hasil.GetValue(2).ToString();
                 user.Nama = hasil.GetValue(4).ToString();
-                user.Saldo = hasil.GetValue(5).ToString();
+                user.Saldo = hasil.GetInt32(5);
                 user.Role = hasil.GetValue(6).ToString();
                 user.Is_enable = hasil.GetBoolean(7);
 

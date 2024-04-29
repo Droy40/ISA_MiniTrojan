@@ -24,10 +24,10 @@ namespace ISA_MiniTrojan
         {
             switch (user.Role)
             {
-                case "ADMIN";
+                case "ADMIN":
 
                     break;
-                case "USER";
+                case "USER":
 
                     break;
             }

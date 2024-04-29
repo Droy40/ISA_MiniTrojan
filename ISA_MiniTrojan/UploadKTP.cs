@@ -21,7 +21,7 @@ namespace ISA_MiniTrojan
         {
             OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.Filter = "Image Files (*.png, *.jpg) | *.png; *.jpg";
-            openDialog.InitialDirectory =@"C:";
+            openDialog.InitialDirectory = @"C:\Users\Lenovo\Pictures\Screenshots\Screenshot 2024-04-06 192101.png";
 
             if(openDialog.ShowDialog() == DialogResult.OK)
             {
@@ -61,7 +61,7 @@ namespace ISA_MiniTrojan
             }
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "Image Files (*.png, *.jpg) | *.png; *.jpg";
-            saveFile.InitialDirectory = @"C:";
+            saveFile.InitialDirectory = @"C:\Users\Lenovo\Pictures\Screenshots\Screenshot 2024-04-06 192101.png";
 
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
@@ -94,6 +94,11 @@ namespace ISA_MiniTrojan
                 }
             }
             textBoxNoKTP.Text = message;
+        }
+
+        private void UploadKTP_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

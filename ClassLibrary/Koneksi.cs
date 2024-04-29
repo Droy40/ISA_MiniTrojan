@@ -16,9 +16,9 @@ namespace ClassLibrary
         public Koneksi()
         {
             Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSetting"];
+            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSettings"];
 
-            var settingSection = userSetting.Sections["ProjectDatabase.db"] as ClientSettingsSection;
+            var settingSection = userSetting.Sections["ISA_MiniTrojan.DbSettings"] as ClientSettingsSection;
 
             string DbServer = settingSection.Settings.Get("DbServer").Value.ValueXml.InnerText;
             string DbName = settingSection.Settings.Get("DbName").Value.ValueXml.InnerText;

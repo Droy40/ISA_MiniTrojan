@@ -39,7 +39,7 @@ namespace ClassLibrary
         {
             int status = (l.status) ? 1 : 0;
             string sql = "insert into login_log(user_id, date, status) " +
-                         "values( select id from users where username = '" + l.User.Username + "' ,now(),'" + l.Status + "')";
+                         "values('" + l.User.Id + "' ,now(),'" + l.Status + "')";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sql);
             if(jumlahDataBerubah == 0)

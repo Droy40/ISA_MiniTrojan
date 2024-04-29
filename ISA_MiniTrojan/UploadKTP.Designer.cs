@@ -41,7 +41,7 @@
             // pictureBoxKtp
             // 
             this.pictureBoxKtp.Location = new System.Drawing.Point(64, 15);
-            this.pictureBoxKtp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxKtp.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxKtp.Name = "pictureBoxKtp";
             this.pictureBoxKtp.Size = new System.Drawing.Size(476, 228);
             this.pictureBoxKtp.TabIndex = 44;
@@ -75,7 +75,7 @@
             this.buttonOpenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.buttonOpenFile.ForeColor = System.Drawing.Color.Firebrick;
             this.buttonOpenFile.Location = new System.Drawing.Point(64, 251);
-            this.buttonOpenFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOpenFile.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOpenFile.Name = "buttonOpenFile";
             this.buttonOpenFile.Size = new System.Drawing.Size(157, 38);
             this.buttonOpenFile.TabIndex = 49;
@@ -89,7 +89,7 @@
             this.buttonEncode.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.buttonEncode.ForeColor = System.Drawing.Color.Firebrick;
             this.buttonEncode.Location = new System.Drawing.Point(64, 448);
-            this.buttonEncode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEncode.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEncode.Name = "buttonEncode";
             this.buttonEncode.Size = new System.Drawing.Size(157, 38);
             this.buttonEncode.TabIndex = 50;
@@ -103,7 +103,7 @@
             this.buttonDecode.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold);
             this.buttonDecode.ForeColor = System.Drawing.Color.Firebrick;
             this.buttonDecode.Location = new System.Drawing.Point(383, 448);
-            this.buttonDecode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDecode.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDecode.Name = "buttonDecode";
             this.buttonDecode.Size = new System.Drawing.Size(157, 38);
             this.buttonDecode.TabIndex = 51;
@@ -133,9 +133,10 @@
             this.Controls.Add(this.labelNoKTP);
             this.Controls.Add(this.pictureBoxKtp);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UploadKTP";
             this.Text = "UploadKTP";
+            this.Load += new System.EventHandler(this.UploadKTP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKtp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

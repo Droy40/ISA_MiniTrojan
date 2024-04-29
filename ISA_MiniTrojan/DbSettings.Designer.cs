@@ -22,5 +22,65 @@ namespace ISA_MiniTrojan {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        public string DbServer {
+            get {
+                return ((string)(this["DbServer"]));
+            }
+            set {
+                this["DbServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("minitrojan")]
+        public string DbName {
+            get {
+                return ((string)(this["DbName"]));
+            }
+            set {
+                this["DbName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        public string DbUsername {
+            get {
+                return ((string)(this["DbUsername"]));
+            }
+            set {
+                this["DbUsername"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DbPassword {
+            get {
+                return ((string)(this["DbPassword"]));
+            }
+            set {
+                this["DbPassword"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string image_path {
+            get {
+                return ((string)(this["image_path"]));
+            }
+            set {
+                this["image_path"] = value;
+            }
+        }
     }
 }
