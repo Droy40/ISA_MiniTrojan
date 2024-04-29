@@ -39,7 +39,7 @@ namespace ClassLibrary
         {
             int status = (l.status) ? 1 : 0;
             string sql = "insert into login_log(user_id, date, status) " +
-                         "values('" + l.User.Id + "',now(),'" + l.Status + "')";
+                         "values( select id from users where username = '" + l.User.Username + "' ,now(),'" + l.Status + "')";
 
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sql);
             if(jumlahDataBerubah == 0)
@@ -80,9 +80,9 @@ namespace ClassLibrary
             return listLoginLog;
         }
 
-        public static int CekPercobaanLogin(int idUser)
+        public static int CekPercobaanLogin(string username)
         {
-            string sql = "select count(*) from (select * from login_log where user_id = '" + idUser + "' order by date desc limit 3) where status = '0'";
+            string sql = "select count(*) from (select * from login_log inner join users on users.id = login_log.users_id where users.username = '" + username + "' order by date desc limit 3) where status = '0'";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             if (hasil.Read())
             {

@@ -23,22 +23,16 @@ namespace ISA_MiniTrojan
             try
             {
                 User u = new User();
-                u.Name = textBoxNama.Text;
                 u.Email = textBoxEmail.Text;
-                if (radioButtonMale.Checked)
-                {
-                    u.Gender = "M";
-                }
-                else
-                {
-                    u.Gender = "L";
-                }
-                u.NoKtp = textBoxNoKTP.Text;
+                u.Username = textBoxUsername.Text;
+                u.Nama = textBoxNama.Text;
                 u.Password = textBoxPassword.Text;
+
                 //u.ImgKtp = upload ktp
+                if ()
                 User.TambahData(u);
                 MessageBox.Show("Register Berhasil");
-                this.Close();               
+                this.Close();                    
             }
             catch (Exception ex)
             {

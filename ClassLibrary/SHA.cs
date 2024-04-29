@@ -22,7 +22,6 @@ namespace ClassLibrary
                 {
                     builder.Append(hashBytes[i].ToString("x2"));
                 }
-
                 return builder.ToString();
             }
         }

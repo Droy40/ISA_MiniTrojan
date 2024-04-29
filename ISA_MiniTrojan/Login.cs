@@ -21,32 +21,55 @@ namespace ISA_MiniTrojan
         public static User u;
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    int tmp = User.CekLoginUsername(textBoxEmail.Text);
+            //    if(tmp > 0)
+            //    {
+            //        labelUsername.Visible = false;
+            //        textBoxEmail.Visible = false;
+            //        labelPassword.Visible = true;
+            //        textBoxPassword.Visible = true;
+            //        u = User.CekLoginPassword(textBoxEmail.Text, textBoxPassword.Text);
+            //        if (u != null)
+            //        {
+            //            this.DialogResult = DialogResult.OK;
+            //            this.Close();
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show(this, "Password salah");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(this, "Username salah");
+            //    }
+
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
             try
             {
-                
-                int tmp = User.CekLoginUsername(textBoxEmail.Text);
-                if(tmp)
+                if(buttonLogin.Text == "Lanjut")
                 {
-                    labelUsername.Visible = false;
-                    textBoxEmail.Visible = false;
-                    labelPassword.Visible = true;
-                    textBoxPassword.Visible = true;
-                    u = User.CekLoginPassword(textBoxEmail.Text, textBoxPassword.Text);
-                    if (u != null)
+                    if (User.CekLoginUsername(textBoxUser.Text))
                     {
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(this, "Password salah");
-                    }
+                        labelPassword.Visible = true;
+                        textBoxPassword.Visible = true;
+                        buttonBack.Visible = true;
+                        textBoxUser.Enabled = false;
+
+                        buttonLogin.Text = "Login";
+                    }                    
                 }
                 else
                 {
-                    MessageBox.Show(this, "Username salah");
+
                 }
-                
             }
             catch(Exception ex)
             {
@@ -73,5 +96,16 @@ namespace ISA_MiniTrojan
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            labelPassword.Visible = false;
+            textBoxPassword.Visible = false;
+            buttonBack.Visible = false;
+            textBoxUser.Enabled = true;
+
+            buttonLogin.Text = "Lanjut";
+        }
+       
     }
 }

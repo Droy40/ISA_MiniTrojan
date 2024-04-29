@@ -18,8 +18,7 @@ namespace ClassLibrary
         private string role;
         private string foto_ktp;
         private bool is_enable;
-
-
+        
         public User()
         {
             Id = 0;
@@ -32,7 +31,7 @@ namespace ClassLibrary
             Is_enable = false;
         }
 
-        public User(int id, string email, string username, string password, string nama, string saldo, string role, bool is_enable, List<Transaksi> listOfTransaction)
+        public User(int id, string email, string username, string password, string nama, int saldo, string role, bool is_enable, List<Transaksi> listOfTransaction)
         {
             Id = id;
             Email = email;
@@ -61,18 +60,18 @@ namespace ClassLibrary
         }
         public string Password 
         { 
-            get => AES.Decrypt(password, AES.key); 
-            set => password = AES.Encrypt(value, AES.key); 
+            get => password; 
+            set => password = SHA.ComputeHash(value); 
         }
         public string Nama 
         { 
             get => AES.Decrypt(nama, AES.key); 
             set => nama = AES.Encrypt(value, AES.key); 
         }
-        public string Saldo 
+        public int Saldo 
         { 
-            get => AES.Decrypt(saldo, AES.key); 
-            set => saldo = AES.Encrypt(value, AES.key); 
+            get => int.Parse(AES.Decrypt(saldo, AES.key)); 
+            set => saldo = AES.Encrypt(value.ToString(), AES.key); 
         }
         public string Role 
         { 
@@ -85,76 +84,30 @@ namespace ClassLibrary
             set => is_enable = value; 
         }
 
-        public static int CekLoginUsername(string username)
+        public static bool CekLoginUsername(string username)
         {            
-            string sql = "select * from users" +
-                         " where username ='" + username + "';";
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-
-            if(hasil.Read()) 
+            
+            if(LoginLog.CekPercobaanLogin(username) > 0) 
             {
-                if (hasil.GetValue(7) == "0")
-                {
-                    throw new Exception("Akun tidak aktif");
-                }
-                else
-                {
-                    int idUser = hasil.GetInt16(0);
-                    int sisaPercobaan = LoginLog.CekPercobaanLogin(idUser);
-                    return sisaPercobaan;
-                }
+                return true;                
+            }
+            else
+            {
+                throw new Exception("Akun tidak aktif");
             }
             throw new Exception("username tidak ditemukan");
         }
-        public static User CekLoginPassword(string username, string password)
+        public static User CekLoginUsernamePassword(string username, string password)
         {
-            string sql = "select * from users" +
-                         " where username = '" +  username + "'";
-            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-            
-            if(hasil.Read())
+            if (LoginLog.CekPercobaanLogin(username) > 0)
             {
-                // cek status disable/enable akun user
-                if(hasil.GetValue(7) == "0")
-                {
-                    throw new Exception("Akun tidak aktif");
-                }
-
-                //cek sisa percobaan login
-                int sisaPercobaan = LoginLog.CekPercobaanLogin(hasil.GetInt16(0));
-                if(sisaPercobaan == 0)
-                {
-                    throw new Exception("Akun tidak aktif");
-                }
-
-                User user = new User();
-                user.Id = int.Parse(hasil.GetValue(0).ToString());
-                user.Email = hasil.GetValue(1).ToString();
-                user.Username = hasil.GetValue(2).ToString();
-                user.Nama = hasil.GetValue(4).ToString();
-                user.Saldo = hasil.GetValue(5).ToString();
-                user.Role = hasil.GetValue(6).ToString();
-                user.Is_enable = hasil.GetBoolean(7);
-                
-                //cek password yg diinput dan catat percobaan login ke loginlog
-                LoginLog loginLog = new LoginLog();
-                if (hasil.GetValue(3) == password)
-                {
-                    loginLog.User = user;
-                    loginLog.Status = true;
-                    LoginLog.TambahData(loginLog);
-
-                    return user;
-                }
-                else
-                {
-                    loginLog.User = user;
-                    loginLog.Status = false;
-                    LoginLog.TambahData(loginLog);
-                    throw new Exception("Password salah");
-                }
+                LoginLog
             }
-            throw new Exception("username tidak ditemukan");
+            else
+            {
+                throw new Exception("Akun tidak aktif");
+            }
+            
         }
         private static int GenerateIdUser()
         {

@@ -55,7 +55,7 @@
             this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForm.Location = new System.Drawing.Point(200, 0);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(600, 450);
+            this.panelForm.Size = new System.Drawing.Size(600, 451);
             this.panelForm.TabIndex = 5;
             // 
             // panelMenu
@@ -72,7 +72,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 450);
+            this.panelMenu.Size = new System.Drawing.Size(200, 451);
             this.panelMenu.TabIndex = 4;
             // 
             // buttonTopUp
@@ -175,11 +175,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 451);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.panelMenu);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

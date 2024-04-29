@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,24 @@ namespace ISA_MiniTrojan
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        public User user;
+        public Dashboard(User user)
         {
             InitializeComponent();
+            this.user = user;
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            switch (user.Role)
+            {
+                case "ADMIN";
+
+                    break;
+                case "USER";
+
+                    break;
+            }
         }
     }
 }

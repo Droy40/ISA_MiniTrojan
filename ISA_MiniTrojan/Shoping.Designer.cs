@@ -31,7 +31,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.buttonBuy = new System.Windows.Forms.Button();
-            this.labelSinopsis = new System.Windows.Forms.Label();
+            this.labelDeskripsi = new System.Windows.Forms.Label();
             this.labelTotalSaldo = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelHargaAkhir = new System.Windows.Forms.Label();
@@ -44,13 +44,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.numericUpDownJumlah = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxBarang = new System.Windows.Forms.ComboBox();
             this.textBoxHarga = new System.Windows.Forms.TextBox();
             this.labelCinema = new System.Windows.Forms.Label();
             this.labelJudul = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -60,9 +62,10 @@
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJumlah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -82,7 +85,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
             this.panel9.Controls.Add(this.buttonBuy);
-            this.panel9.Controls.Add(this.labelSinopsis);
+            this.panel9.Controls.Add(this.labelDeskripsi);
             this.panel9.Controls.Add(this.labelTotalSaldo);
             this.panel9.Controls.Add(this.label8);
             this.panel9.Controls.Add(this.labelHargaAkhir);
@@ -107,17 +110,18 @@
             this.buttonBuy.TabIndex = 43;
             this.buttonBuy.Text = "BUY";
             this.buttonBuy.UseVisualStyleBackColor = false;
+            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
             // 
-            // labelSinopsis
+            // labelDeskripsi
             // 
-            this.labelSinopsis.AutoSize = true;
-            this.labelSinopsis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSinopsis.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelSinopsis.Location = new System.Drawing.Point(11, 42);
-            this.labelSinopsis.Name = "labelSinopsis";
-            this.labelSinopsis.Size = new System.Drawing.Size(70, 18);
-            this.labelSinopsis.TabIndex = 42;
-            this.labelSinopsis.Text = "Deskripsi";
+            this.labelDeskripsi.AutoSize = true;
+            this.labelDeskripsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeskripsi.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelDeskripsi.Location = new System.Drawing.Point(11, 42);
+            this.labelDeskripsi.Name = "labelDeskripsi";
+            this.labelDeskripsi.Size = new System.Drawing.Size(70, 18);
+            this.labelDeskripsi.TabIndex = 42;
+            this.labelDeskripsi.Text = "Deskripsi";
             // 
             // labelTotalSaldo
             // 
@@ -246,6 +250,16 @@
             this.pictureBox12.TabIndex = 0;
             this.pictureBox12.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Location = new System.Drawing.Point(37, 105);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(207, 186);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
@@ -258,7 +272,9 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
-            this.panel6.Controls.Add(this.textBox1);
+            this.panel6.Controls.Add(this.numericUpDownJumlah);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.comboBoxBarang);
             this.panel6.Controls.Add(this.textBoxHarga);
             this.panel6.Controls.Add(this.labelCinema);
             this.panel6.Controls.Add(this.labelJudul);
@@ -267,12 +283,40 @@
             this.panel6.Size = new System.Drawing.Size(426, 195);
             this.panel6.TabIndex = 9;
             // 
+            // numericUpDownJumlah
+            // 
+            this.numericUpDownJumlah.Location = new System.Drawing.Point(94, 89);
+            this.numericUpDownJumlah.Name = "numericUpDownJumlah";
+            this.numericUpDownJumlah.Size = new System.Drawing.Size(54, 22);
+            this.numericUpDownJumlah.TabIndex = 36;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(19, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 18);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Jumlah :";
+            // 
+            // comboBoxBarang
+            // 
+            this.comboBoxBarang.FormattingEnabled = true;
+            this.comboBoxBarang.Location = new System.Drawing.Point(94, 15);
+            this.comboBoxBarang.Name = "comboBoxBarang";
+            this.comboBoxBarang.Size = new System.Drawing.Size(196, 24);
+            this.comboBoxBarang.TabIndex = 34;
+            // 
             // textBoxHarga
             // 
+            this.textBoxHarga.Enabled = false;
             this.textBoxHarga.Location = new System.Drawing.Point(94, 52);
             this.textBoxHarga.Name = "textBoxHarga";
             this.textBoxHarga.Size = new System.Drawing.Size(196, 22);
             this.textBoxHarga.TabIndex = 33;
+            this.textBoxHarga.TextChanged += new System.EventHandler(this.textBoxHarga_TextChanged);
             // 
             // labelCinema
             // 
@@ -295,23 +339,6 @@
             this.labelJudul.Size = new System.Drawing.Size(71, 18);
             this.labelJudul.TabIndex = 0;
             this.labelJudul.Text = "Barang :";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(37, 105);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(207, 186);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(94, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 22);
-            this.textBox1.TabIndex = 34;
             // 
             // pictureBox5
             // 
@@ -368,16 +395,18 @@
             this.Controls.Add(this.pictureBox7);
             this.Name = "Shoping";
             this.Text = "Shoping";
+            this.Load += new System.EventHandler(this.Shoping_Load);
             this.panel5.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJumlah)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -390,7 +419,7 @@
 
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label labelSinopsis;
+        private System.Windows.Forms.Label labelDeskripsi;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelTotalSaldo;
         private System.Windows.Forms.Label labelHargaAkhir;
@@ -410,10 +439,12 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button buttonBuy;
         private System.Windows.Forms.TextBox textBoxHarga;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxBarang;
+        private System.Windows.Forms.NumericUpDown numericUpDownJumlah;
     }
 }
