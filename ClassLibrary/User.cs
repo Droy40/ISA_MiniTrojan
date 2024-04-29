@@ -26,7 +26,7 @@ namespace ClassLibrary
             Username = "";
             Password = "";
             Nama = "";
-            Saldo = 0;
+            Saldo = "";
             Role = "";
             Is_enable = false;
         }

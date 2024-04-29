@@ -57,6 +57,9 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.comboBoxBarang = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDownJumlah = new System.Windows.Forms.NumericUpDown();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,11 +68,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJumlah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJumlah)).BeginInit();
             this.SuspendLayout();
             // 
             // panel5
@@ -380,6 +383,32 @@
             this.pictureBox7.TabIndex = 20;
             this.pictureBox7.TabStop = false;
             // 
+            // comboBoxBarang
+            // 
+            this.comboBoxBarang.FormattingEnabled = true;
+            this.comboBoxBarang.Location = new System.Drawing.Point(94, 15);
+            this.comboBoxBarang.Name = "comboBoxBarang";
+            this.comboBoxBarang.Size = new System.Drawing.Size(196, 24);
+            this.comboBoxBarang.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(19, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 18);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Jumlah :";
+            // 
+            // numericUpDownJumlah
+            // 
+            this.numericUpDownJumlah.Location = new System.Drawing.Point(94, 88);
+            this.numericUpDownJumlah.Name = "numericUpDownJumlah";
+            this.numericUpDownJumlah.Size = new System.Drawing.Size(196, 22);
+            this.numericUpDownJumlah.TabIndex = 36;
+            // 
             // Shoping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -406,11 +435,11 @@
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJumlah)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJumlah)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -443,8 +472,8 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxBarang;
         private System.Windows.Forms.NumericUpDown numericUpDownJumlah;
+        private System.Windows.Forms.Label label1;
     }
 }
