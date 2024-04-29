@@ -27,7 +27,7 @@ namespace ClassLibrary
             Username = "";
             Password = "";
             Nama = "";
-            Saldo = 0;
+            Saldo = "";
             Role = "";
             Is_enable = false;
         }
@@ -61,8 +61,8 @@ namespace ClassLibrary
         }
         public string Password 
         { 
-            get => AES.Decrypt(password, AES.key); 
-            set => password = AES.Encrypt(value, AES.key); 
+            get => password; 
+            set => password = SHA.ComputeHash(value); 
         }
         public string Nama 
         { 
