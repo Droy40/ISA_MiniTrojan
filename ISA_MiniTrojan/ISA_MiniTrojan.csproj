@@ -75,6 +75,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>DbSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="DecodeKTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DecodeKTP.Designer.cs">
+      <DependentUpon>DecodeKTP.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProduk.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DecodeKTP.resx">
+      <DependentUpon>DecodeKTP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditProduk.resx">
       <DependentUpon>EditProduk.cs</DependentUpon>

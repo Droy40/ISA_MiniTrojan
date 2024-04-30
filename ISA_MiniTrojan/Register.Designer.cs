@@ -82,6 +82,7 @@
             this.buttonUploadKTP.TabIndex = 51;
             this.buttonUploadKTP.Text = "UPLOAD KTP";
             this.buttonUploadKTP.UseVisualStyleBackColor = false;
+            this.buttonUploadKTP.Click += new System.EventHandler(this.buttonUploadKTP_Click);
             // 
             // buttonRegister
             // 
