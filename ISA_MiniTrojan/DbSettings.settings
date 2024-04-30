@@ -11,11 +11,12 @@
     <Setting Name="DbUsername" Type="System.String" Scope="User">
       <Value Profile="(Default)">root</Value>
     </Setting>
-    <Setting Name="DbPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)"> </Value>
-    </Setting>
     <Setting Name="image_path" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DbPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">
+                        </Value>
     </Setting>
   </Settings>
 </SettingsFile>

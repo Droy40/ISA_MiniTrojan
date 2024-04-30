@@ -24,17 +24,8 @@ namespace ISA_MiniTrojan
             List<User> listHasil = User.BacaData();
             dataGridViewUser.Rows.Clear();
             foreach (User u in listHasil)
-            {
-                string status;
-                if(u.Is_enable==true)
-                {
-                    status = "Aktif";
-                }
-                else
-                {
-                    status = "Terblokir";
-                }
-                dataGridViewUser.Rows.Add(u.Id, u.Username, u.Email, u.Nama, u.Saldo, status);
+            {                
+                dataGridViewUser.Rows.Add(u.Id, u.Username, u.Email, u.Nama, u.Saldo, u.Sisa_percobaan_login);
             }
 
             if (dataGridViewUser.ColumnCount == 6)
@@ -61,16 +52,7 @@ namespace ISA_MiniTrojan
             dataGridViewUser.Rows.Clear();
             foreach (User u in listHasil)
             {
-                string status;
-                if (u.Is_enable == true)
-                {
-                    status = "Aktif";
-                }
-                else
-                {
-                    status = "Terblokir";
-                }
-                dataGridViewUser.Rows.Add(u.Id, u.Username, u.Email, u.Nama, u.Saldo, status);
+                dataGridViewUser.Rows.Add(u.Id, u.Username, u.Email, u.Nama, u.Saldo, u.Sisa_percobaan_login);
             }
 
             if (dataGridViewUser.ColumnCount == 6)
@@ -106,6 +88,7 @@ namespace ISA_MiniTrojan
             {
                 Invoice form = new Invoice();
                 form.Owner = this;
+                form.kodeUser = kode;
                 form.ShowDialog();
 
                 DaftarUser_Load(this, e);

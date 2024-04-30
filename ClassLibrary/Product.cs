@@ -53,7 +53,7 @@ namespace ClassLibrary
 
         private static int GenerateIdProduct()
         {
-            string sql = "select max(id) from products";
+            string sql = "select max(id) from produk";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             if(hasil.Read() == true)
@@ -67,7 +67,7 @@ namespace ClassLibrary
         public static bool TambahData(Product p)
         {
             p.Id = GenerateIdProduct();
-            string sql = "insert into products(id,name,description,price,stock,photo_path) " +
+            string sql = "insert into produk(id,name,description,price,stock,photo_path) " +
                          "values ('" + p.Id + "','" + p.Name + "','" + p.Description + "','" + p.Price + "','" +
                          p.Stock + "','" + p.Photo_path + "')";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql); 

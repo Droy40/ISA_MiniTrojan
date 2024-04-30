@@ -62,24 +62,24 @@ namespace ISA_MiniTrojan {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DbPassword {
-            get {
-                return ((string)(this["DbPassword"]));
-            }
-            set {
-                this["DbPassword"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string image_path {
             get {
                 return ((string)(this["image_path"]));
             }
             set {
                 this["image_path"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DbPassword {
+            get {
+                return ((string)(this["DbPassword"]));
+            }
+            set {
+                this["DbPassword"] = value;
             }
         }
     }
