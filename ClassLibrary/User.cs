@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace ClassLibrary
         public string saldo;
         public string role;
         public string foto_ktp;
-        public bool is_enable;
+        public int sisa_percobaan_login;
         
         public User()
         {
@@ -29,10 +29,10 @@ namespace ClassLibrary
             Nama = "";
             Saldo = 0;
             Role = "";
-            Is_enable = true;
+            Sisa_percobaan_login = 3;
         }
 
-        public User(int id, string email, string username, string password, string nama, int saldo, string role, bool is_enable, List<Transaksi> listOfTransaction)
+        public User(int id, string email, string username, string password, string nama, double saldo, string role, int sisa_percobaan_login, List<Transaksi> listOfTransaction)
         {
             Id = id;
             Email = email;
@@ -41,7 +41,7 @@ namespace ClassLibrary
             Nama = nama;
             Saldo = saldo;
             Role = role;
-            Is_enable = is_enable;
+            Sisa_percobaan_login = sisa_percobaan_login;
         }
 
         public int Id 
@@ -69,9 +69,9 @@ namespace ClassLibrary
             get => AES.Decrypt(nama, AES.key); 
             set => nama = AES.Encrypt(value, AES.key); 
         }
-        public int Saldo 
+        public double Saldo 
         { 
-            get => int.Parse(AES.Decrypt(saldo, AES.key)); 
+            get => double.Parse(AES.Decrypt(saldo, AES.key)); 
             set => saldo = AES.Encrypt(value.ToString(), AES.key); 
         }
         public string Role 
@@ -79,33 +79,26 @@ namespace ClassLibrary
             get => role; 
             set => role = value; 
         }
-        public bool Is_enable 
+        public int Sisa_percobaan_login 
         { 
-            get => is_enable; 
-            set => is_enable = value; 
+            get => sisa_percobaan_login; 
+            set => sisa_percobaan_login = value; 
         }
 
-        public static bool CekLoginUsername(string username)
+        public static bool CekUsername(string username)
         {
-            string sql = "select * from users where username =  '" + username+ "'";
+            string sql = "select username, sisa_percobaan_login from users where username =  '" + AES.Encrypt(username,AES.key)+ "'";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             if(hasil.Read() == true)
             {
-                if (hasil.GetBoolean(7) == true)
+                if(hasil.GetInt16(1) == 0)
                 {
-                    if (LoginLog.CekPercobaanLogin(username) > 0)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        throw new Exception("Akun tidak aktif");
-                    }
+                    throw new Exception("Akun tidak aktif");
                 }
                 else
                 {
-                    throw new Exception("Akun tidak aktif");
+                    return true;
                 }
             }
             else
@@ -113,51 +106,40 @@ namespace ClassLibrary
                 throw new Exception("Username tidak ditemukan");
             }
         }
-        public static User CekLoginUsernamePassword(string username, string password)
+        public static User UserLogin(string username, string password)
         {
+            string sql = "select * from users where username = '" + AES.Encrypt(username,AES.key) + "'";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            int sisaPercobaan = LoginLog.CekPercobaanLogin(username);
-            if (sisaPercobaan > 0)
+            if (hasil.Read())
             {
-                string sql = "select * from users where username = '" + username + "' and password = '" + password + "'";
-                MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-                LoginLog lg = new LoginLog();
-                if (hasil.Read() == true)
+                User u = new User();
+                u.id = hasil.GetInt32(0);
+                u.email = hasil.GetString(1);
+                u.username = hasil.GetString(2);
+                u.password = hasil.GetString(3);
+                u.nama = hasil.GetString(4);
+                u.saldo = hasil.GetString(5);
+                u.Role = hasil.GetString(6);
+                u.Sisa_percobaan_login = hasil.GetInt32(7);
+
+                if (u.Sisa_percobaan_login == 0)
                 {
-                    User u = new User();
-                    u.Id = int.Parse(hasil.GetValue(0).ToString());
-                    u.email = hasil.GetValue(1).ToString();
-                    u.username = hasil.GetValue(2).ToString();
-                    u.Password = hasil.GetValue(3).ToString();
-                    u.nama = hasil.GetValue(4).ToString();
-                    u.saldo = hasil.GetValue(5).ToString();
-                    u.role = hasil.GetValue(6).ToString();
-                    u.Is_enable = hasil.GetBoolean(7);
-
-                    lg.User = u;
-                    lg.Status = true;
-
-                    LoginLog.TambahData(lg);
+                    throw new Exception("akun tidak aktif");
+                }
+                else if (u.Password == SHA.ComputeHash(password))
+                {
                     return u;
                 }
                 else
                 {
-                    if (sisaPercobaan == 1)
-                    {
-                        string sql2 = "update users set is_enable = 0 where username = '" + username + "'";
-                        Koneksi.JalankanPerintahDML(sql2);
-                    }
-                    lg.User.username = username;
-                    lg.Status = false;
-                    LoginLog.TambahData(lg);
+                    string sql2 = "update users set sisa_percobaan_login = sisa_percobaan_login - 1 where username = '" + AES.Encrypt(username,AES.key) + "'";
+                    Koneksi.JalankanPerintahDML(sql2);
                     throw new Exception("Password salah");
                 }
 
             }
-            else
-            {
-                throw new Exception("Akun tidak aktif");
-            }
+            throw new Exception("Username tidak ditemukan");
             
         }
         private static int GenerateIdUser()
@@ -175,13 +157,12 @@ namespace ClassLibrary
             }
             return 1;
         }
-        public static bool TambahData(User u)
+        public static bool Register(User u)
         {
-            u.Id = GenerateIdUser();
-            string isEnable = (u.is_enable == true) ? "1" : "0";
-            string sql = "insert into users(id, email, username, password, nama, saldo, role, is_enable) " +
+            u.Id = GenerateIdUser();            
+            string sql = "insert into users(id, email, username, password, nama, saldo, role, sisa_percobaan_login) " +
                          "values ('" + u.id + "','" + u.email + "', '" + u.username + "','" + u.password +
-                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + isEnable  + "')";
+                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login  + "')";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if(jumlahDiubah == 0)
             {
@@ -216,7 +197,7 @@ namespace ClassLibrary
                 user.Nama = hasil.GetValue(4).ToString();
                 user.Saldo = hasil.GetInt32(5);
                 user.Role = hasil.GetValue(6).ToString();
-                user.Is_enable = hasil.GetBoolean(7);
+                user.Sisa_percobaan_login = hasil.GetInt16(7);
 
                 listUser.Add(user);
             }

@@ -87,13 +87,13 @@ namespace ClassLibrary
                 
                 User tampung = new User();
                 tampung.Id = int.Parse(hasil.GetValue(3).ToString());
-                tampung.Email = hasil.GetValue(4).ToString();
-                tampung.Username = hasil.GetValue(5).ToString();
-                tampung.Password = "";
-                tampung.Nama = hasil.GetValue(6).ToString();
-                tampung.Saldo = hasil.GetInt32(7);
-                tampung.Role = hasil.GetValue(8).ToString();
-                tampung.Is_enable = (hasil.GetInt32(9) == 1)?true:false;
+                tampung.email = hasil.GetValue(4).ToString();
+                tampung.username = hasil.GetValue(5).ToString();
+                tampung.password = "";
+                tampung.nama = hasil.GetValue(6).ToString();
+                tampung.saldo = hasil.GetValue(7).ToString();
+                tampung.role = hasil.GetValue(8).ToString();
+                tampung.Sisa_percobaan_login = hasil.GetInt32(9);
                 t.User = tampung;
                 listTransaksi.Add(t); 
             }
