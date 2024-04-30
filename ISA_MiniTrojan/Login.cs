@@ -31,7 +31,7 @@ namespace ISA_MiniTrojan
                         textBoxPassword.Visible = true;
                         buttonBack.Visible = true;
                         textBoxUser.Enabled = false;
-
+                        textBoxPassword.Focus();
                         buttonLogin.Text = "Login";
                     }                    
                 }
@@ -39,7 +39,11 @@ namespace ISA_MiniTrojan
                 {
                     u = User.UserLogin(textBoxUser.Text, textBoxPassword.Text);
                     MessageBox.Show("Login Berhasil");
+                    textBoxUser.Clear();
+                    textBoxPassword.Clear();
+                    buttonBack_Click(sender, e);
                     Dashboard formDashboard = new Dashboard(u);
+                    formDashboard.Owner = this;
                     formDashboard.Show();
                     this.Hide();
                 }

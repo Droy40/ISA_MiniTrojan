@@ -17,7 +17,7 @@ namespace ClassLibrary
         public string nama;
         public string saldo;
         public string role;
-        public string foto_ktp;
+        private string foto_ktp;
         public int sisa_percobaan_login;
         
         public User()
@@ -29,6 +29,7 @@ namespace ClassLibrary
             Nama = "";
             Saldo = 0;
             Role = "";
+            Foto
             Sisa_percobaan_login = 3;
         }
 
@@ -84,6 +85,10 @@ namespace ClassLibrary
             get => sisa_percobaan_login; 
             set => sisa_percobaan_login = value; 
         }
+        public string Foto_ktp 
+        { 
+            set => foto_ktp = value; 
+        }
 
         public static bool CekUsername(string username)
         {
@@ -129,12 +134,14 @@ namespace ClassLibrary
                 }
                 else if (u.Password == SHA.ComputeHash(password))
                 {
+                    string sql3 = "update users set sisa_percobaan_login = '3' where username = '" + AES.Encrypt(username, AES.key) + "'";
+                    Koneksi.JalankanPerintahDML(sql3);
                     return u;
                 }
                 else
                 {
-                    string sql2 = "update users set sisa_percobaan_login = sisa_percobaan_login - 1 where username = '" + AES.Encrypt(username,AES.key) + "'";
-                    Koneksi.JalankanPerintahDML(sql2);
+                    string sql3 = "update users set sisa_percobaan_login = sisa_percobaan_login - 1 where username = '" + AES.Encrypt(username,AES.key) + "'";
+                    Koneksi.JalankanPerintahDML(sql3);
                     throw new Exception("Password salah");
                 }
 
@@ -203,9 +210,9 @@ namespace ClassLibrary
             }
             return listUser;
         }
-        public static bool ActivateAcc(int id)
-        {
-            List<User> list = User.BacaData()
-        }
+        //public static bool ActivateAcc(int id)
+        //{
+        //    List<User> list = User.BacaData();
+        //}
     }
 }

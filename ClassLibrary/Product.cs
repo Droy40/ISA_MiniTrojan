@@ -1,9 +1,8 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Configuration;
+using System.Data.SqlTypes;
+using System.Drawing;
 
 namespace ClassLibrary
 {
@@ -71,6 +70,22 @@ namespace ClassLibrary
                 return true;
             }
         }
+        public static bool UbahData(Product p)
+        {
+            string sql = "UPDATE produk SET id='" + p.Id.ToString() + "', nama='" + p.Name + "', " +
+                                               "deskripsi= '" + p.Description + "', harga='" + p.Price.ToString() + "', stock='" + p.Stock.ToString() + "', " +
+                                               "photo_path= '" + p.Photo_path + "'" +
+                         "WHERE id='" + p.Id.ToString() + "';";
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDiubah == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public static bool HapusData(Product p)
         {
             string sql = "DELETE FROM products" +
@@ -111,6 +126,27 @@ namespace ClassLibrary
                 listProduct.Add(product);
             }
             return listProduct;
+        }
+
+        public static string SimpanGambar(Product product, Image image )
+        {
+            Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            ConfigurationSectionGroup userSettings = myConf.SectionGroups["userSettings"];
+
+            var settingSection = userSettings.Sections["ProjectDatabase.db"] as ClientSettingsSection;
+            string path = settingSection.Settings.Get("cover_image").Value.ValueXml.InnerText;
+
+            if (image != null)
+            {
+                image.Save(path + "\\film_" + f.Id);
+                return "film_" + f.Id;
+
+            }
+            else
+            {
+                return "";
+            }
         }
     }
 }
