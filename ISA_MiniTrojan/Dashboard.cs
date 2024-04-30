@@ -14,6 +14,7 @@ namespace ISA_MiniTrojan
     public partial class Dashboard : Form
     {
         public User user;
+        Form activeForm;
         public Dashboard(User user)
         {
             InitializeComponent();
@@ -25,10 +26,46 @@ namespace ISA_MiniTrojan
             switch (user.Role)
             {
                 case "ADMIN":
+                    btnProduk.Visible = false;
+                    btnKeranjang.Visible = false;
+                    btnInvoice.Visible = false;
+                    btnChatAdmin.Visible = false;
+                    btnTopUp.Visible = false;
 
+                    buttonDaftarKonsumen.Visible = true;
+                    buttonDaftarInvoice.Visible = true;
+                    buttonDaftarProduk.Visible = true;
+                    buttonDaftarChat.Visible = true;
+                    buttonDaftarTopup.Visible = true;
+                    buttonDaftarStaff.Visible = true;                    
                     break;
-                case "USER":
+                case "STAFF":
+                    btnProduk.Visible = false;
+                    btnKeranjang.Visible = false;
+                    btnInvoice.Visible = false;
+                    btnChatAdmin.Visible = false;
+                    btnTopUp.Visible = false;
 
+                    buttonDaftarKonsumen.Visible = true;
+                    buttonDaftarInvoice.Visible = false;
+                    buttonDaftarProduk.Visible = true;
+                    buttonDaftarChat.Visible = true;
+                    buttonDaftarTopup.Visible = true;
+                    buttonDaftarStaff.Visible = false;
+                    break;
+                case "KONSUMEN":
+                    btnProduk.Visible = true;
+                    btnKeranjang.Visible = true;
+                    btnInvoice.Visible = true;
+                    btnChatAdmin.Visible = true;
+                    btnTopUp.Visible = true;
+
+                    buttonDaftarKonsumen.Visible = false;
+                    buttonDaftarInvoice.Visible = false;
+                    buttonDaftarProduk.Visible = false;
+                    buttonDaftarChat.Visible = false;
+                    buttonDaftarTopup.Visible = false;
+                    buttonDaftarStaff.Visible = false;
                     break;
             }
         }
@@ -36,6 +73,54 @@ namespace ISA_MiniTrojan
         private void btnInvoice_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            (this.Owner as Login).Show();
+            this.Dispose();
+        }
+
+        private void OpenForm(Form form)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+
+            Form form1 = Application.OpenForms[form.DataBindings.ToString()];
+            if (form1 == null)
+            {                
+                activeForm = form;
+                form.TopLevel = false;
+                form.FormBorderStyle = FormBorderStyle.None;
+                form.Dock = DockStyle.Fill;
+                this.panelForm.Controls.Add(form);
+                this.panelForm.Tag = form;
+                form.Show();
+                form.BringToFront();
+
+            }
+            else
+            {
+                activeForm = form;
+                form.Show();
+                form.BringToFront();
+            }
+
+        }
+
+        private void btnProduk_Click(object sender, EventArgs e)
+        {
+            Shoping form = new Shoping();
+            form.Owner = this;
+            OpenForm(form);
+
+        }
+
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            buttonLogout_Click(sender, e);
         }
     }
 }

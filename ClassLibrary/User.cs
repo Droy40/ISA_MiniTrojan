@@ -129,12 +129,14 @@ namespace ClassLibrary
                 }
                 else if (u.Password == SHA.ComputeHash(password))
                 {
+                    string sql3 = "update users set sisa_percobaan_login = '3' where username = '" + AES.Encrypt(username, AES.key) + "'";
+                    Koneksi.JalankanPerintahDML(sql3);
                     return u;
                 }
                 else
                 {
-                    string sql2 = "update users set sisa_percobaan_login = sisa_percobaan_login - 1 where username = '" + AES.Encrypt(username,AES.key) + "'";
-                    Koneksi.JalankanPerintahDML(sql2);
+                    string sql3 = "update users set sisa_percobaan_login = sisa_percobaan_login - 1 where username = '" + AES.Encrypt(username,AES.key) + "'";
+                    Koneksi.JalankanPerintahDML(sql3);
                     throw new Exception("Password salah");
                 }
 
@@ -203,9 +205,9 @@ namespace ClassLibrary
             }
             return listUser;
         }
-        public static bool ActivateAcc(int id)
-        {
-            List<User> list = User.BacaData()
-        }
+        //public static bool ActivateAcc(int id)
+        //{
+        //    List<User> list = User.BacaData();
+        //}
     }
 }

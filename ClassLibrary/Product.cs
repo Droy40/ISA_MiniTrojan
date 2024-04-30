@@ -1,17 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Data;
-using System.Linq;
-using System.Net.Configuration;
-using System.Security.Cryptography;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using System.Transactions;
 using System.Configuration;
-using System.IO;
+using System.Data.SqlTypes;
 using System.Drawing;
 
 namespace ClassLibrary
@@ -137,7 +127,26 @@ namespace ClassLibrary
             }
             return listProduct;
         }
-        
-        
+
+        public static string SimpanGambar(Product product, Image image )
+        {
+            Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            ConfigurationSectionGroup userSettings = myConf.SectionGroups["userSettings"];
+
+            var settingSection = userSettings.Sections["ProjectDatabase.db"] as ClientSettingsSection;
+            string path = settingSection.Settings.Get("cover_image").Value.ValueXml.InnerText;
+
+            if (image != null)
+            {
+                image.Save(path + "\\film_" + f.Id);
+                return "film_" + f.Id;
+
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }
