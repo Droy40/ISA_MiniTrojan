@@ -17,7 +17,7 @@ namespace ClassLibrary
         public string nama;
         public string saldo;
         public string role;
-        public string foto_ktp;
+        private string foto_ktp;
         public int sisa_percobaan_login;
         
         public User()
@@ -29,6 +29,7 @@ namespace ClassLibrary
             Nama = "";
             Saldo = 0;
             Role = "";
+            Foto
             Sisa_percobaan_login = 3;
         }
 
@@ -83,6 +84,10 @@ namespace ClassLibrary
         { 
             get => sisa_percobaan_login; 
             set => sisa_percobaan_login = value; 
+        }
+        public string Foto_ktp 
+        { 
+            set => foto_ktp = value; 
         }
 
         public static bool CekUsername(string username)
