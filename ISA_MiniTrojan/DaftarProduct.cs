@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary;
-using Guna.UI2.WinForms;
 
 namespace ISA_MiniTrojan
 {
@@ -19,13 +18,15 @@ namespace ISA_MiniTrojan
             InitializeComponent();
         }
         Dashboard utama;
-        List<Product> listHasil;
-        
+        private void dataGridViewInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void DaftarProduct_Load(object sender, EventArgs e)
         {
-            utama = (Dashboard)this.MdiParent;
-            listHasil = Product.BacaData();
+            utama = (Dashboard)this.Parent;
+            List<Product> listHasil = Product.BacaData();
             dataGridViewProduct.Rows.Clear();
             foreach (Product p in listHasil)
             {
@@ -48,49 +49,6 @@ namespace ISA_MiniTrojan
                 btnUbah.UseColumnTextForButtonValue = true;
                 dataGridViewProduct.Columns.Add(btnUbah);
             }
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            TambahProduk form = new TambahProduk();
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                DaftarProduct_Load(guna2Button2, e);
-            }
-        }
-
-        private void dataGridViewInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridViewProduct.Columns["buttonUbahGrid"].Index && e.RowIndex >= 0)
-            {
-                EditProduk form = new EditProduk(listHasil[e.RowIndex]);
-                form.Owner = this;
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    DaftarProduct_Load(dataGridViewProduct, e);
-                }
-            }
-            else if (e.ColumnIndex == dataGridViewProduct.Columns["buttonHapusGrid"].Index && e.RowIndex >= 0)
-            {
-                string kodeHapus = listHasil[e.RowIndex].Id.ToString();
-
-                DialogResult hasil = MessageBox.Show(this, "anda yakin ingin menghapus produk id - " + kodeHapus + "?",
-                    "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (hasil == DialogResult.Yes)
-                {
-                    Boolean hapus = Product.HapusData(listHasil[e.RowIndex]);
-                    if (hapus == true)
-                    {
-                        MessageBox.Show("penghapusan data berhasil");
-                        DaftarProduct_Load(dataGridViewProduct, e);
-                    }
-                    else
-                    {
-                        MessageBox.Show("penghapusan data gagal");
-                    }
-                }
-            }
-
         }
     }
 }

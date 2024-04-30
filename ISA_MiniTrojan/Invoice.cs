@@ -65,7 +65,12 @@ namespace ISA_MiniTrojan
             string kodeTransaksi = dataGridViewInvoice.CurrentRow.Cells["ColumnId"].Value.ToString();
             if (e.ColumnIndex == dataGridViewInvoice.Columns["buttonDetail"].Index)
             {
-                
+                DetailTransaksi form = new DetailTransaksi();
+                form.Owner = this;
+                form.selectedTransaksi = kodeTransaksi;
+                form.ShowDialog();
+
+                Invoice_Load(this, e);
             }
         }
     }
