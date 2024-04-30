@@ -40,5 +40,12 @@ namespace ISA_MiniTrojan
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonUploadKTP_Click(object sender, EventArgs e)
+        {
+            UploadKTP uploadKTP = new UploadKTP();
+            uploadKTP.Owner = this;
+            uploadKTP.ShowDialog();
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace ISA_MiniTrojan
         Dashboard utama;
         private void DaftarUser_Load(object sender, EventArgs e)
         {
-            utama = (Dashboard)this.MdiParent;
+            utama = (Dashboard)this.Parent;
             List<User> listHasil = User.BacaData();
             dataGridViewUser.Rows.Clear();
             foreach (User u in listHasil)

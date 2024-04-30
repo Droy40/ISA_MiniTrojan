@@ -42,6 +42,13 @@ namespace ClassLibrary
                       "inner join transaksi as t on dt.transaksi_id = t.id " +
                       "inner join produk as p on dt.products_id = p.id";
             }
+            else if (kriteria=="t.id")
+            {
+                sql = "select t.id, p.id, dt.quantity, dt.harga from detail_transaksi " +
+                      "inner join transaksi as t on dt.transaksi_id = t.id " +
+                      "inner join produk as p on dt.products_id = p.id " +
+                      "where " + kriteria + " = '" + nilaiKriteria + "'";
+            }
             else
             {
                 sql = "select t.id, p.id, dt.quantity, dt.harga from detail_transaksi " +
