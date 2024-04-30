@@ -75,11 +75,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>DbSettings.settings</DependentUpon>
     </Compile>
-    <Compile Include="DecodeKTP.cs">
+    <Compile Include="DetailTransaksi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DecodeKTP.Designer.cs">
-      <DependentUpon>DecodeKTP.cs</DependentUpon>
+    <Compile Include="DetailTransaksi.Designer.cs">
+      <DependentUpon>DetailTransaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="EditProduk.cs">
       <SubType>Form</SubType>
@@ -152,8 +152,8 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DecodeKTP.resx">
-      <DependentUpon>DecodeKTP.cs</DependentUpon>
+    <EmbeddedResource Include="DetailTransaksi.resx">
+      <DependentUpon>DetailTransaksi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditProduk.resx">
       <DependentUpon>EditProduk.cs</DependentUpon>
