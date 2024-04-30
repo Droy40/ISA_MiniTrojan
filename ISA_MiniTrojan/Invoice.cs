@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,11 @@ namespace ISA_MiniTrojan
         {
             InitializeComponent();
         }
-
+        public string kodeUser;
+        Dashboard utama;
         private void Invoice_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -29,7 +29,7 @@ namespace ClassLibrary
             Nama = "";
             Saldo = 0;
             Role = "";
-            Is_enable = false;
+            Is_enable = true;
         }
 
         public User(int id, string email, string username, string password, string nama, int saldo, string role, bool is_enable, List<Transaksi> listOfTransaction)
@@ -221,6 +221,10 @@ namespace ClassLibrary
                 listUser.Add(user);
             }
             return listUser;
+        }
+        public static bool ActivateAcc(int id)
+        {
+            List<User> list = User.BacaData()
         }
     }
 }

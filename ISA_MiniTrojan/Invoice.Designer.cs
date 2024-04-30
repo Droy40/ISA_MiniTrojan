@@ -30,7 +30,6 @@
         {
             this.dataGridViewInvoice = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelNoInvoice = new System.Windows.Forms.Label();
@@ -41,37 +40,31 @@
             // dataGridViewInvoice
             // 
             this.dataGridViewInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInvoice.Location = new System.Drawing.Point(29, 139);
+            this.dataGridViewInvoice.Location = new System.Drawing.Point(22, 113);
+            this.dataGridViewInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewInvoice.Name = "dataGridViewInvoice";
             this.dataGridViewInvoice.RowHeadersWidth = 51;
             this.dataGridViewInvoice.RowTemplate.Height = 24;
-            this.dataGridViewInvoice.Size = new System.Drawing.Size(742, 294);
+            this.dataGridViewInvoice.Size = new System.Drawing.Size(556, 239);
             this.dataGridViewInvoice.TabIndex = 26;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.panel1.Controls.Add(this.comboBoxStatus);
             this.panel1.Controls.Add(this.textBoxId);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(29, 91);
+            this.panel1.Location = new System.Drawing.Point(22, 74);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(742, 33);
+            this.panel1.Size = new System.Drawing.Size(556, 27);
             this.panel1.TabIndex = 24;
-            // 
-            // comboBoxStatus
-            // 
-            this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Location = new System.Drawing.Point(183, 4);
-            this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(224, 24);
-            this.comboBoxStatus.TabIndex = 20;
             // 
             // textBoxId
             // 
-            this.textBoxId.Location = new System.Drawing.Point(413, 5);
+            this.textBoxId.Location = new System.Drawing.Point(201, 3);
+            this.textBoxId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(308, 22);
+            this.textBoxId.Size = new System.Drawing.Size(342, 20);
             this.textBoxId.TabIndex = 19;
             // 
             // label1
@@ -79,9 +72,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label1.Location = new System.Drawing.Point(13, 5);
+            this.label1.Location = new System.Drawing.Point(10, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 22);
+            this.label1.Size = new System.Drawing.Size(128, 18);
             this.label1.TabIndex = 18;
             this.label1.Text = "Search Invoices";
             // 
@@ -89,22 +83,24 @@
             // 
             this.labelNoInvoice.Font = new System.Drawing.Font("Magneto", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelNoInvoice.Location = new System.Drawing.Point(21, 13);
+            this.labelNoInvoice.Location = new System.Drawing.Point(16, 11);
+            this.labelNoInvoice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNoInvoice.Name = "labelNoInvoice";
-            this.labelNoInvoice.Size = new System.Drawing.Size(758, 54);
+            this.labelNoInvoice.Size = new System.Drawing.Size(568, 44);
             this.labelNoInvoice.TabIndex = 23;
             this.labelNoInvoice.Text = "Invoices";
             this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Invoice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.dataGridViewInvoice);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelNoInvoice);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Invoice";
             this.Text = "Invoice";
             this.Load += new System.EventHandler(this.Invoice_Load);
@@ -119,7 +115,6 @@
 
         private System.Windows.Forms.DataGridView dataGridViewInvoice;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBoxStatus;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelNoInvoice;

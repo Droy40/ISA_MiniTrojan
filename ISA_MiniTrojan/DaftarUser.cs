@@ -106,6 +106,7 @@ namespace ISA_MiniTrojan
             {
                 Invoice form = new Invoice();
                 form.Owner = this;
+                form.kodeUser = kode;
                 form.ShowDialog();
 
                 DaftarUser_Load(this, e);
