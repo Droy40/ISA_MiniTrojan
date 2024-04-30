@@ -39,6 +39,9 @@ namespace ISA_MiniTrojan
                 {
                     u = User.UserLogin(textBoxUser.Text, textBoxPassword.Text);
                     MessageBox.Show("Login Berhasil");
+                    Dashboard formDashboard = new Dashboard(u);
+                    formDashboard.Show();
+                    this.Hide();
                 }
             }
             catch(Exception ex)
