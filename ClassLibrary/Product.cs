@@ -1,9 +1,18 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Data;
 using System.Linq;
+using System.Net.Configuration;
+using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Transactions;
+using System.Configuration;
+using System.IO;
+using System.Drawing;
 
 namespace ClassLibrary
 {
@@ -71,6 +80,22 @@ namespace ClassLibrary
                 return true;
             }
         }
+        public static bool UbahData(Product p)
+        {
+            string sql = "UPDATE produk SET id='" + p.Id.ToString() + "', nama='" + p.Name + "', " +
+                                               "deskripsi= '" + p.Description + "', harga='" + p.Price.ToString() + "', stock='" + p.Stock.ToString() + "', " +
+                                               "photo_path= '" + p.Photo_path + "'" +
+                         "WHERE id='" + p.Id.ToString() + "';";
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDiubah == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public static bool HapusData(Product p)
         {
             string sql = "DELETE FROM products" +
@@ -112,5 +137,7 @@ namespace ClassLibrary
             }
             return listProduct;
         }
+        
+        
     }
 }

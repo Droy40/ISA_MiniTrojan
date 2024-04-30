@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using ClassLibrary;
 namespace ISA_MiniTrojan
 {
     public partial class TambahProduk : Form
@@ -29,7 +29,7 @@ namespace ISA_MiniTrojan
 
         private void TambahProduk_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -45,6 +45,27 @@ namespace ISA_MiniTrojan
         private void pictureBox12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Product p = new Product();
+                p.Name = textBoxNama.Text;
+                p.Price = int.Parse(textBoxHarga.Text);
+                p.Stock = (int)numericUpDownStock.Value;
+                p.Description = textBoxDeskripsi.Text;
+                p.Photo_path = pictureBox1.Image.ToString();
+                Product.TambahData(p);
+                MessageBox.Show("tambah data berhasil");
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("gagal tambah data. Pesan kesalahan : " + ex.Message, "informasi");
+            }
         }
     }
 }
