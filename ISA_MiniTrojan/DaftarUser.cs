@@ -52,16 +52,7 @@ namespace ISA_MiniTrojan
             dataGridViewUser.Rows.Clear();
             foreach (User u in listHasil)
             {
-                string status;
-                if (u.Is_enable == true)
-                {
-                    status = "Aktif";
-                }
-                else
-                {
-                    status = "Terblokir";
-                }
-                dataGridViewUser.Rows.Add(u.Id, u.Username, u.Email, u.Nama, u.Saldo, status);
+                dataGridViewUser.Rows.Add(u.Id, u.Username, u.Email, u.Nama, u.Saldo, u.Sisa_percobaan_login);
             }
 
             if (dataGridViewUser.ColumnCount == 6)

@@ -32,5 +32,10 @@ namespace ISA_MiniTrojan
                     break;
             }
         }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

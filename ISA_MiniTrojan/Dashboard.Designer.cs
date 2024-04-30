@@ -34,9 +34,9 @@
             this.buttonTopUp = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnChatAdmin = new System.Windows.Forms.Button();
-            this.btnBasket = new System.Windows.Forms.Button();
             this.btnInvoice = new System.Windows.Forms.Button();
-            this.btnShoping = new System.Windows.Forms.Button();
+            this.btnKeranjang = new System.Windows.Forms.Button();
+            this.btnProduk = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelForm.Location = new System.Drawing.Point(200, 0);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(600, 451);
+            this.panelForm.Size = new System.Drawing.Size(794, 599);
             this.panelForm.TabIndex = 5;
             // 
             // panelMenu
@@ -65,14 +65,14 @@
             this.panelMenu.Controls.Add(this.buttonTopUp);
             this.panelMenu.Controls.Add(this.btnReport);
             this.panelMenu.Controls.Add(this.btnChatAdmin);
-            this.panelMenu.Controls.Add(this.btnBasket);
             this.panelMenu.Controls.Add(this.btnInvoice);
-            this.panelMenu.Controls.Add(this.btnShoping);
+            this.panelMenu.Controls.Add(this.btnKeranjang);
+            this.panelMenu.Controls.Add(this.btnProduk);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 451);
+            this.panelMenu.Size = new System.Drawing.Size(200, 599);
             this.panelMenu.TabIndex = 4;
             // 
             // buttonTopUp
@@ -123,22 +123,6 @@
             this.btnChatAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnChatAdmin.UseVisualStyleBackColor = true;
             // 
-            // btnBasket
-            // 
-            this.btnBasket.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBasket.FlatAppearance.BorderSize = 0;
-            this.btnBasket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBasket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnBasket.ForeColor = System.Drawing.Color.White;
-            this.btnBasket.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBasket.Location = new System.Drawing.Point(0, 196);
-            this.btnBasket.Name = "btnBasket";
-            this.btnBasket.Size = new System.Drawing.Size(200, 60);
-            this.btnBasket.TabIndex = 6;
-            this.btnBasket.Text = "Basket";
-            this.btnBasket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBasket.UseVisualStyleBackColor = true;
-            // 
             // btnInvoice
             // 
             this.btnInvoice.Dock = System.Windows.Forms.DockStyle.Top;
@@ -147,35 +131,52 @@
             this.btnInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnInvoice.ForeColor = System.Drawing.Color.White;
             this.btnInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInvoice.Location = new System.Drawing.Point(0, 136);
+            this.btnInvoice.Location = new System.Drawing.Point(0, 196);
             this.btnInvoice.Name = "btnInvoice";
             this.btnInvoice.Size = new System.Drawing.Size(200, 60);
-            this.btnInvoice.TabIndex = 2;
+            this.btnInvoice.TabIndex = 6;
             this.btnInvoice.Text = "Invoice";
             this.btnInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInvoice.UseVisualStyleBackColor = true;
             // 
-            // btnShoping
+            // btnKeranjang
             // 
-            this.btnShoping.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnShoping.FlatAppearance.BorderSize = 0;
-            this.btnShoping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShoping.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnShoping.ForeColor = System.Drawing.Color.White;
-            this.btnShoping.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShoping.Location = new System.Drawing.Point(0, 76);
-            this.btnShoping.Name = "btnShoping";
-            this.btnShoping.Size = new System.Drawing.Size(200, 60);
-            this.btnShoping.TabIndex = 1;
-            this.btnShoping.Text = "Tambah Produk";
-            this.btnShoping.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnShoping.UseVisualStyleBackColor = true;
+            this.btnKeranjang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKeranjang.FlatAppearance.BorderSize = 0;
+            this.btnKeranjang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKeranjang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnKeranjang.ForeColor = System.Drawing.Color.White;
+            this.btnKeranjang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKeranjang.Location = new System.Drawing.Point(0, 136);
+            this.btnKeranjang.Name = "btnKeranjang";
+            this.btnKeranjang.Size = new System.Drawing.Size(200, 60);
+            this.btnKeranjang.TabIndex = 2;
+            this.btnKeranjang.Text = "Keranjang";
+            this.btnKeranjang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKeranjang.UseVisualStyleBackColor = true;
+            this.btnKeranjang.Click += new System.EventHandler(this.btnInvoice_Click);
+            // 
+            // btnProduk
+            // 
+            this.btnProduk.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProduk.FlatAppearance.BorderSize = 0;
+            this.btnProduk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProduk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnProduk.ForeColor = System.Drawing.Color.White;
+            this.btnProduk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProduk.Location = new System.Drawing.Point(0, 76);
+            this.btnProduk.Name = "btnProduk";
+            this.btnProduk.Size = new System.Drawing.Size(200, 60);
+            this.btnProduk.TabIndex = 1;
+            this.btnProduk.Text = "Produk";
+            this.btnProduk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProduk.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.ClientSize = new System.Drawing.Size(994, 599);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.panelMenu);
             this.Name = "Dashboard";
@@ -194,9 +195,9 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnChatAdmin;
-        private System.Windows.Forms.Button btnBasket;
         private System.Windows.Forms.Button btnInvoice;
-        private System.Windows.Forms.Button btnShoping;
+        private System.Windows.Forms.Button btnKeranjang;
+        private System.Windows.Forms.Button btnProduk;
         private System.Windows.Forms.Button buttonTopUp;
     }
 }
