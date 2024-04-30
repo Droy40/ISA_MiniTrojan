@@ -18,10 +18,55 @@ namespace ISA_MiniTrojan
             InitializeComponent();
         }
         public string kodeUser;
-        Dashboard utama;
+        DaftarUser parent;
         private void Invoice_Load(object sender, EventArgs e)
         {
-            
+            parent = (DaftarUser)this.Parent.Parent;
+            List<Transaksi> listHasil = Transaksi.BacaData("u.id", kodeUser);
+            dataGridViewInvoice.Rows.Clear();
+            foreach (Transaksi t in listHasil)
+            {
+                dataGridViewInvoice.Rows.Add(t.Id, t.Date, t.Total);
+            }
+
+            if (dataGridViewInvoice.ColumnCount == 3)
+            {
+                DataGridViewButtonColumn btnDetail = new DataGridViewButtonColumn();
+                btnDetail.HeaderText = "Detail Transaksi";
+                btnDetail.Text = "Lihat";
+                btnDetail.Name = "buttonDetail";
+                btnDetail.UseColumnTextForButtonValue = true;
+                dataGridViewInvoice.Columns.Add(btnDetail);
+            }
+        }
+
+        private void textBoxId_TextChanged(object sender, EventArgs e)
+        {
+            List<Transaksi> listHasil = Transaksi.BacaData("t.id", textBoxId.Text);
+            dataGridViewInvoice.Rows.Clear();
+            foreach (Transaksi t in listHasil)
+            {
+                dataGridViewInvoice.Rows.Add(t.Id, t.Date, t.Total);
+            }
+
+            if (dataGridViewInvoice.ColumnCount == 3)
+            {
+                DataGridViewButtonColumn btnDetail = new DataGridViewButtonColumn();
+                btnDetail.HeaderText = "Detail Transaksi";
+                btnDetail.Text = "Lihat";
+                btnDetail.Name = "buttonDetail";
+                btnDetail.UseColumnTextForButtonValue = true;
+                dataGridViewInvoice.Columns.Add(btnDetail);
+            }
+        }
+
+        private void dataGridViewInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string kodeTransaksi = dataGridViewInvoice.CurrentRow.Cells["ColumnId"].Value.ToString();
+            if (e.ColumnIndex == dataGridViewInvoice.Columns["buttonDetail"].Index)
+            {
+                
+            }
         }
     }
 }

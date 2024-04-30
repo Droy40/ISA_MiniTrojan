@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridViewInvoice = new System.Windows.Forms.DataGridView();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTgl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,13 +43,36 @@
             // dataGridViewInvoice
             // 
             this.dataGridViewInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
+            this.ColumnTgl,
+            this.ColumnTotal});
             this.dataGridViewInvoice.Location = new System.Drawing.Point(22, 113);
-            this.dataGridViewInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewInvoice.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewInvoice.Name = "dataGridViewInvoice";
             this.dataGridViewInvoice.RowHeadersWidth = 51;
             this.dataGridViewInvoice.RowTemplate.Height = 24;
             this.dataGridViewInvoice.Size = new System.Drawing.Size(556, 239);
             this.dataGridViewInvoice.TabIndex = 26;
+            this.dataGridViewInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInvoice_CellContentClick);
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Id";
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            // 
+            // ColumnTgl
+            // 
+            this.ColumnTgl.HeaderText = "Tanggal Transaksi";
+            this.ColumnTgl.Name = "ColumnTgl";
+            this.ColumnTgl.ReadOnly = true;
+            // 
+            // ColumnTotal
+            // 
+            this.ColumnTotal.HeaderText = "Total Transaksi";
+            this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
             // 
             // panel1
             // 
@@ -54,7 +80,7 @@
             this.panel1.Controls.Add(this.textBoxId);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(22, 74);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(556, 27);
             this.panel1.TabIndex = 24;
@@ -62,10 +88,11 @@
             // textBoxId
             // 
             this.textBoxId.Location = new System.Drawing.Point(201, 3);
-            this.textBoxId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxId.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(342, 20);
             this.textBoxId.TabIndex = 19;
+            this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
             // 
             // label1
             // 
@@ -100,7 +127,7 @@
             this.Controls.Add(this.dataGridViewInvoice);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelNoInvoice);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Invoice";
             this.Text = "Invoice";
             this.Load += new System.EventHandler(this.Invoice_Load);
@@ -118,5 +145,8 @@
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelNoInvoice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTgl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
     }
 }
