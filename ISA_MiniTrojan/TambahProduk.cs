@@ -56,7 +56,6 @@ namespace ISA_MiniTrojan
                 p.Price = int.Parse(textBoxHarga.Text);
                 p.Stock = (int)numericUpDownStock.Value;
                 p.Description = textBoxDeskripsi.Text;
-                p.Photo_path = pictureBox1.Image.ToString();
                 Product.TambahData(p);
                 MessageBox.Show("tambah data berhasil");
                 DialogResult = DialogResult.OK;

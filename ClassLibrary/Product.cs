@@ -13,7 +13,6 @@ namespace ClassLibrary
         private string description;
         private double price;
         private int stock;
-        private string photo_path;
 
 
         public Product(int id, string name, string description, double price, int stock, string photo_path)
@@ -23,7 +22,6 @@ namespace ClassLibrary
             this.Description = description;
             this.Price = price;
             this.Stock = stock;
-            this.Photo_path = photo_path;
         }
         public Product()
         {
@@ -31,15 +29,13 @@ namespace ClassLibrary
             this.Name = "";
             this.Description = "";
             this.Price = 0;
-            this.Stock = 0;
-            this.Photo_path = "";
+            this.Stock = 0;         
         }
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public string Description { get => description; set => description = value; }
         public double Price { get => price; set => price = value; }
-        public int Stock { get => stock; set => stock = value; }
-        public string Photo_path { get => photo_path; set => photo_path = value; }
+        public int Stock { get => stock; set => stock = value; }        
 
         private static int GenerateIdProduct()
         {
@@ -59,7 +55,7 @@ namespace ClassLibrary
             p.Id = GenerateIdProduct();
             string sql = "insert into produk(id,name,description,price,stock,photo_path) " +
                          "values ('" + p.Id + "','" + p.Name + "','" + p.Description + "','" + p.Price + "','" +
-                         p.Stock + "','" + p.Photo_path + "')";
+                         p.Stock + "')";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql); 
             if(jumlahDiubah == 0)
             {
@@ -73,9 +69,7 @@ namespace ClassLibrary
         public static bool UbahData(Product p)
         {
             string sql = "UPDATE produk SET id='" + p.Id.ToString() + "', nama='" + p.Name + "', " +
-                                               "deskripsi= '" + p.Description + "', harga='" + p.Price.ToString() + "', stock='" + p.Stock.ToString() + "', " +
-                                               "photo_path= '" + p.Photo_path + "'" +
-                         "WHERE id='" + p.Id.ToString() + "';";
+                                               "deskripsi= '" + p.Description + "', harga='" + p.Price.ToString() + "', stock='" + p.Stock.ToString() + "', WHERE id='" + p.Id.ToString() + "';";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDiubah == 0)
             {
@@ -122,31 +116,9 @@ namespace ClassLibrary
                 product.Description = hasil.GetValue(2).ToString();
                 product.Price = double.Parse(hasil.GetValue(3).ToString());
                 product.Stock = int.Parse(hasil.GetValue(4).ToString());
-                product.Photo_path = hasil.GetValue(5).ToString();
                 listProduct.Add(product);
             }
             return listProduct;
-        }
-
-        public static string SimpanGambar(Product product, Image image )
-        {
-            Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-            ConfigurationSectionGroup userSettings = myConf.SectionGroups["userSettings"];
-
-            var settingSection = userSettings.Sections["ProjectDatabase.db"] as ClientSettingsSection;
-            string path = settingSection.Settings.Get("cover_image").Value.ValueXml.InnerText;
-
-            if (image != null)
-            {
-                image.Save(path + "\\film_" + f.Id);
-                return "film_" + f.Id;
-
-            }
-            else
-            {
-                return "";
-            }
         }
     }
 }

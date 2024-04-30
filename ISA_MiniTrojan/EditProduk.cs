@@ -37,8 +37,7 @@ namespace ISA_MiniTrojan
                 product.Name = labelNama.Text;
                 product.Price = int.Parse(textBoxHarga.Text);
                 product.Stock = int.Parse(textBoxStock.Text);
-                product.Description = labelDescription.Text;
-                product.Photo_path = pictureBox1.Image.ToString();
+                product.Description = labelDescription.Text;                
 
                 Product.UbahData(product) ;
                 MessageBox.Show("Ubah data konsumen berhasil");
