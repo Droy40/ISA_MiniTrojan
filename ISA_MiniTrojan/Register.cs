@@ -31,7 +31,7 @@ namespace ISA_MiniTrojan
 
                 //u.ImgKtp = upload ktp
                 
-                User.TambahData(u);
+                User.Register(u);
                 MessageBox.Show("Register Berhasil");
                 this.Close();                    
             }

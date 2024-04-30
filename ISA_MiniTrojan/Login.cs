@@ -25,7 +25,7 @@ namespace ISA_MiniTrojan
             {
                 if(buttonLogin.Text == "Lanjut")
                 {
-                    if (User.CekLoginUsername(AES.Encrypt(textBoxUser.Text, AES.key)))
+                    if (User.CekUsername(textBoxUser.Text))
                     {
                         labelPassword.Visible = true;
                         textBoxPassword.Visible = true;
@@ -37,7 +37,7 @@ namespace ISA_MiniTrojan
                 }
                 else
                 {
-                    u = User.CekLoginUsernamePassword(AES.Encrypt(textBoxUser.Text,AES.key), SHA.ComputeHash(textBoxPassword.Text));
+                    u = User.UserLogin(textBoxUser.Text, textBoxPassword.Text);
                     MessageBox.Show("Login Berhasil");
                 }
             }

@@ -50,7 +50,6 @@
     <Compile Include="DetailTransaksi.cs" />
     <Compile Include="HistorySaldo.cs" />
     <Compile Include="Keranjang.cs" />
-    <Compile Include="LoginLog.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Koneksi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
