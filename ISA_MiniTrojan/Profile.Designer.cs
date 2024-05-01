@@ -44,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHistory)).BeginInit();
@@ -234,6 +235,29 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Username :";
             // 
+            // btnTambah
+            // 
+            this.btnTambah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTambah.AutoRoundedCorners = true;
+            this.btnTambah.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
+            this.btnTambah.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
+            this.btnTambah.BorderRadius = 22;
+            this.btnTambah.BorderThickness = 2;
+            this.btnTambah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTambah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTambah.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.btnTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTambah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
+            this.btnTambah.Location = new System.Drawing.Point(352, 486);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(180, 46);
+            this.btnTambah.TabIndex = 47;
+            this.btnTambah.Text = "Change Password";
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -241,6 +265,7 @@
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(605, 555);
+            this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelNoInvoice);
             this.DoubleBuffered = true;
@@ -274,5 +299,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBoxBack;
         private System.Windows.Forms.PictureBox pictureBoxHistory;
+        private Guna.UI2.WinForms.Guna2Button btnTambah;
     }
 }
