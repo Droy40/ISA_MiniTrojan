@@ -64,6 +64,7 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(1062, 673);
             this.panelForm.TabIndex = 5;
+            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
             // panelMenu
             // 
@@ -117,7 +118,7 @@
             this.buttonDaftarTopup.Name = "buttonDaftarTopup";
             this.buttonDaftarTopup.Size = new System.Drawing.Size(179, 60);
             this.buttonDaftarTopup.TabIndex = 22;
-            this.buttonDaftarTopup.Text = "Topup";
+            this.buttonDaftarTopup.Text = "Top-up";
             this.buttonDaftarTopup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDaftarTopup.UseVisualStyleBackColor = true;
             // 
@@ -197,6 +198,7 @@
             this.buttonProfile.TabIndex = 17;
             this.buttonProfile.Text = "PROFILE";
             this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // buttonLogout
             // 

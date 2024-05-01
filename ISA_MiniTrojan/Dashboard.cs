@@ -136,5 +136,17 @@ namespace ISA_MiniTrojan
             form.Owner = this;
             OpenForm(form);
         }
+
+        private void panelForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            Profile form = new Profile();
+            form.Owner = this;
+            OpenForm(form);
+        }
     }
 }

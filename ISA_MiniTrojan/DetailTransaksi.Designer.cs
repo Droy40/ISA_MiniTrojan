@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailTransaksi));
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelRegister = new System.Windows.Forms.Label();
             this.dataGridViewInvoice = new System.Windows.Forms.DataGridView();
@@ -37,15 +36,15 @@
             this.ColumnHarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBoxBack = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelNama = new System.Windows.Forms.Label();
-            this.labelId = new System.Windows.Forms.Label();
+            this.labelNominal = new System.Windows.Forms.Label();
             this.labelTanggal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.labelNominal = new System.Windows.Forms.Label();
+            this.labelNama = new System.Windows.Forms.Label();
+            this.labelId = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
@@ -118,7 +117,7 @@
             // 
             this.pictureBoxBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxBack.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBack.Image")));
+            this.pictureBoxBack.Image = global::ISA_MiniTrojan.Properties.Resources.back_1689837_1280_removebg_preview;
             this.pictureBoxBack.Location = new System.Drawing.Point(36, 470);
             this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxBack.Name = "pictureBoxBack";
@@ -144,71 +143,16 @@
             this.panel1.Size = new System.Drawing.Size(573, 137);
             this.panel1.TabIndex = 45;
             // 
-            // label1
+            // labelNominal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label1.Location = new System.Drawing.Point(18, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Id Transaksi :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label2.Location = new System.Drawing.Point(18, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nama User :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label3.Location = new System.Drawing.Point(293, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 22);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Tanggal :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label4.Location = new System.Drawing.Point(293, 86);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 22);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Total Nominal :";
-            // 
-            // labelNama
-            // 
-            this.labelNama.AutoSize = true;
-            this.labelNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelNama.Location = new System.Drawing.Point(147, 21);
-            this.labelNama.Name = "labelNama";
-            this.labelNama.Size = new System.Drawing.Size(54, 22);
-            this.labelNama.TabIndex = 5;
-            this.labelNama.Text = "nama";
-            // 
-            // labelId
-            // 
-            this.labelId.AutoSize = true;
-            this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelId.Location = new System.Drawing.Point(147, 88);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(30, 22);
-            this.labelId.TabIndex = 4;
-            this.labelId.Text = "00";
+            this.labelNominal.AutoSize = true;
+            this.labelNominal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNominal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.labelNominal.Location = new System.Drawing.Point(450, 86);
+            this.labelNominal.Name = "labelNominal";
+            this.labelNominal.Size = new System.Drawing.Size(80, 22);
+            this.labelNominal.TabIndex = 8;
+            this.labelNominal.Text = "0000000";
             // 
             // labelTanggal
             // 
@@ -233,16 +177,71 @@
             this.label6.Text = "Rp";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // labelNominal
+            // labelNama
             // 
-            this.labelNominal.AutoSize = true;
-            this.labelNominal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNominal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelNominal.Location = new System.Drawing.Point(450, 86);
-            this.labelNominal.Name = "labelNominal";
-            this.labelNominal.Size = new System.Drawing.Size(80, 22);
-            this.labelNominal.TabIndex = 8;
-            this.labelNominal.Text = "0000000";
+            this.labelNama.AutoSize = true;
+            this.labelNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.labelNama.Location = new System.Drawing.Point(147, 21);
+            this.labelNama.Name = "labelNama";
+            this.labelNama.Size = new System.Drawing.Size(54, 22);
+            this.labelNama.TabIndex = 5;
+            this.labelNama.Text = "nama";
+            // 
+            // labelId
+            // 
+            this.labelId.AutoSize = true;
+            this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.labelId.Location = new System.Drawing.Point(147, 88);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(30, 22);
+            this.labelId.TabIndex = 4;
+            this.labelId.Text = "00";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.label3.Location = new System.Drawing.Point(293, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 22);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Tanggal :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.label4.Location = new System.Drawing.Point(293, 86);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 22);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Total Nominal :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.label2.Location = new System.Drawing.Point(18, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 22);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nama User :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.label1.Location = new System.Drawing.Point(18, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Id Transaksi :";
             // 
             // DetailTransaksi
             // 
@@ -256,7 +255,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridViewInvoice);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DetailTransaksi";
             this.Text = "DetailTransaksi";
             this.Load += new System.EventHandler(this.DetailTransaksi_Load);

@@ -250,7 +250,7 @@ namespace ClassLibrary
 
             ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSetting"];
 
-            var settingSection = userSetting.Sections["MiniTrojan.db"] as ClientSettingsSection;
+            var settingSection = userSetting.Sections["ISA_MiniTrojan.DbSettings"] as ClientSettingsSection;
             string path = settingSection.Settings.Get("photo_id_path").Value.ValueXml?.InnerText;
             try
             {
