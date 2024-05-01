@@ -21,8 +21,15 @@ namespace ISA_MiniTrojan
             user = u;
         }
         private void Invoice_Load(object sender, EventArgs e)
-        {            
-            listTransaksi = Transaksi.BacaData("u.id", user.Id.ToString());
+        {
+            if (user.Role=="KONSUMEN")
+            {
+                listTransaksi = Transaksi.BacaData("u.id", user.Id.ToString());
+            }
+            else
+            {
+                listTransaksi = Transaksi.BacaData();
+            }
             DisplayData();
         }
 
