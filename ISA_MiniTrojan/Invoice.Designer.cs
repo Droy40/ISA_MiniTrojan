@@ -33,11 +33,10 @@
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelNoInvoice = new System.Windows.Forms.Label();
-            this.ColumnNama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnIdUser = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnIdTransaksi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTgl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,11 +45,12 @@
             // 
             this.dataGridViewInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnNama,
-            this.ColumnIdUser,
-            this.ColumnIdTransaksi,
+            //this.ColumnNama,
+            this.ColumnId,
+            //this.ColumnIdTransaksi,
             this.ColumnTgl,
-            this.ColumnTotal});
+            this.ColumnTotal,
+            this.btnDetail});
             this.dataGridViewInvoice.Location = new System.Drawing.Point(29, 139);
             this.dataGridViewInvoice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewInvoice.Name = "dataGridViewInvoice";
@@ -93,7 +93,7 @@
             // 
             // labelNoInvoice
             // 
-            this.labelNoInvoice.Font = new System.Drawing.Font("Magneto", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.labelNoInvoice.Location = new System.Drawing.Point(21, 14);
             this.labelNoInvoice.Name = "labelNoInvoice";
@@ -102,29 +102,13 @@
             this.labelNoInvoice.Text = "Invoices";
             this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ColumnNama
+            // ColumnId
             // 
-            this.ColumnNama.HeaderText = "Nama User";
-            this.ColumnNama.MinimumWidth = 6;
-            this.ColumnNama.Name = "ColumnNama";
-            this.ColumnNama.ReadOnly = true;
-            this.ColumnNama.Width = 125;
-            // 
-            // ColumnIdUser
-            // 
-            this.ColumnIdUser.HeaderText = "Id User";
-            this.ColumnIdUser.MinimumWidth = 6;
-            this.ColumnIdUser.Name = "ColumnIdUser";
-            this.ColumnIdUser.ReadOnly = true;
-            this.ColumnIdUser.Width = 125;
-            // 
-            // ColumnIdTransaksi
-            // 
-            this.ColumnIdTransaksi.HeaderText = "Id Transaksi";
-            this.ColumnIdTransaksi.MinimumWidth = 6;
-            this.ColumnIdTransaksi.Name = "ColumnIdTransaksi";
-            this.ColumnIdTransaksi.ReadOnly = true;
-            this.ColumnIdTransaksi.Width = 125;
+            this.ColumnId.HeaderText = "Id";
+            this.ColumnId.MinimumWidth = 6;
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Width = 125;
             // 
             // ColumnTgl
             // 
@@ -141,6 +125,15 @@
             this.ColumnTotal.Name = "ColumnTotal";
             this.ColumnTotal.ReadOnly = true;
             this.ColumnTotal.Width = 125;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.HeaderText = "Detail";
+            this.btnDetail.MinimumWidth = 6;
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Text = "Lihat";
+            this.btnDetail.UseColumnTextForButtonValue = true;
+            this.btnDetail.Width = 125;
             // 
             // Invoice
             // 
@@ -170,9 +163,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelNoInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNama;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdTransaksi;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTgl;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
+        private System.Windows.Forms.DataGridViewButtonColumn btnDetail;
+
     }
 }

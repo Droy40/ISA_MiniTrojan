@@ -57,8 +57,7 @@ namespace ISA_MiniTrojan
                 p.Stock = (int)numericUpDownStock.Value;
                 p.Description = textBoxDeskripsi.Text;
                 Product.TambahData(p);
-                MessageBox.Show("tambah data berhasil");
-                DialogResult = DialogResult.OK;
+                MessageBox.Show("tambah data berhasil");                
                 this.Close();
             }
             catch (Exception ex)

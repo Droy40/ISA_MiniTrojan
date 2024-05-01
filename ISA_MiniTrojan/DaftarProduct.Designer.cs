@@ -28,33 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaftarProduct));
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelRegister = new System.Windows.Forms.Label();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnHarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBoxBack = new System.Windows.Forms.PictureBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.labelRegister = new System.Windows.Forms.Label();
+            this.btnUbah = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewProduct
             // 
+            this.dataGridViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,
             this.ColumnNama,
             this.ColumnHarga,
-            this.ColumnStock});
+            this.ColumnStock,
+            this.btnUbah});
             this.dataGridViewProduct.Location = new System.Drawing.Point(29, 153);
             this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
@@ -63,38 +65,6 @@
             this.dataGridViewProduct.Size = new System.Drawing.Size(573, 294);
             this.dataGridViewProduct.TabIndex = 30;
             this.dataGridViewProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInvoice_CellContentClick);
-            // 
-            // ColumnId
-            // 
-            this.ColumnId.HeaderText = "Id";
-            this.ColumnId.MinimumWidth = 6;
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            this.ColumnId.Width = 125;
-            // 
-            // ColumnNama
-            // 
-            this.ColumnNama.HeaderText = "Nama Produk";
-            this.ColumnNama.MinimumWidth = 6;
-            this.ColumnNama.Name = "ColumnNama";
-            this.ColumnNama.ReadOnly = true;
-            this.ColumnNama.Width = 125;
-            // 
-            // ColumnHarga
-            // 
-            this.ColumnHarga.HeaderText = "Harga";
-            this.ColumnHarga.MinimumWidth = 6;
-            this.ColumnHarga.Name = "ColumnHarga";
-            this.ColumnHarga.ReadOnly = true;
-            this.ColumnHarga.Width = 125;
-            // 
-            // ColumnStock
-            // 
-            this.ColumnStock.HeaderText = "Stock Barang";
-            this.ColumnStock.MinimumWidth = 6;
-            this.ColumnStock.Name = "ColumnStock";
-            this.ColumnStock.ReadOnly = true;
-            this.ColumnStock.Width = 125;
             // 
             // label1
             // 
@@ -130,41 +100,31 @@
             this.textBox1.Size = new System.Drawing.Size(253, 27);
             this.textBox1.TabIndex = 19;
             // 
-            // pictureBoxBack
+            // btnTambah
             // 
-            this.pictureBoxBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxBack.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBack.Image")));
-            this.pictureBoxBack.Location = new System.Drawing.Point(29, 463);
-            this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxBack.Name = "pictureBoxBack";
-            this.pictureBoxBack.Size = new System.Drawing.Size(51, 48);
-            this.pictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBack.TabIndex = 32;
-            this.pictureBoxBack.TabStop = false;
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.AutoRoundedCorners = true;
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.guna2Button2.BorderRadius = 22;
-            this.guna2Button2.BorderThickness = 2;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.guna2Button2.Location = new System.Drawing.Point(422, 465);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(180, 46);
-            this.guna2Button2.TabIndex = 36;
-            this.guna2Button2.Text = "Tambah";
+            this.btnTambah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTambah.AutoRoundedCorners = true;
+            this.btnTambah.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
+            this.btnTambah.BorderRadius = 22;
+            this.btnTambah.BorderThickness = 2;
+            this.btnTambah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTambah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTambah.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.btnTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTambah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
+            this.btnTambah.Location = new System.Drawing.Point(421, 466);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(180, 46);
+            this.btnTambah.TabIndex = 36;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.panel3.Controls.Add(this.labelRegister);
             this.panel3.Location = new System.Drawing.Point(185, 12);
@@ -175,6 +135,7 @@
             // 
             // labelRegister
             // 
+            this.labelRegister.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
             this.labelRegister.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,6 +147,47 @@
             this.labelRegister.Text = "Daftar Produk";
             this.labelRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Id";
+            this.ColumnId.MinimumWidth = 6;
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Width = 125;
+            // 
+            // ColumnNama
+            // 
+            this.ColumnNama.HeaderText = "Nama Produk";
+            this.ColumnNama.MinimumWidth = 6;
+            this.ColumnNama.Name = "ColumnNama";
+            this.ColumnNama.ReadOnly = true;
+            this.ColumnNama.Width = 125;
+            // 
+            // ColumnHarga
+            // 
+            this.ColumnHarga.HeaderText = "Harga";
+            this.ColumnHarga.MinimumWidth = 6;
+            this.ColumnHarga.Name = "ColumnHarga";
+            this.ColumnHarga.ReadOnly = true;
+            this.ColumnHarga.Width = 125;
+            // 
+            // ColumnStock
+            // 
+            this.ColumnStock.HeaderText = "Stock Barang";
+            this.ColumnStock.MinimumWidth = 6;
+            this.ColumnStock.Name = "ColumnStock";
+            this.ColumnStock.ReadOnly = true;
+            this.ColumnStock.Width = 125;
+            // 
+            // btnUbah
+            // 
+            this.btnUbah.HeaderText = "Aksi";
+            this.btnUbah.MinimumWidth = 6;
+            this.btnUbah.Name = "btnUbah";
+            this.btnUbah.Text = "Ubah";
+            this.btnUbah.UseColumnTextForButtonValue = true;
+            this.btnUbah.Width = 125;
+            // 
             // DaftarProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -193,8 +195,7 @@
             this.BackColor = System.Drawing.Color.Firebrick;
             this.ClientSize = new System.Drawing.Size(630, 523);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.guna2Button2);
-            this.Controls.Add(this.pictureBoxBack);
+            this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dataGridViewProduct);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -204,7 +205,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -216,13 +216,13 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBoxBack;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnTambah;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelRegister;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNama;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStock;
+        private System.Windows.Forms.DataGridViewButtonColumn btnUbah;
     }
 }

@@ -291,6 +291,7 @@
             this.comboBoxBarang.Name = "comboBoxBarang";
             this.comboBoxBarang.Size = new System.Drawing.Size(196, 24);
             this.comboBoxBarang.TabIndex = 34;
+            this.comboBoxBarang.SelectedIndexChanged += new System.EventHandler(this.comboBoxBarang_SelectedIndexChanged);
             // 
             // textBoxHarga
             // 
