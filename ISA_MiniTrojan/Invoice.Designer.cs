@@ -37,7 +37,6 @@
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelNoInvoice = new System.Windows.Forms.Label();
-            this.buttonPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,12 +49,12 @@
             this.ColumnTgl,
             this.ColumnTotal,
             this.btnDetail});
-            this.dataGridViewInvoice.Location = new System.Drawing.Point(29, 139);
-            this.dataGridViewInvoice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewInvoice.Location = new System.Drawing.Point(22, 113);
+            this.dataGridViewInvoice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewInvoice.Name = "dataGridViewInvoice";
             this.dataGridViewInvoice.RowHeadersWidth = 51;
             this.dataGridViewInvoice.RowTemplate.Height = 24;
-            this.dataGridViewInvoice.Size = new System.Drawing.Size(741, 294);
+            this.dataGridViewInvoice.Size = new System.Drawing.Size(556, 239);
             this.dataGridViewInvoice.TabIndex = 26;
             this.dataGridViewInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInvoice_CellContentClick);
             // 
@@ -97,18 +96,18 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
             this.panel1.Controls.Add(this.textBoxId);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(29, 91);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(22, 74);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(741, 33);
+            this.panel1.Size = new System.Drawing.Size(556, 27);
             this.panel1.TabIndex = 24;
             // 
             // textBoxId
             // 
-            this.textBoxId.Location = new System.Drawing.Point(268, 4);
-            this.textBoxId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxId.Location = new System.Drawing.Point(201, 3);
+            this.textBoxId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(455, 22);
+            this.textBoxId.Size = new System.Drawing.Size(342, 20);
             this.textBoxId.TabIndex = 19;
             this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
             // 
@@ -117,46 +116,39 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label1.Location = new System.Drawing.Point(13, 5);
+            this.label1.Location = new System.Drawing.Point(10, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 22);
+            this.label1.Size = new System.Drawing.Size(128, 18);
             this.label1.TabIndex = 18;
             this.label1.Text = "Search Invoices";
             // 
             // labelNoInvoice
             // 
-            this.labelNoInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoInvoice.BackColor = System.Drawing.Color.Firebrick;
+            this.labelNoInvoice.Font = new System.Drawing.Font("Magneto", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelNoInvoice.Location = new System.Drawing.Point(21, 14);
+            this.labelNoInvoice.Location = new System.Drawing.Point(147, 18);
+            this.labelNoInvoice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNoInvoice.Name = "labelNoInvoice";
-            this.labelNoInvoice.Size = new System.Drawing.Size(757, 54);
-            this.labelNoInvoice.TabIndex = 23;
-            this.labelNoInvoice.Text = "Invoices";
+            this.labelNoInvoice.Size = new System.Drawing.Size(320, 44);
+            this.labelNoInvoice.TabIndex = 38;
+            this.labelNoInvoice.Text = "Daftar Invoice";
             this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonPrint
-            // 
-            this.buttonPrint.BackColor = System.Drawing.Color.Yellow;
-            this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.Location = new System.Drawing.Point(677, 393);
-            this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(75, 28);
-            this.buttonPrint.TabIndex = 27;
-            this.buttonPrint.Text = "PRINT";
-            this.buttonPrint.UseVisualStyleBackColor = false;
-            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // Invoice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonPrint);
+            this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.labelNoInvoice);
             this.Controls.Add(this.dataGridViewInvoice);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.labelNoInvoice);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Invoice";
             this.Text = "Invoice";
             this.Load += new System.EventHandler(this.Invoice_Load);
@@ -173,13 +165,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelNoInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNama;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdTransaksi;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTgl;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btnDetail;
-        private System.Windows.Forms.Button buttonPrint;
+        private System.Windows.Forms.Label labelNoInvoice;
     }
 }

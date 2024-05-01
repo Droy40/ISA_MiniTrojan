@@ -68,8 +68,6 @@ namespace ISA_MiniTrojan
 
         private void buttonBeli_Click(object sender, EventArgs e)
         {
-            try
-            {
                 Transaksi tampung = new Transaksi();
                 tampung.User = utama.user;
                 for (int i = 0; i < dataGridViewKeranjang.Rows.Count - 1; i++)
@@ -89,11 +87,6 @@ namespace ISA_MiniTrojan
                 MessageBox.Show("Produk berhasil dibeli");
 
                 KeranjangShopping_Load(this, e);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         
             //try{
             //}

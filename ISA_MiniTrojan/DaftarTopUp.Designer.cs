@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridViewTopUp = new System.Windows.Forms.DataGridView();
-            this.labelNoInvoice = new System.Windows.Forms.Label();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTopUpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +36,7 @@
             this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStaffId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.labelNoInvoice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopUp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,25 +51,14 @@
             this.ColumnStatus,
             this.ColumnStaffId,
             this.btnDetail});
-            this.dataGridViewTopUp.Location = new System.Drawing.Point(12, 66);
+            this.dataGridViewTopUp.Location = new System.Drawing.Point(9, 54);
+            this.dataGridViewTopUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewTopUp.Name = "dataGridViewTopUp";
             this.dataGridViewTopUp.RowHeadersWidth = 51;
             this.dataGridViewTopUp.RowTemplate.Height = 24;
-            this.dataGridViewTopUp.Size = new System.Drawing.Size(722, 348);
+            this.dataGridViewTopUp.Size = new System.Drawing.Size(542, 283);
             this.dataGridViewTopUp.TabIndex = 0;
             this.dataGridViewTopUp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTopUp_CellContentClick);
-            // 
-            // labelNoInvoice
-            // 
-            this.labelNoInvoice.BackColor = System.Drawing.Color.Firebrick;
-            this.labelNoInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNoInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelNoInvoice.Location = new System.Drawing.Point(248, 9);
-            this.labelNoInvoice.Name = "labelNoInvoice";
-            this.labelNoInvoice.Size = new System.Drawing.Size(255, 54);
-            this.labelNoInvoice.TabIndex = 24;
-            this.labelNoInvoice.Text = "Top-Up";
-            this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ColumnId
             // 
@@ -129,16 +118,30 @@
             this.btnDetail.UseColumnTextForButtonValue = true;
             this.btnDetail.Width = 125;
             // 
+            // labelNoInvoice
+            // 
+            this.labelNoInvoice.BackColor = System.Drawing.Color.Firebrick;
+            this.labelNoInvoice.Font = new System.Drawing.Font("Magneto", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.labelNoInvoice.Location = new System.Drawing.Point(129, 8);
+            this.labelNoInvoice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNoInvoice.Name = "labelNoInvoice";
+            this.labelNoInvoice.Size = new System.Drawing.Size(314, 44);
+            this.labelNoInvoice.TabIndex = 38;
+            this.labelNoInvoice.Text = "Daftar Top-Up";
+            this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // DaftarTopUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(746, 476);
+            this.ClientSize = new System.Drawing.Size(560, 387);
             this.Controls.Add(this.labelNoInvoice);
             this.Controls.Add(this.dataGridViewTopUp);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DaftarTopUp";
             this.Text = "TopUp";
             this.Load += new System.EventHandler(this.TopUp_Load);
@@ -150,7 +153,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewTopUp;
-        private System.Windows.Forms.Label labelNoInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUserId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTopUpDate;
@@ -158,5 +160,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStaffId;
         private System.Windows.Forms.DataGridViewButtonColumn btnDetail;
+        private System.Windows.Forms.Label labelNoInvoice;
     }
 }

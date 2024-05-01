@@ -39,13 +39,11 @@
             this.ColumnNama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSisaPercobaanLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.labelRegister = new System.Windows.Forms.Label();
             this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBoxBack = new System.Windows.Forms.PictureBox();
+            this.labelNoInvoice = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,23 +51,23 @@
             // 
             this.guna2Panel1.AutoRoundedCorners = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderRadius = 24;
+            this.guna2Panel1.BorderRadius = 19;
             this.guna2Panel1.Controls.Add(this.textBoxUsername);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(24, 120);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel1.Location = new System.Drawing.Point(18, 98);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(573, 50);
+            this.guna2Panel1.Size = new System.Drawing.Size(699, 41);
             this.guna2Panel1.TabIndex = 45;
             // 
             // textBoxUsername
             // 
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsername.Location = new System.Drawing.Point(271, 11);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxUsername.Location = new System.Drawing.Point(203, 9);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(253, 27);
+            this.textBoxUsername.Size = new System.Drawing.Size(468, 23);
             this.textBoxUsername.TabIndex = 19;
             // 
             // label1
@@ -77,9 +75,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label1.Location = new System.Drawing.Point(21, 14);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 22);
+            this.label1.Size = new System.Drawing.Size(143, 18);
             this.label1.TabIndex = 18;
             this.label1.Text = "Search Username";
             // 
@@ -96,12 +95,12 @@
             this.ColumnNama,
             this.ColumnSaldo,
             this.ColumnSisaPercobaanLogin});
-            this.dataGridViewUser.Location = new System.Drawing.Point(24, 184);
-            this.dataGridViewUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewUser.Location = new System.Drawing.Point(18, 150);
+            this.dataGridViewUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewUser.Name = "dataGridViewUser";
             this.dataGridViewUser.RowHeadersWidth = 51;
             this.dataGridViewUser.RowTemplate.Height = 24;
-            this.dataGridViewUser.Size = new System.Drawing.Size(932, 362);
+            this.dataGridViewUser.Size = new System.Drawing.Size(699, 294);
             this.dataGridViewUser.TabIndex = 44;
             this.dataGridViewUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellContentClick);
             // 
@@ -153,37 +152,13 @@
             this.ColumnSisaPercobaanLogin.ReadOnly = true;
             this.ColumnSisaPercobaanLogin.Width = 125;
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.panel3.Controls.Add(this.labelRegister);
-            this.panel3.Location = new System.Drawing.Point(346, 33);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(317, 60);
-            this.panel3.TabIndex = 43;
-            // 
-            // labelRegister
-            // 
-            this.labelRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
-            this.labelRegister.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelRegister.Location = new System.Drawing.Point(5, 6);
-            this.labelRegister.Name = "labelRegister";
-            this.labelRegister.Size = new System.Drawing.Size(307, 48);
-            this.labelRegister.TabIndex = 34;
-            this.labelRegister.Text = "Daftar Staff";
-            this.labelRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnTambah
             // 
             this.btnTambah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTambah.AutoRoundedCorners = true;
             this.btnTambah.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
             this.btnTambah.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.btnTambah.BorderRadius = 22;
+            this.btnTambah.BorderRadius = 17;
             this.btnTambah.BorderThickness = 2;
             this.btnTambah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTambah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -192,10 +167,10 @@
             this.btnTambah.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.btnTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTambah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.btnTambah.Location = new System.Drawing.Point(776, 567);
-            this.btnTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTambah.Location = new System.Drawing.Point(582, 461);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(180, 46);
+            this.btnTambah.Size = new System.Drawing.Size(135, 37);
             this.btnTambah.TabIndex = 46;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
@@ -205,32 +180,48 @@
             this.pictureBoxBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxBack.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBack.Image")));
-            this.pictureBoxBack.Location = new System.Drawing.Point(24, 565);
+            this.pictureBoxBack.Location = new System.Drawing.Point(18, 459);
+            this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxBack.Name = "pictureBoxBack";
-            this.pictureBoxBack.Size = new System.Drawing.Size(51, 48);
+            this.pictureBoxBack.Size = new System.Drawing.Size(38, 39);
             this.pictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBack.TabIndex = 52;
             this.pictureBoxBack.TabStop = false;
             this.pictureBoxBack.Click += new System.EventHandler(this.pictureBoxBack_Click);
             // 
+            // labelNoInvoice
+            // 
+            this.labelNoInvoice.BackColor = System.Drawing.Color.Firebrick;
+            this.labelNoInvoice.Font = new System.Drawing.Font("Magneto", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.labelNoInvoice.Location = new System.Drawing.Point(213, 28);
+            this.labelNoInvoice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNoInvoice.Name = "labelNoInvoice";
+            this.labelNoInvoice.Size = new System.Drawing.Size(314, 44);
+            this.labelNoInvoice.TabIndex = 53;
+            this.labelNoInvoice.Text = "Daftar Staff";
+            this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // DaftarStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
-            this.ClientSize = new System.Drawing.Size(980, 633);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(735, 514);
+            this.Controls.Add(this.labelNoInvoice);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dataGridViewUser);
-            this.Controls.Add(this.panel3);
+            this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DaftarStaff";
             this.Text = "DaftarStaff";
             this.Load += new System.EventHandler(this.DaftarStaff_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).EndInit();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
             this.ResumeLayout(false);
 
@@ -242,8 +233,6 @@
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewUser;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label labelRegister;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUsername;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmail;
@@ -252,5 +241,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSisaPercobaanLogin;
         private Guna.UI2.WinForms.Guna2Button btnTambah;
         private System.Windows.Forms.PictureBox pictureBoxBack;
+        private System.Windows.Forms.Label labelNoInvoice;
     }
 }
