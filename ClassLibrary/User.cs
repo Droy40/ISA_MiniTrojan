@@ -185,46 +185,35 @@ namespace ClassLibrary
             }
         }
 
-        public static List<User> BacaDataUser(string filter = "", string nilai = "")
+        public static List<User> BacaData(string filter = "", string nilai = "")
         {
-            string sql = "select * from users where role = 'KONSUMEN'";
-            if(filter != "")
+            string sql;
+            if(filter == "")
             {
-                sql += " AND " + filter + " = '" + AES.Encrypt(nilai,AES.key) + "'";
+                sql = "select * from users";
             }
-            
+            else
+            {
+                sql = "select * from users" +
+                      " where " + filter + " like '%'" + nilai + "%'";
+            }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             List<User> listUser = new List<User>();
             while(hasil.Read() == true)
             {
                 User user = new User();
                 user.Id = int.Parse(hasil.GetValue(0).ToString());
-                user.email = hasil.GetValue(1).ToString();
-                user.username = hasil.GetValue(2).ToString();
-                user.nama = hasil.GetValue(4).ToString();
-                user.saldo = hasil.GetString(5);
-                user.role = hasil.GetValue(6).ToString();
-                user.sisa_percobaan_login = hasil.GetInt16(7);
+                user.Email = hasil.GetValue(1).ToString();
+                user.Username = hasil.GetValue(2).ToString();
+                user.Nama = hasil.GetValue(4).ToString();
+                user.Saldo = hasil.GetInt32(5);
+                user.Role = hasil.GetValue(6).ToString();
+                user.Sisa_percobaan_login = hasil.GetInt16(7);
 
                 listUser.Add(user);
             }
             return listUser;
         }
-
-        public static bool AktivasiUser(User user)
-        {
-            string sql = "update users set sisa_percobaan_login = 3 where id = '" + user.Id + "'";
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
-            if(jumlahDiubah == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
         public static string SimpanGambar(User u, Image image)
         {
             Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
@@ -261,6 +250,36 @@ namespace ClassLibrary
             {
                 return null;
             }
+        }
+
+        public static List<User> BacaDataStaff(string filter = "", string nilai = "")
+        {
+            string sql;
+            if (filter == "")
+            {
+                sql = "select * from users where role = staff";
+            }
+            else
+            {
+                sql = "select * from users" +
+                      " where " + filter + " like '%'" + nilai + "%' and role = staff";
+            }
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<User> listUser = new List<User>();
+            while (hasil.Read() == true)
+            {
+                User user = new User();
+                user.Id = int.Parse(hasil.GetValue(0).ToString());
+                user.Email = hasil.GetValue(1).ToString();
+                user.Username = hasil.GetValue(2).ToString();
+                user.Nama = hasil.GetValue(4).ToString();
+                user.Saldo = hasil.GetInt32(5);
+                user.Role = hasil.GetValue(6).ToString();
+                user.Sisa_percobaan_login = hasil.GetInt16(7);
+
+                listUser.Add(user);
+            }
+            return listUser;
         }
     }
 }

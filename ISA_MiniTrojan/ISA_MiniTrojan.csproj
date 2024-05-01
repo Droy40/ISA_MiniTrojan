@@ -64,6 +64,12 @@
     <Compile Include="DaftarProduct.Designer.cs">
       <DependentUpon>DaftarProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="DaftarStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaftarStaff.Designer.cs">
+      <DependentUpon>DaftarStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="DaftarUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,12 @@
     <Compile Include="TambahProduk.Designer.cs">
       <DependentUpon>TambahProduk.cs</DependentUpon>
     </Compile>
+    <Compile Include="TambahStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahStaff.Designer.cs">
+      <DependentUpon>TambahStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DaftarProduct.resx">
       <DependentUpon>DaftarProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DaftarStaff.resx">
+      <DependentUpon>DaftarStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DaftarUser.resx">
       <DependentUpon>DaftarUser.cs</DependentUpon>
@@ -203,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TambahProduk.resx">
       <DependentUpon>TambahProduk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahStaff.resx">
+      <DependentUpon>TambahStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TopUp.resx">
       <DependentUpon>TopUp.cs</DependentUpon>
