@@ -105,7 +105,6 @@
             this.buttonDaftarStaff.Text = "Staff";
             this.buttonDaftarStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDaftarStaff.UseVisualStyleBackColor = true;
-            this.buttonDaftarStaff.Click += new System.EventHandler(this.buttonDaftarStaff_Click);
             // 
             // buttonDaftarTopup
             // 
@@ -260,6 +259,7 @@
             this.btnInvoice.Text = "Invoice";
             this.btnInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInvoice.UseVisualStyleBackColor = true;
+            //this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click_1);
             // 
             // btnKeranjang
             // 

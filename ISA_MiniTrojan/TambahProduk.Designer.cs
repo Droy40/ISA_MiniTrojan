@@ -291,6 +291,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TambahProduk";
             this.Text = "TambahProduk";
             this.Load += new System.EventHandler(this.TambahProduk_Load);
