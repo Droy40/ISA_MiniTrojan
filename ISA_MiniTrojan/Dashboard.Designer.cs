@@ -231,7 +231,7 @@
             this.btnTopUp.Text = "Top Up";
             this.btnTopUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTopUp.UseVisualStyleBackColor = true;
-            this.btnTopUp.Click += new System.EventHandler(this.btnTopUp_Click);
+            
             // 
             // btnChatAdmin
             // 

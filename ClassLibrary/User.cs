@@ -183,8 +183,17 @@ namespace ClassLibrary
             string sql = "insert into users(id, email, username, password, nama, saldo, role, sisa_percobaan_login, photo_id_path) " +
                          "values ('" + u.id + "','" + u.email + "', '" + u.username + "','" + u.password +
                          "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login  + "','"+ u.Foto_ktp +"')";
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);            
-            
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+
+            if (jumlahDiubah == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
         }
 
         public static List<User> BacaDataUser(string filter = "", string nilai = "")
