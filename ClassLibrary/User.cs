@@ -171,18 +171,29 @@ namespace ClassLibrary
         public static bool Register(User u, string filePath = "")
         {
             u.Id = GenerateIdUser();
-            string sql = "insert into users(id, email, username, password, nama, saldo, role, sisa_percobaan_login, photo_id_path) " +
-                         "values ('" + u.id + "','" + u.email + "', '" + u.username + "','" + u.password +
-                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login + "','" + filePath + "')";
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
-            if (jumlahDiubah == 0)
+            string sql = "select * from users " +
+                         "where username = '" + u.username + "'";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read())
             {
-                return false;
+                throw new Exception("Username sudah terpakai! Silahkan register username lain");
             }
             else
             {
-                return true;
+                string sql1 = "insert into users(id, email, username, password, nama, saldo, role, sisa_percobaan_login) " +
+                         "values ('" + u.id + "','" + u.email + "', '" + u.username + "','" + u.password +
+                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login + "')";
+                int jumlahDiubah = Koneksi.JalankanPerintahDML(sql1);
+                if (jumlahDiubah == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
+            
         }
 
         public static List<User> BacaDataUser(string filter = "", string nilai = "")
@@ -327,6 +338,19 @@ namespace ClassLibrary
             {
                 return true;
             }
+        }
+        public static void GantiPassword(User u, string passwordLama, string passwordBaru)
+        {
+            if (UserLogin(u.Username, passwordLama) != null)
+            {
+                string sql = "Update users set password = SHA2('" + passwordBaru + "',512) where id = '" + u.Id + "'";
+                Koneksi.JalankanPerintahDML(sql);
+            }
+            else
+            {
+                throw new Exception("Password Lama Salah");
+            }
+
         }
     }
 }

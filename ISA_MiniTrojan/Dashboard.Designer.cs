@@ -105,7 +105,7 @@
             this.buttonDaftarStaff.Text = "Staff";
             this.buttonDaftarStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDaftarStaff.UseVisualStyleBackColor = true;
-            this.buttonDaftarStaff.Click += new System.EventHandler(this.buttonDaftarStaff_Click);
+            this.buttonDaftarStaff.Click += new System.EventHandler(this.buttonDaftarStaff_Click_1);
             // 
             // buttonDaftarTopup
             // 

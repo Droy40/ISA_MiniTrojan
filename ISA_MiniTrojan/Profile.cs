@@ -34,5 +34,12 @@ namespace ISA_MiniTrojan
                 labelKtp.Text = "Belum Terverifikasi";
             }
         }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            GantiPassword form = new GantiPassword();
+            form.Owner = this;
+            form.ShowDialog();
+        }
     }
 }

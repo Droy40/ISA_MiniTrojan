@@ -12,7 +12,7 @@ namespace ISA_MiniTrojan {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
     internal sealed partial class DbSettings : global::System.Configuration.ApplicationSettingsBase {
         
         private static DbSettings defaultInstance = ((DbSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new DbSettings())));
