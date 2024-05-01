@@ -17,6 +17,16 @@ namespace ISA_MiniTrojan
             InitializeComponent();
         }
 
+        private void panelDepan_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TambahStaff_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void pictureBoxBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -34,12 +44,14 @@ namespace ISA_MiniTrojan
                 staff.Role = "Staff";
 
                 User.Register(staff);
+                MessageBox.Show("tambah data berhasil");
+                DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
     }
 }

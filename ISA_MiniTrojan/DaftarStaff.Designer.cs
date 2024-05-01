@@ -38,11 +38,11 @@
             this.ColumnEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSisaPercobaanLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelRegister = new System.Windows.Forms.Label();
+            this.btnTambah = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBoxBack = new System.Windows.Forms.PictureBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser)).BeginInit();
             this.panel3.SuspendLayout();
@@ -57,11 +57,11 @@
             this.guna2Panel1.Controls.Add(this.textBoxUsername);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(24, 104);
+            this.guna2Panel1.Location = new System.Drawing.Point(24, 120);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(573, 50);
-            this.guna2Panel1.TabIndex = 46;
+            this.guna2Panel1.TabIndex = 45;
             // 
             // textBoxUsername
             // 
@@ -85,6 +85,9 @@
             // 
             // dataGridViewUser
             // 
+            this.dataGridViewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnId,
@@ -92,14 +95,15 @@
             this.ColumnEmail,
             this.ColumnNama,
             this.ColumnSaldo,
-            this.ColumnStatus});
-            this.dataGridViewUser.Location = new System.Drawing.Point(24, 168);
+            this.ColumnSisaPercobaanLogin});
+            this.dataGridViewUser.Location = new System.Drawing.Point(24, 184);
             this.dataGridViewUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewUser.Name = "dataGridViewUser";
             this.dataGridViewUser.RowHeadersWidth = 51;
             this.dataGridViewUser.RowTemplate.Height = 24;
-            this.dataGridViewUser.Size = new System.Drawing.Size(573, 294);
-            this.dataGridViewUser.TabIndex = 45;
+            this.dataGridViewUser.Size = new System.Drawing.Size(932, 362);
+            this.dataGridViewUser.TabIndex = 44;
+            this.dataGridViewUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUser_CellContentClick);
             // 
             // ColumnId
             // 
@@ -141,23 +145,24 @@
             this.ColumnSaldo.ReadOnly = true;
             this.ColumnSaldo.Width = 125;
             // 
-            // ColumnStatus
+            // ColumnSisaPercobaanLogin
             // 
-            this.ColumnStatus.HeaderText = "Status";
-            this.ColumnStatus.MinimumWidth = 6;
-            this.ColumnStatus.Name = "ColumnStatus";
-            this.ColumnStatus.ReadOnly = true;
-            this.ColumnStatus.Width = 125;
+            this.ColumnSisaPercobaanLogin.HeaderText = "Sisa Percobaan Login";
+            this.ColumnSisaPercobaanLogin.MinimumWidth = 6;
+            this.ColumnSisaPercobaanLogin.Name = "ColumnSisaPercobaanLogin";
+            this.ColumnSisaPercobaanLogin.ReadOnly = true;
+            this.ColumnSisaPercobaanLogin.Width = 125;
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.panel3.Controls.Add(this.labelRegister);
-            this.panel3.Location = new System.Drawing.Point(156, 23);
+            this.panel3.Location = new System.Drawing.Point(346, 33);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(317, 60);
-            this.panel3.TabIndex = 44;
+            this.panel3.TabIndex = 43;
             // 
             // labelRegister
             // 
@@ -172,53 +177,53 @@
             this.labelRegister.Text = "Daftar Staff";
             this.labelRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnTambah
+            // 
+            this.btnTambah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTambah.AutoRoundedCorners = true;
+            this.btnTambah.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
+            this.btnTambah.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
+            this.btnTambah.BorderRadius = 22;
+            this.btnTambah.BorderThickness = 2;
+            this.btnTambah.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTambah.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTambah.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTambah.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.btnTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTambah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
+            this.btnTambah.Location = new System.Drawing.Point(776, 567);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(180, 46);
+            this.btnTambah.TabIndex = 46;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
+            // 
             // pictureBoxBack
             // 
             this.pictureBoxBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxBack.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBack.Image")));
-            this.pictureBoxBack.Location = new System.Drawing.Point(24, 477);
-            this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxBack.Location = new System.Drawing.Point(24, 565);
             this.pictureBoxBack.Name = "pictureBoxBack";
             this.pictureBoxBack.Size = new System.Drawing.Size(51, 48);
             this.pictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBack.TabIndex = 47;
+            this.pictureBoxBack.TabIndex = 52;
             this.pictureBoxBack.TabStop = false;
             this.pictureBoxBack.Click += new System.EventHandler(this.pictureBoxBack_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.AutoRoundedCorners = true;
-            this.guna2Button2.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.guna2Button2.BorderRadius = 22;
-            this.guna2Button2.BorderThickness = 2;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.guna2Button2.Location = new System.Drawing.Point(417, 479);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(180, 46);
-            this.guna2Button2.TabIndex = 48;
-            this.guna2Button2.Text = "Tambah";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // DaftarStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
-            this.ClientSize = new System.Drawing.Size(621, 549);
-            this.Controls.Add(this.guna2Button2);
+            this.ClientSize = new System.Drawing.Size(980, 633);
+            this.Controls.Add(this.pictureBoxBack);
+            this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dataGridViewUser);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pictureBoxBack);
             this.Name = "DaftarStaff";
             this.Text = "DaftarStaff";
             this.Load += new System.EventHandler(this.DaftarStaff_Load);
@@ -237,15 +242,15 @@
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewUser;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label labelRegister;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUsername;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNama;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSaldo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label labelRegister;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSisaPercobaanLogin;
+        private Guna.UI2.WinForms.Guna2Button btnTambah;
         private System.Windows.Forms.PictureBox pictureBoxBack;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

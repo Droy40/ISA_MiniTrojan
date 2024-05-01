@@ -13,49 +13,75 @@ namespace ISA_MiniTrojan
 {
     public partial class DaftarStaff : Form
     {
+        Dashboard utama;
+        List<User> listHasil;
         public DaftarStaff()
         {
             InitializeComponent();
         }
-        Dashboard utama;
+
         private void DaftarStaff_Load(object sender, EventArgs e)
         {
-            utama = (Dashboard)this.Parent;
-            List<User> listHasil = User.BacaDataStaff();
+            listHasil = User.BacaDataStaff();
+            DisplayData();
+            if (dataGridViewUser.ColumnCount == 6)
+            {
+                DataGridViewButtonColumn bcol2 = new DataGridViewButtonColumn();
+                bcol2.HeaderText = "Aksi";
+                bcol2.Text = "DELETE";
+                bcol2.Name = "btnDeleteGrid";
+                bcol2.UseColumnTextForButtonValue = true;
+                dataGridViewUser.Columns.Add(bcol2);
+            }
+        }
+        private void DisplayData()
+        {
             dataGridViewUser.Rows.Clear();
             foreach (User u in listHasil)
             {
                 dataGridViewUser.Rows.Add(u.Id, u.Username, u.Email, u.Nama, u.Saldo, u.Sisa_percobaan_login);
             }
-
-            if (dataGridViewUser.ColumnCount == 6)
-            {
-                DataGridViewButtonColumn btnDel = new DataGridViewButtonColumn();
-                btnDel.HeaderText = "AKSI";
-                btnDel.Text = "HAPUS";
-                btnDel.Name = "buttonHapusGrid";
-                btnDel.UseColumnTextForButtonValue = true;
-                dataGridViewUser.Columns.Add(btnDel);
-
-                DataGridViewButtonColumn btnUbah = new DataGridViewButtonColumn();
-                btnUbah.HeaderText = "AKSI";
-                btnUbah.Text = "UBAH";
-                btnUbah.Name = "buttonUbahGrid";
-                btnUbah.UseColumnTextForButtonValue = true;
-                dataGridViewUser.Columns.Add(btnUbah);
-            }
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void dataGridViewUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            TambahStaff form = new TambahStaff();
-            form.Owner = this;
-            form.ShowDialog();
+            if (e.ColumnIndex == dataGridViewUser.Columns["btnDeleteGrid"].Index && e.RowIndex >= 0)
+            {
+                string kodeHapus = listHasil[e.RowIndex].Id.ToString();
+
+                DialogResult hasil = MessageBox.Show(this, "anda yakin ingin menghapus konsumen id - " + kodeHapus + "?",
+                    "HAPUS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (hasil == DialogResult.Yes)
+                {
+                    Boolean hapus = User.HapusData(listHasil[e.RowIndex]);
+                    if (hapus == true)
+                    {
+                        MessageBox.Show("penghapusan data berhasil");
+                        DaftarStaff_Load(dataGridViewUser, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("penghapusan data gagal");
+                    }
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Data tidak ditemukan");
+            }
         }
 
         private void pictureBoxBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            TambahStaff form = new TambahStaff();
+            form.Owner = this;
+            form.ShowDialog();
         }
     }
 }

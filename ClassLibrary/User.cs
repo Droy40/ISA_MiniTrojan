@@ -262,5 +262,48 @@ namespace ClassLibrary
                 return null;
             }
         }
+        public static List<User> BacaDataStaff(string filter = "", string nilai = "")
+        {
+            string sql;
+            if (filter == "")
+            {
+                sql = "select * from users where role = 'Staff'";
+            }
+            else
+            {
+                sql = "select * from users" +
+                      " where " + filter + " like '%'" + nilai + "%' and role = 'Staff'";
+            }
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<User> listUser = new List<User>();
+            while (hasil.Read() == true)
+            {
+                User user = new User();
+                user.Id = int.Parse(hasil.GetValue(0).ToString());
+                user.email = hasil.GetValue(1).ToString();
+                user.username = hasil.GetValue(2).ToString();
+                user.nama = hasil.GetValue(4).ToString();
+                user.saldo = hasil.GetValue(5).ToString();
+                user.Role = hasil.GetValue(6).ToString();
+                user.Sisa_percobaan_login = hasil.GetInt16(7);
+
+                listUser.Add(user);
+            }
+            return listUser;
+        }
+        public static bool HapusData(User u)
+        {
+            string sql = "DELETE FROM users WHERE id= '" + u.Id + "';";
+
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+            if (jumlahDiubah == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

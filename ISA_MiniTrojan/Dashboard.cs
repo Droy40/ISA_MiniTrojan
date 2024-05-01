@@ -136,5 +136,12 @@ namespace ISA_MiniTrojan
             form.Owner = this;
             OpenForm(form);
         }
+
+        private void buttonDaftarStaff_Click(object sender, EventArgs e)
+        {
+            DaftarStaff form = new DaftarStaff();
+            form.Owner = this;
+            OpenForm(form);
+        }
     }
 }
