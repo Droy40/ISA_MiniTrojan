@@ -132,6 +132,7 @@
             this.DoubleBuffered = true;
             this.Name = "RiwayatTransaksi";
             this.Text = "RiwayatTransaksi";
+            this.Load += new System.EventHandler(this.RiwayatTransaksi_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
             this.guna2Panel1.ResumeLayout(false);

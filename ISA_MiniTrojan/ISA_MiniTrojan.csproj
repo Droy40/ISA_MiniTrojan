@@ -137,6 +137,12 @@
     <Compile Include="TopUp.Designer.cs">
       <DependentUpon>TopUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="TopUpLanjutan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopUpLanjutan.Designer.cs">
+      <DependentUpon>TopUpLanjutan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UploadKTP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TopUp.resx">
       <DependentUpon>TopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopUpLanjutan.resx">
+      <DependentUpon>TopUpLanjutan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UploadKTP.resx">
       <DependentUpon>UploadKTP.cs</DependentUpon>
