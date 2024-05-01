@@ -12,7 +12,7 @@ namespace ClassLibrary
         private int id;
         private User user;
         private DateTime waktuTransaksi;
-        private double nominal;
+        private string nominal;
         private string jenis;
         private Transaksi transaksi;
 
@@ -39,7 +39,11 @@ namespace ClassLibrary
         public int Id { get => id; set => id = value; }
         public User User { get => user; set => user = value; }
         public DateTime WaktuTransaksi { get => waktuTransaksi; set => waktuTransaksi = value; }
-        public double Nominal { get => nominal; set => nominal = value; }
+        public double Nominal 
+        {
+            get => double.Parse(AES.Decrypt(nominal, AES.key));
+            set => nominal = AES.Encrypt(value.ToString(), AES.key);
+        }
         public string Jenis { get => jenis; set => jenis = value; }
         public Transaksi Transaksi { get => transaksi; set => transaksi = value; }
 
@@ -60,7 +64,7 @@ namespace ClassLibrary
         {
             hs.Id = GenerateIdHistorySaldo();
             string sql = "INSERT INTO `mydb`.`history_saldo` (`id`, `users_id`, `transaction_date`, `nominal`, `jenis`, `transactions_id`)" +
-            "VALUES ('"+hs.Id+"', '"+hs.User.Id+"', '"+hs.WaktuTransaksi+"', '"+ hs.Nominal+"', '"+ hs.Jenis+"', '"+hs.Transaksi.Id+"');";
+            "VALUES ('"+hs.Id+"', '"+hs.User.Id+"', '"+hs.WaktuTransaksi+"', '"+ hs.nominal+"', '"+ hs.Jenis+"', '"+hs.Transaksi.Id+"');";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql); 
             if(jumlahDiubah == 0)
             {
@@ -101,7 +105,7 @@ namespace ClassLibrary
                 hs.User = tampungUser;
 
                 hs.WaktuTransaksi = DateTime.Parse(hasil.GetValue(2).ToString());
-                hs.Nominal = double.Parse(hasil.GetValue(3).ToString());
+                hs.nominal = hasil.GetValue(3).ToString();
                 hs.Jenis = hasil.GetValue(4).ToString();
 
                 Transaksi tampungTransaksi = new Transaksi();

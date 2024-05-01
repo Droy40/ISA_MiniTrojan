@@ -53,5 +53,10 @@ namespace ISA_MiniTrojan
         {
             pictureBox1.ImageLocation = openFileDialog1.FileName;
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

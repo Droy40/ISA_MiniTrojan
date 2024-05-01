@@ -72,7 +72,9 @@ namespace ISA_MiniTrojan
 
         private void btnInvoice_Click(object sender, EventArgs e)
         {
-
+            KeranjangShopping form = new KeranjangShopping();
+            form.Owner = this;
+            OpenForm(form);
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -137,6 +139,17 @@ namespace ISA_MiniTrojan
             OpenForm(form);
         }
 
+        private void panelForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            Profile form = new Profile();
+            form.Owner = this;
+            form.ShowDialog();
+        }
         private void buttonDaftarStaff_Click(object sender, EventArgs e)
         {
             DaftarStaff form = new DaftarStaff();
@@ -144,9 +157,11 @@ namespace ISA_MiniTrojan
             OpenForm(form);
         }
 
-        private void btnTopUp_Click(object sender, EventArgs e)
+        private void buttonDaftarStaff_Click_1(object sender, EventArgs e)
         {
-
+            DaftarStaff form = new DaftarStaff();
+            form.Owner = this;
+            OpenForm(form);
         }
     }
-}
+    }

@@ -30,7 +30,6 @@
         {
             this.panelDepan = new System.Windows.Forms.Panel();
             this.buttonUploadKTP = new System.Windows.Forms.Button();
-            this.buttonRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -58,7 +57,6 @@
             this.panelDepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
             this.panelDepan.Controls.Add(this.pictureBox1);
             this.panelDepan.Controls.Add(this.buttonUploadKTP);
-            this.panelDepan.Controls.Add(this.buttonRegister);
             this.panelDepan.Controls.Add(this.label1);
             this.panelDepan.Controls.Add(this.textBoxPassword);
             this.panelDepan.Controls.Add(this.labelPassword);
@@ -260,6 +258,7 @@
             this.Controls.Add(this.panelBlkng);
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.panelDepan.ResumeLayout(false);
             this.panelDepan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -283,7 +282,6 @@
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Label labelRegister;
         private System.Windows.Forms.Panel panelBlkng;
-        private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Button buttonUploadKTP;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;

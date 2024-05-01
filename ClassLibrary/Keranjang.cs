@@ -35,16 +35,20 @@ namespace ClassLibrary
             string sql;
             if (kriteria == "")
             {
-                sql = "select u.id, p.product, k.jumlah from keranjang as k" +
+                sql = "select u.id, u.email, u.username, u.password, u.nama, u.saldo, u.role, u.sisa_percobaan_login, u.photo_id_path, " +
+                      " p.id, p.nama, p.deskripsi, p.harga, p.stock," +
+                      " k.jumlah from keranjang as k" +
                       " inner join users as u on k.users_id = u.id" +
                       " inner join produk as p on k.produk_id = p.id";
             }
             else
             {
-                sql = "select u.id, p.product, k.jumlah from keranjang as k" +
+                sql = "select u.id, u.email, u.username, u.password, u.nama, u.saldo, u.role, u.sisa_percobaan_login, u.photo_id_path, " +
+                      " p.id, p.nama, p.deskripsi, p.harga, p.stock," +
+                      " k.jumlah from keranjang as k" +
                       " inner join users as u on k.users_id = u.id" +
                       " inner join produk as p on k.produk_id = p.id" +
-                      " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+                      " where " + kriteria + " = '" + nilaiKriteria + "'";
             }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             List<Keranjang> listKeranjang = new List<Keranjang>();
@@ -52,12 +56,24 @@ namespace ClassLibrary
             {
                 User u = new User();
                 u.Id = int.Parse(hasil.GetValue(0).ToString());
+                u.email = hasil.GetValue(1).ToString();
+                u.username = hasil.GetValue(2).ToString();
+                u.nama = hasil.GetValue(4).ToString();
+                u.saldo = hasil.GetValue(5).ToString();
+                u.Role = hasil.GetValue(6).ToString();
+                u.Sisa_percobaan_login = int.Parse(hasil.GetValue(7).ToString());
+
                 Product p = new Product();
-                p.Id = int.Parse(hasil.GetValue(1).ToString());
+                p.Id = int.Parse(hasil.GetValue(9).ToString());
+                p.Name = hasil.GetValue(10).ToString();
+                p.Description = hasil.GetValue(11).ToString();
+                p.Price = double.Parse(hasil.GetValue(12).ToString());
+                p.Stock = int.Parse(hasil.GetValue(13).ToString());
+
                 Keranjang k = new Keranjang();
                 k.User = u;
                 k.Product = p;
-                k.Jumlah = int.Parse(hasil.GetValue(2).ToString());
+                k.Jumlah = int.Parse(hasil.GetValue(14).ToString());
                 listKeranjang.Add(k);
             }
             return listKeranjang;
