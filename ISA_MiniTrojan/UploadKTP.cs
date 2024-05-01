@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -72,6 +73,9 @@ namespace ISA_MiniTrojan
                 pictureBoxKtp.ImageLocation = textBoxFilePath.Text;
 
                 img.Save(textBoxFilePath.Text);
+                User u = new User();
+                User.SimpanGambar(u, pictureBoxKtp.Image);
+                MessageBox.Show("Photo has been saved!");
             }
         }
 

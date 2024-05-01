@@ -26,7 +26,7 @@ namespace ISA_MiniTrojan
             dataGridViewInvoice.Rows.Clear();
             foreach (Transaksi t in listHasil)
             {
-                dataGridViewInvoice.Rows.Add(t.Id, t.Date, t.Total);
+                dataGridViewInvoice.Rows.Add(t.User.Nama, t.User.Id, t.Id, t.Date, t.Total);
             }
 
             if (dataGridViewInvoice.ColumnCount == 3)

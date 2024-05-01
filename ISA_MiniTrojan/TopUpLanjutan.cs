@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ISA_MiniTrojan
 {
-    public partial class RiwayatTransaksi : Form
+    public partial class TopUpLanjutan : Form
     {
-        public RiwayatTransaksi()
+        public TopUpLanjutan()
         {
             InitializeComponent();
-        }
-
-        private void RiwayatTransaksi_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

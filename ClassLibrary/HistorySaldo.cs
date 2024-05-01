@@ -71,34 +71,35 @@ namespace ClassLibrary
                 return true;
             }
         }
-        
-        //public static List<HistorySaldo> BacaData(string filter = "", string nilai = "")
-        //{
-        //    string sql;
-        //    if(filter == "")
-        //    {
-        //        sql = "select * from History_Saldo";
-        //    }
-        //    else
-        //    {
-        //        sql = "select * from History_Saldo" +
-        //              " where " + filter + " like '%'" + nilai + "%'";
-        //    }
-        //    MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-        //    List<HistorySaldo> listHistorySaldo = new List<HistorySaldo>();
-        //    while(hasil.Read() == true)
-        //    {
-        //        HistorySaldo hs = new HistorySaldo();
-        //        hs.Id = int.Parse(hasil.GetValue(0).ToString());
-        //        User tampung = 
-        //        hs.User = hasil.GetValue(1).ToString(); 
-        //        product.Description = hasil.GetValue(2).ToString();
-        //        product.Price = double.Parse(hasil.GetValue(3).ToString());
-        //        product.Stock = int.Parse(hasil.GetValue(4).ToString());
-        //        product.Photo_path = hasil.GetValue(5).ToString();
-        //        listHistorySaldo.Add(hs);
-        //    }
-        //    return listProduct;
-        //}
+
+        public static List<HistorySaldo> BacaData(string filter = "", string nilai = "")
+        {
+            string sql;
+            if (filter == "")
+            {
+                sql = "select * from History_Saldo";
+            }
+            else if (filter=="")
+            else
+            {
+                sql = "select * from History_Saldo" +
+                      " where " + filter + " like '%'" + nilai + "%'";
+            }
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            List<HistorySaldo> listHistorySaldo = new List<HistorySaldo>();
+            while (hasil.Read() == true)
+            {
+                HistorySaldo hs = new HistorySaldo();
+                hs.Id = int.Parse(hasil.GetValue(0).ToString());
+                User tampung =
+                hs.User = hasil.GetValue(1).ToString();
+                product.Description = hasil.GetValue(2).ToString();
+                product.Price = double.Parse(hasil.GetValue(3).ToString());
+                product.Stock = int.Parse(hasil.GetValue(4).ToString());
+                product.Photo_path = hasil.GetValue(5).ToString();
+                listHistorySaldo.Add(hs);
+            }
+            return listProduct;
+        }
     }
 }
