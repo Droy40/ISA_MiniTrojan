@@ -90,6 +90,7 @@
             this.DoubleBuffered = true;
             this.Name = "TopUp";
             this.Text = "TopUp";
+            this.Load += new System.EventHandler(this.TopUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopUp)).EndInit();
             this.ResumeLayout(false);
 

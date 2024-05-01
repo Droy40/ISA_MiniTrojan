@@ -79,7 +79,11 @@ namespace ClassLibrary
             {
                 sql = "select * from History_Saldo";
             }
-            else if (filter=="")
+            else if (filter=="users_id")
+            {
+                sql = "select * from History_Saldo" +
+                      " where " + filter + " = '" + nilai + "'";
+            }
             else
             {
                 sql = "select * from History_Saldo" +
@@ -91,15 +95,22 @@ namespace ClassLibrary
             {
                 HistorySaldo hs = new HistorySaldo();
                 hs.Id = int.Parse(hasil.GetValue(0).ToString());
-                User tampung =
-                hs.User = hasil.GetValue(1).ToString();
-                product.Description = hasil.GetValue(2).ToString();
-                product.Price = double.Parse(hasil.GetValue(3).ToString());
-                product.Stock = int.Parse(hasil.GetValue(4).ToString());
-                product.Photo_path = hasil.GetValue(5).ToString();
+
+                User tampungUser = new User();
+                tampungUser.Id = int.Parse(hasil.GetValue(1).ToString());
+                hs.User = tampungUser;
+
+                hs.WaktuTransaksi = DateTime.Parse(hasil.GetValue(2).ToString());
+                hs.Nominal = double.Parse(hasil.GetValue(3).ToString());
+                hs.Jenis = hasil.GetValue(4).ToString();
+
+                Transaksi tampungTransaksi = new Transaksi();
+                tampungTransaksi.Id = int.Parse(hasil.GetValue(5).ToString());
+                hs.Transaksi = tampungTransaksi;
+
                 listHistorySaldo.Add(hs);
             }
-            return listProduct;
+            return listHistorySaldo;
         }
     }
 }

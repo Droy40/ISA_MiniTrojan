@@ -31,19 +31,19 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonDaftarStaff = new System.Windows.Forms.Button();
+            this.buttonDaftarTopup = new System.Windows.Forms.Button();
+            this.buttonDaftarChat = new System.Windows.Forms.Button();
+            this.buttonDaftarProduk = new System.Windows.Forms.Button();
+            this.buttonDaftarInvoice = new System.Windows.Forms.Button();
+            this.buttonDaftarKonsumen = new System.Windows.Forms.Button();
+            this.buttonProfile = new System.Windows.Forms.Button();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.btnTopUp = new System.Windows.Forms.Button();
             this.btnChatAdmin = new System.Windows.Forms.Button();
             this.btnInvoice = new System.Windows.Forms.Button();
             this.btnKeranjang = new System.Windows.Forms.Button();
             this.btnProduk = new System.Windows.Forms.Button();
-            this.buttonLogout = new System.Windows.Forms.Button();
-            this.buttonProfile = new System.Windows.Forms.Button();
-            this.buttonDaftarKonsumen = new System.Windows.Forms.Button();
-            this.buttonDaftarInvoice = new System.Windows.Forms.Button();
-            this.buttonDaftarProduk = new System.Windows.Forms.Button();
-            this.buttonDaftarChat = new System.Windows.Forms.Button();
-            this.buttonDaftarTopup = new System.Windows.Forms.Button();
-            this.buttonDaftarStaff = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,127 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(200, 673);
             this.panelMenu.TabIndex = 4;
+            // 
+            // buttonDaftarStaff
+            // 
+            this.buttonDaftarStaff.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDaftarStaff.FlatAppearance.BorderSize = 0;
+            this.buttonDaftarStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDaftarStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.buttonDaftarStaff.ForeColor = System.Drawing.Color.White;
+            this.buttonDaftarStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDaftarStaff.Location = new System.Drawing.Point(0, 676);
+            this.buttonDaftarStaff.Name = "buttonDaftarStaff";
+            this.buttonDaftarStaff.Size = new System.Drawing.Size(179, 60);
+            this.buttonDaftarStaff.TabIndex = 23;
+            this.buttonDaftarStaff.Text = "Staff";
+            this.buttonDaftarStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDaftarStaff.UseVisualStyleBackColor = true;
+            // 
+            // buttonDaftarTopup
+            // 
+            this.buttonDaftarTopup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDaftarTopup.FlatAppearance.BorderSize = 0;
+            this.buttonDaftarTopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDaftarTopup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.buttonDaftarTopup.ForeColor = System.Drawing.Color.White;
+            this.buttonDaftarTopup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDaftarTopup.Location = new System.Drawing.Point(0, 616);
+            this.buttonDaftarTopup.Name = "buttonDaftarTopup";
+            this.buttonDaftarTopup.Size = new System.Drawing.Size(179, 60);
+            this.buttonDaftarTopup.TabIndex = 22;
+            this.buttonDaftarTopup.Text = "Topup";
+            this.buttonDaftarTopup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDaftarTopup.UseVisualStyleBackColor = true;
+            // 
+            // buttonDaftarChat
+            // 
+            this.buttonDaftarChat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDaftarChat.FlatAppearance.BorderSize = 0;
+            this.buttonDaftarChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDaftarChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.buttonDaftarChat.ForeColor = System.Drawing.Color.White;
+            this.buttonDaftarChat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDaftarChat.Location = new System.Drawing.Point(0, 556);
+            this.buttonDaftarChat.Name = "buttonDaftarChat";
+            this.buttonDaftarChat.Size = new System.Drawing.Size(179, 60);
+            this.buttonDaftarChat.TabIndex = 21;
+            this.buttonDaftarChat.Text = "Chat";
+            this.buttonDaftarChat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDaftarChat.UseVisualStyleBackColor = true;
+            // 
+            // buttonDaftarProduk
+            // 
+            this.buttonDaftarProduk.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDaftarProduk.FlatAppearance.BorderSize = 0;
+            this.buttonDaftarProduk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDaftarProduk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.buttonDaftarProduk.ForeColor = System.Drawing.Color.White;
+            this.buttonDaftarProduk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDaftarProduk.Location = new System.Drawing.Point(0, 496);
+            this.buttonDaftarProduk.Name = "buttonDaftarProduk";
+            this.buttonDaftarProduk.Size = new System.Drawing.Size(179, 60);
+            this.buttonDaftarProduk.TabIndex = 20;
+            this.buttonDaftarProduk.Text = "Produk";
+            this.buttonDaftarProduk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDaftarProduk.UseVisualStyleBackColor = true;
+            this.buttonDaftarProduk.Click += new System.EventHandler(this.buttonDaftarProduk_Click);
+            // 
+            // buttonDaftarInvoice
+            // 
+            this.buttonDaftarInvoice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDaftarInvoice.FlatAppearance.BorderSize = 0;
+            this.buttonDaftarInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDaftarInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.buttonDaftarInvoice.ForeColor = System.Drawing.Color.White;
+            this.buttonDaftarInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDaftarInvoice.Location = new System.Drawing.Point(0, 436);
+            this.buttonDaftarInvoice.Name = "buttonDaftarInvoice";
+            this.buttonDaftarInvoice.Size = new System.Drawing.Size(179, 60);
+            this.buttonDaftarInvoice.TabIndex = 19;
+            this.buttonDaftarInvoice.Text = "Invoice";
+            this.buttonDaftarInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDaftarInvoice.UseVisualStyleBackColor = true;
+            // 
+            // buttonDaftarKonsumen
+            // 
+            this.buttonDaftarKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDaftarKonsumen.FlatAppearance.BorderSize = 0;
+            this.buttonDaftarKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDaftarKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.buttonDaftarKonsumen.ForeColor = System.Drawing.Color.White;
+            this.buttonDaftarKonsumen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDaftarKonsumen.Location = new System.Drawing.Point(0, 376);
+            this.buttonDaftarKonsumen.Name = "buttonDaftarKonsumen";
+            this.buttonDaftarKonsumen.Size = new System.Drawing.Size(179, 60);
+            this.buttonDaftarKonsumen.TabIndex = 18;
+            this.buttonDaftarKonsumen.Text = "Konsumen";
+            this.buttonDaftarKonsumen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDaftarKonsumen.UseVisualStyleBackColor = true;
+            this.buttonDaftarKonsumen.Click += new System.EventHandler(this.buttonDaftarKonsumen_Click);
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonProfile.Location = new System.Drawing.Point(0, 736);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonProfile.Size = new System.Drawing.Size(179, 31);
+            this.buttonProfile.TabIndex = 17;
+            this.buttonProfile.Text = "PROFILE";
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonLogout.Location = new System.Drawing.Point(0, 767);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonLogout.Size = new System.Drawing.Size(179, 31);
+            this.buttonLogout.TabIndex = 0;
+            this.buttonLogout.Text = "LOGOUT";
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // btnTopUp
             // 
@@ -170,125 +291,6 @@
             this.btnProduk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProduk.UseVisualStyleBackColor = true;
             this.btnProduk.Click += new System.EventHandler(this.btnProduk_Click);
-            // 
-            // buttonLogout
-            // 
-            this.buttonLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonLogout.Location = new System.Drawing.Point(0, 767);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Padding = new System.Windows.Forms.Padding(3);
-            this.buttonLogout.Size = new System.Drawing.Size(179, 31);
-            this.buttonLogout.TabIndex = 0;
-            this.buttonLogout.Text = "LOGOUT";
-            this.buttonLogout.UseVisualStyleBackColor = true;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonProfile.Location = new System.Drawing.Point(0, 736);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Padding = new System.Windows.Forms.Padding(3);
-            this.buttonProfile.Size = new System.Drawing.Size(179, 31);
-            this.buttonProfile.TabIndex = 17;
-            this.buttonProfile.Text = "PROFILE";
-            this.buttonProfile.UseVisualStyleBackColor = true;
-            // 
-            // buttonDaftarKonsumen
-            // 
-            this.buttonDaftarKonsumen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDaftarKonsumen.FlatAppearance.BorderSize = 0;
-            this.buttonDaftarKonsumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDaftarKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonDaftarKonsumen.ForeColor = System.Drawing.Color.White;
-            this.buttonDaftarKonsumen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarKonsumen.Location = new System.Drawing.Point(0, 376);
-            this.buttonDaftarKonsumen.Name = "buttonDaftarKonsumen";
-            this.buttonDaftarKonsumen.Size = new System.Drawing.Size(179, 60);
-            this.buttonDaftarKonsumen.TabIndex = 18;
-            this.buttonDaftarKonsumen.Text = "Konsumen";
-            this.buttonDaftarKonsumen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDaftarKonsumen.UseVisualStyleBackColor = true;
-            // 
-            // buttonDaftarInvoice
-            // 
-            this.buttonDaftarInvoice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDaftarInvoice.FlatAppearance.BorderSize = 0;
-            this.buttonDaftarInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDaftarInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonDaftarInvoice.ForeColor = System.Drawing.Color.White;
-            this.buttonDaftarInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarInvoice.Location = new System.Drawing.Point(0, 436);
-            this.buttonDaftarInvoice.Name = "buttonDaftarInvoice";
-            this.buttonDaftarInvoice.Size = new System.Drawing.Size(179, 60);
-            this.buttonDaftarInvoice.TabIndex = 19;
-            this.buttonDaftarInvoice.Text = "Invoice";
-            this.buttonDaftarInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDaftarInvoice.UseVisualStyleBackColor = true;
-            // 
-            // buttonDaftarProduk
-            // 
-            this.buttonDaftarProduk.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDaftarProduk.FlatAppearance.BorderSize = 0;
-            this.buttonDaftarProduk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDaftarProduk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonDaftarProduk.ForeColor = System.Drawing.Color.White;
-            this.buttonDaftarProduk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarProduk.Location = new System.Drawing.Point(0, 496);
-            this.buttonDaftarProduk.Name = "buttonDaftarProduk";
-            this.buttonDaftarProduk.Size = new System.Drawing.Size(179, 60);
-            this.buttonDaftarProduk.TabIndex = 20;
-            this.buttonDaftarProduk.Text = "Produk";
-            this.buttonDaftarProduk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDaftarProduk.UseVisualStyleBackColor = true;
-            // 
-            // buttonDaftarChat
-            // 
-            this.buttonDaftarChat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDaftarChat.FlatAppearance.BorderSize = 0;
-            this.buttonDaftarChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDaftarChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonDaftarChat.ForeColor = System.Drawing.Color.White;
-            this.buttonDaftarChat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarChat.Location = new System.Drawing.Point(0, 556);
-            this.buttonDaftarChat.Name = "buttonDaftarChat";
-            this.buttonDaftarChat.Size = new System.Drawing.Size(179, 60);
-            this.buttonDaftarChat.TabIndex = 21;
-            this.buttonDaftarChat.Text = "Chat";
-            this.buttonDaftarChat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDaftarChat.UseVisualStyleBackColor = true;
-            // 
-            // buttonDaftarTopup
-            // 
-            this.buttonDaftarTopup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDaftarTopup.FlatAppearance.BorderSize = 0;
-            this.buttonDaftarTopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDaftarTopup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonDaftarTopup.ForeColor = System.Drawing.Color.White;
-            this.buttonDaftarTopup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarTopup.Location = new System.Drawing.Point(0, 616);
-            this.buttonDaftarTopup.Name = "buttonDaftarTopup";
-            this.buttonDaftarTopup.Size = new System.Drawing.Size(179, 60);
-            this.buttonDaftarTopup.TabIndex = 22;
-            this.buttonDaftarTopup.Text = "Topup";
-            this.buttonDaftarTopup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDaftarTopup.UseVisualStyleBackColor = true;
-            // 
-            // buttonDaftarStaff
-            // 
-            this.buttonDaftarStaff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDaftarStaff.FlatAppearance.BorderSize = 0;
-            this.buttonDaftarStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDaftarStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonDaftarStaff.ForeColor = System.Drawing.Color.White;
-            this.buttonDaftarStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarStaff.Location = new System.Drawing.Point(0, 676);
-            this.buttonDaftarStaff.Name = "buttonDaftarStaff";
-            this.buttonDaftarStaff.Size = new System.Drawing.Size(179, 60);
-            this.buttonDaftarStaff.TabIndex = 23;
-            this.buttonDaftarStaff.Text = "Staff";
-            this.buttonDaftarStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDaftarStaff.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 

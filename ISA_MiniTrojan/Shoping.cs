@@ -21,8 +21,8 @@ namespace ISA_MiniTrojan
         }
 
         private void Shoping_Load(object sender, EventArgs e)
-        {            
-            
+        {
+
             //comboBoxBarang.DataSource = Product.BacaData();
             //comboBoxBarang.DisplayMember = "Name";
             //textBoxHarga.Text = Product.BacaData("P.Price", comboBoxBarang.SelectedValue);
@@ -32,6 +32,11 @@ namespace ISA_MiniTrojan
             //labelDiskonHarga.Text = "";
             //labelHargaAkhir.Text = (int.Parse(labelTotal.Text) * int.Parse(labelDiskon.Text)).ToString();
             //labelTotalSaldo.Text = "";
+        }
+
+        private void comboBoxBarang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

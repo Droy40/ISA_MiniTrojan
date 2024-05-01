@@ -16,5 +16,10 @@ namespace ISA_MiniTrojan
         {
             InitializeComponent();
         }
+
+        private void TopUp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
