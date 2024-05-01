@@ -137,6 +137,14 @@ namespace ISA_MiniTrojan
             OpenForm(form);
         }
 
+        private void panelForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+            Profile form = new Profile();
         private void buttonDaftarStaff_Click(object sender, EventArgs e)
         {
             DaftarStaff form = new DaftarStaff();
