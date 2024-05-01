@@ -162,7 +162,6 @@
             this.guna2Button2.Size = new System.Drawing.Size(180, 46);
             this.guna2Button2.TabIndex = 36;
             this.guna2Button2.Text = "Tambah";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // panel3
             // 
