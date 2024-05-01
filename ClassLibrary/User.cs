@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Transactions;
+using System.Configuration;
 
 namespace ClassLibrary
 {
@@ -29,7 +32,7 @@ namespace ClassLibrary
             Nama = "";
             Saldo = 0;
             Role = "";
-            Foto
+            Foto_ktp = "";
             Sisa_percobaan_login = 3;
         }
 
@@ -87,6 +90,7 @@ namespace ClassLibrary
         }
         public string Foto_ktp 
         { 
+            get => foto_ktp;
             set => foto_ktp = value; 
         }
 
@@ -210,9 +214,42 @@ namespace ClassLibrary
             }
             return listUser;
         }
-        //public static bool ActivateAcc(int id)
-        //{
-        //    List<User> list = User.BacaData();
-        //}
+        public static string SimpanGambar(User u, Image image)
+        {
+            Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSetting"];
+
+            var settingSection = userSetting.Sections["MiniTrojan.db"] as ClientSettingsSection;
+            string path = settingSection.Settings.Get("photo_id_path").Value.ValueXml.InnerText;
+
+            if(image != null)
+            {
+                image.Save(path + "\\user_" + u.Id);
+                return "user_" + u.Id;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public static Image BacaGambar(string imageKtp)
+        {
+            Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSetting"];
+
+            var settingSection = userSetting.Sections["MiniTrojan.db"] as ClientSettingsSection;
+            string path = settingSection.Settings.Get("photo_id_path").Value.ValueXml?.InnerText;
+            try
+            {
+                Image image_Ktp = Image.FromFile(path + "\\" + imageKtp);
+                return image_Ktp;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }
