@@ -13,8 +13,8 @@ namespace ClassLibrary
     {
         public static Transaksi BacaDataInvoice(int idTransaksi)
         {
-            string sql = "select t.id, t.date, t.total, u.username" +
-                "from transaksi as t inner join users as u on t.user_id = u.id " +
+            string sql = "select t.id, t.date, t.total, u.username " +
+                "from transaksi as t inner join users as u on t.id = u.id " +
                 "where t.id = '" + idTransaksi + "'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);

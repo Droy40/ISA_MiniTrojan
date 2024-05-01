@@ -171,6 +171,7 @@
             this.buttonDaftarInvoice.Text = "Invoice";
             this.buttonDaftarInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDaftarInvoice.UseVisualStyleBackColor = true;
+            this.buttonDaftarInvoice.Click += new System.EventHandler(this.buttonDaftarInvoice_Click);
             // 
             // buttonDaftarKonsumen
             // 
@@ -245,6 +246,7 @@
             this.btnInvoice.Text = "Invoice";
             this.btnInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInvoice.UseVisualStyleBackColor = true;
+            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click_1);
             // 
             // btnKeranjang
             // 

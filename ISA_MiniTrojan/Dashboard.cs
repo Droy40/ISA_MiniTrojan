@@ -181,5 +181,19 @@ namespace ISA_MiniTrojan
             form.Owner = this;
             OpenForm(form);
         }
+
+        private void buttonDaftarInvoice_Click(object sender, EventArgs e)
+        {
+            Invoice form = new Invoice(user);
+            form.Owner = this;
+            OpenForm(form);
+        }
+
+        private void btnInvoice_Click_1(object sender, EventArgs e)
+        {
+            Invoice form = new Invoice(user);
+            form.Owner = this;
+            OpenForm(form);
+        }
     }
 }

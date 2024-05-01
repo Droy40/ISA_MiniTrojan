@@ -21,8 +21,16 @@ namespace ISA_MiniTrojan
             user = u;
         }
         private void Invoice_Load(object sender, EventArgs e)
-        {            
-            listTransaksi = Transaksi.BacaData("u.id", user.Id.ToString());
+        {
+            if (user.Role == "KONSUMEN")
+            {
+                listTransaksi = Transaksi.BacaData("u.id", user.Id.ToString());
+                buttonPrint.Visible = false;
+            }
+            else
+            {
+                listTransaksi = Transaksi.BacaData();
+            }
             DisplayData();
         }
 
@@ -43,7 +51,7 @@ namespace ISA_MiniTrojan
             if (listTransaksi.Count != 0 || listTransaksi != null)
             {
                 Transaksi selectedTransaksi = listTransaksi[e.RowIndex];
-                if (e.ColumnIndex == dataGridViewInvoice.Columns["buttonDetail"].Index)
+                if (e.ColumnIndex == dataGridViewInvoice.Columns["btnDetail"].Index)
                 {
                     DetailTransaksi form = new DetailTransaksi(selectedTransaksi);
                     form.Owner = this;                    
@@ -70,6 +78,14 @@ namespace ISA_MiniTrojan
                 {
                     dataGridViewInvoice.Rows.Add(t.Id, t.Date, t.Total);
                 }
+            }
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            foreach (Transaksi t in listTransaksi)
+            {
+                Laporan.PrintLaporan1(t.Id);
             }
         }
     }

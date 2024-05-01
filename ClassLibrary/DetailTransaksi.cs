@@ -38,20 +38,20 @@ namespace ClassLibrary
             string sql;
             if(kriteria == "")
             {
-                sql = "select t.id, p.id, dt.quantity, dt.harga from detail_transaksi dt " +
+                sql = "select t.id, p.id, p.nama, dt.quantity, dt.harga from detail_transaksi dt " +
                       "inner join transaksi as t on dt.transaksi_id = t.id " +
                       "inner join produk as p on dt.products_id = p.id";
             }
             else if (kriteria=="t.id")
             {
-                sql = "select t.id, p.id, dt.quantity, dt.harga from detail_transaksi dt " +
+                sql = "select t.id, p.id, p.nama, dt.quantity, dt.harga from detail_transaksi dt " +
                       "inner join transaksi as t on dt.transaksi_id = t.id " +
                       "inner join produk as p on dt.products_id = p.id " +
                       "where " + kriteria + " = '" + nilaiKriteria + "'";
             }
             else
             {
-                sql = "select t.id, p.id, dt.quantity, dt.harga from detail_transaksi dt " +
+                sql = "select t.id, p.id, p.nama, dt.quantity, dt.harga from detail_transaksi dt " +
                       "inner join transaksi as t on dt.transaksi_id = t.id " +
                       "inner join produk as p on dt.products_id = p.id " +
                       "where " + kriteria + " like '%" + nilaiKriteria + "%'";
@@ -64,11 +64,12 @@ namespace ClassLibrary
                 t.Id = int.Parse(hasil.GetValue(0).ToString());
                 Product p = new Product();
                 p.Id = int.Parse(hasil.GetValue(1).ToString());
+                p.Name = hasil.GetValue(2).ToString();
                 DetailTransaksi dt = new DetailTransaksi();
                 dt.Transactions = t;
                 dt.Product = p;
-                dt.Quantity = int.Parse(hasil.GetValue(2).ToString());
-                dt.Harga = int.Parse(hasil.GetValue(3).ToString());
+                dt.Quantity = int.Parse(hasil.GetValue(3).ToString());
+                dt.Harga = int.Parse(hasil.GetValue(4).ToString());
                 listDetailTransaksi.Add(dt);
             }
             return listDetailTransaksi;

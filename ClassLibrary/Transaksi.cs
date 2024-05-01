@@ -88,18 +88,11 @@ namespace ClassLibrary
                     Koneksi.JalankanPerintahDML(sqlStock);
                     string sqlKeranjang = "delete from keranjang " +
                         "where users_id ='" + t.User.Id + "' and produk_id='" + dt.Product.Id + "'";
+                    Koneksi.JalankanPerintahDML(sqlKeranjang);
                 }
                 double saldoAkhir = t.User.Saldo - t.Total;
                 string sqlSaldo = "UPDATE `minitrojan`.`users` SET `saldo` = '"+AES.Encrypt(saldoAkhir.ToString(),AES.key)+"' WHERE (`id` = '" + t.User.Id + "');";
                 Koneksi.JalankanPerintahDML(sqlSaldo);
-
-                HistorySaldo h = new HistorySaldo();
-                h.User = t.User;
-                h.Nominal = t.Total;
-                h.Jenis = "Beli";
-                h.Transaksi = t;
-                HistorySaldo.TambahData(h);
-
 
             }
             else
@@ -123,7 +116,7 @@ namespace ClassLibrary
             string sql;
             if(filter == "")
             {
-                sql = "select * from Transaksi";
+                sql = "select t.*, u.* from Transaksi t inner join Users u on t.users_id=u.id";
             }
             else if (filter=="u.id")
             {
