@@ -27,11 +27,11 @@ namespace ISA_MiniTrojan
                 u.Username = textBoxUsername.Text;
                 u.Nama = textBoxNama.Text;
                 u.Password = textBoxPassword.Text;
-                u.Role = "Konsumen"; 
+                u.Role = "KONSUMEN"; 
 
                 //u.ImgKtp = upload ktp
                 
-                User.Register(u);
+                User.Register(u,pictureBox1.ImageLocation,textBoxNoKTP.Text);
                 MessageBox.Show("Register Berhasil");
                 this.Close();                    
             }
@@ -43,9 +43,20 @@ namespace ISA_MiniTrojan
 
         private void buttonUploadKTP_Click(object sender, EventArgs e)
         {
-            UploadKTP uploadKTP = new UploadKTP();
-            uploadKTP.Owner = this;
-            uploadKTP.ShowDialog();
+            //UploadKTP uploadKTP = new UploadKTP();
+            //uploadKTP.Owner = this;
+            //uploadKTP.ShowDialog();
+            openFileDialog1.ShowDialog();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            pictureBox1.ImageLocation = openFileDialog1.FileName;
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

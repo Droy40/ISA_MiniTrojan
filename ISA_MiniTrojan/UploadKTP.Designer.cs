@@ -34,11 +34,13 @@
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.buttonEncode = new System.Windows.Forms.Button();
             this.textBoxFilePath = new System.Windows.Forms.TextBox();
+            this.buttonRegister = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKtp)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxKtp
             // 
+            this.pictureBoxKtp.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxKtp.Location = new System.Drawing.Point(64, 15);
             this.pictureBoxKtp.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxKtp.Name = "pictureBoxKtp";
@@ -103,6 +105,18 @@
             this.textBoxFilePath.Size = new System.Drawing.Size(312, 22);
             this.textBoxFilePath.TabIndex = 52;
             // 
+            // buttonRegister
+            // 
+            this.buttonRegister.BackColor = System.Drawing.Color.Yellow;
+            this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegister.Location = new System.Drawing.Point(436, 476);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(129, 30);
+            this.buttonRegister.TabIndex = 53;
+            this.buttonRegister.Text = "REGISTER";
+            this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            // 
             // UploadKTP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -110,6 +124,7 @@
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(603, 554);
+            this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.textBoxFilePath);
             this.Controls.Add(this.buttonEncode);
             this.Controls.Add(this.buttonOpenFile);
@@ -134,5 +149,6 @@
         private System.Windows.Forms.Button buttonOpenFile;
         private System.Windows.Forms.Button buttonEncode;
         private System.Windows.Forms.TextBox textBoxFilePath;
+        private System.Windows.Forms.Button buttonRegister;
     }
 }

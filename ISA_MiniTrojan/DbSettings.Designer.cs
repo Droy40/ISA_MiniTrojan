@@ -85,7 +85,7 @@ namespace ISA_MiniTrojan {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Dustin\\Kuliah\\Semester 4\\ISA\\Project UTS\\ISA_MiniTrojan\\photo_id_path")]
         public string photo_id_path {
             get {
                 return ((string)(this["photo_id_path"]));

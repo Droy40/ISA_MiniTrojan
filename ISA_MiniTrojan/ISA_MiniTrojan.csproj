@@ -99,6 +99,12 @@
     <Compile Include="EditProduk.Designer.cs">
       <DependentUpon>EditProduk.cs</DependentUpon>
     </Compile>
+    <Compile Include="GantiPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GantiPassword.Designer.cs">
+      <DependentUpon>GantiPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,17 +167,17 @@
     <Compile Include="TambahStaff.Designer.cs">
       <DependentUpon>TambahStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="DaftarTopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaftarTopUp.Designer.cs">
+      <DependentUpon>DaftarTopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="TopUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TopUp.Designer.cs">
       <DependentUpon>TopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TopUpLanjutan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TopUpLanjutan.Designer.cs">
-      <DependentUpon>TopUpLanjutan.cs</DependentUpon>
     </Compile>
     <Compile Include="UploadKTP.cs">
       <SubType>Form</SubType>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditProduk.resx">
       <DependentUpon>EditProduk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GantiPassword.resx">
+      <DependentUpon>GantiPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice.resx">
       <DependentUpon>Invoice.cs</DependentUpon>
@@ -240,11 +249,11 @@
     <EmbeddedResource Include="TambahStaff.resx">
       <DependentUpon>TambahStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DaftarTopUp.resx">
+      <DependentUpon>DaftarTopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TopUp.resx">
       <DependentUpon>TopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TopUpLanjutan.resx">
-      <DependentUpon>TopUpLanjutan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UploadKTP.resx">
       <DependentUpon>UploadKTP.cs</DependentUpon>

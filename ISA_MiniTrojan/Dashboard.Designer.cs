@@ -105,6 +105,7 @@
             this.buttonDaftarStaff.Text = "Staff";
             this.buttonDaftarStaff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDaftarStaff.UseVisualStyleBackColor = true;
+            this.buttonDaftarStaff.Click += new System.EventHandler(this.buttonDaftarStaff_Click_1);
             // 
             // buttonDaftarTopup
             // 
@@ -227,6 +228,7 @@
             this.btnTopUp.Text = "Top Up";
             this.btnTopUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTopUp.UseVisualStyleBackColor = true;
+            this.btnTopUp.Click += new System.EventHandler(this.btnTopUp_Click);
             // 
             // btnChatAdmin
             // 
@@ -259,7 +261,6 @@
             this.btnInvoice.Text = "Invoice";
             this.btnInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInvoice.UseVisualStyleBackColor = true;
-            //this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click_1);
             // 
             // btnKeranjang
             // 

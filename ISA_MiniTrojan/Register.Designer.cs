@@ -30,7 +30,6 @@
         {
             this.panelDepan = new System.Windows.Forms.Panel();
             this.buttonUploadKTP = new System.Windows.Forms.Button();
-            this.buttonRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -44,7 +43,10 @@
             this.labelNama = new System.Windows.Forms.Label();
             this.labelRegister = new System.Windows.Forms.Label();
             this.panelBlkng = new System.Windows.Forms.Panel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDepan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDepan
@@ -53,8 +55,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
+            this.panelDepan.Controls.Add(this.pictureBox1);
             this.panelDepan.Controls.Add(this.buttonUploadKTP);
-            this.panelDepan.Controls.Add(this.buttonRegister);
             this.panelDepan.Controls.Add(this.label1);
             this.panelDepan.Controls.Add(this.textBoxPassword);
             this.panelDepan.Controls.Add(this.labelPassword);
@@ -69,14 +71,14 @@
             this.panelDepan.Controls.Add(this.labelRegister);
             this.panelDepan.Location = new System.Drawing.Point(98, 30);
             this.panelDepan.Name = "panelDepan";
-            this.panelDepan.Size = new System.Drawing.Size(603, 388);
+            this.panelDepan.Size = new System.Drawing.Size(565, 561);
             this.panelDepan.TabIndex = 6;
             // 
             // buttonUploadKTP
             // 
             this.buttonUploadKTP.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.buttonUploadKTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUploadKTP.Location = new System.Drawing.Point(295, 215);
+            this.buttonUploadKTP.Location = new System.Drawing.Point(295, 182);
             this.buttonUploadKTP.Name = "buttonUploadKTP";
             this.buttonUploadKTP.Size = new System.Drawing.Size(156, 30);
             this.buttonUploadKTP.TabIndex = 51;
@@ -88,7 +90,7 @@
             // 
             this.buttonRegister.BackColor = System.Drawing.Color.Yellow;
             this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegister.Location = new System.Drawing.Point(458, 344);
+            this.buttonRegister.Location = new System.Drawing.Point(420, 515);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(129, 30);
             this.buttonRegister.TabIndex = 50;
@@ -101,7 +103,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(76, 215);
+            this.label1.Location = new System.Drawing.Point(76, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 22);
             this.label1.TabIndex = 48;
@@ -110,7 +112,7 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(259, 182);
+            this.textBoxPassword.Location = new System.Drawing.Point(259, 149);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(223, 27);
             this.textBoxPassword.TabIndex = 16;
@@ -121,7 +123,7 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelPassword.Location = new System.Drawing.Point(74, 184);
+            this.labelPassword.Location = new System.Drawing.Point(74, 151);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(109, 22);
             this.labelPassword.TabIndex = 15;
@@ -130,7 +132,7 @@
             // textBoxNoKTP
             // 
             this.textBoxNoKTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNoKTP.Location = new System.Drawing.Point(259, 149);
+            this.textBoxNoKTP.Location = new System.Drawing.Point(141, 264);
             this.textBoxNoKTP.Name = "textBoxNoKTP";
             this.textBoxNoKTP.Size = new System.Drawing.Size(223, 27);
             this.textBoxNoKTP.TabIndex = 14;
@@ -140,7 +142,7 @@
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelUsername.Location = new System.Drawing.Point(74, 151);
+            this.labelUsername.Location = new System.Drawing.Point(43, 265);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(92, 22);
             this.labelUsername.TabIndex = 13;
@@ -229,21 +231,37 @@
             this.panelBlkng.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(185)))), ((int)(((byte)(13)))));
             this.panelBlkng.Location = new System.Drawing.Point(91, 24);
             this.panelBlkng.Name = "panelBlkng";
-            this.panelBlkng.Size = new System.Drawing.Size(618, 402);
+            this.panelBlkng.Size = new System.Drawing.Size(580, 575);
             this.panelBlkng.TabIndex = 7;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pictureBox1.Location = new System.Drawing.Point(60, 297);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(327, 231);
+            this.pictureBox1.TabIndex = 52;
+            this.pictureBox1.TabStop = false;
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(762, 623);
             this.Controls.Add(this.panelDepan);
             this.Controls.Add(this.panelBlkng);
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.panelDepan.ResumeLayout(false);
             this.panelDepan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,7 +282,8 @@
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Label labelRegister;
         private System.Windows.Forms.Panel panelBlkng;
-        private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Button buttonUploadKTP;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

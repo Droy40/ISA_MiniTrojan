@@ -22,7 +22,7 @@ namespace ClassLibrary
         public string role;
         private string foto_ktp;
         public int sisa_percobaan_login;
-        
+
         public User()
         {
             Id = 0;
@@ -48,60 +48,60 @@ namespace ClassLibrary
             Sisa_percobaan_login = sisa_percobaan_login;
         }
 
-        public int Id 
-        { 
-            get => id; 
-            set => id = value; 
+        public int Id
+        {
+            get => id;
+            set => id = value;
         }
-        public string Email 
-        { 
+        public string Email
+        {
             get => AES.Decrypt(email, AES.key);
             set => email = AES.Encrypt(value, AES.key);
         }
-        public string Username 
-        { 
-            get => AES.Decrypt(username, AES.key); 
-            set => username = AES.Encrypt(value, AES.key); 
+        public string Username
+        {
+            get => AES.Decrypt(username, AES.key);
+            set => username = AES.Encrypt(value, AES.key);
         }
-        public string Password 
-        { 
-            get => password; 
-            set => password = SHA.ComputeHash(value); 
+        public string Password
+        {
+            get => password;
+            set => password = SHA.ComputeHash(value);
         }
-        public string Nama 
-        { 
-            get => AES.Decrypt(nama, AES.key); 
-            set => nama = AES.Encrypt(value, AES.key); 
+        public string Nama
+        {
+            get => AES.Decrypt(nama, AES.key);
+            set => nama = AES.Encrypt(value, AES.key);
         }
-        public double Saldo 
-        { 
-            get => double.Parse(AES.Decrypt(saldo, AES.key)); 
-            set => saldo = AES.Encrypt(value.ToString(), AES.key); 
+        public double Saldo
+        {
+            get => double.Parse(AES.Decrypt(saldo, AES.key));
+            set => saldo = AES.Encrypt(value.ToString(), AES.key);
         }
-        public string Role 
-        { 
-            get => role; 
-            set => role = value; 
+        public string Role
+        {
+            get => role;
+            set => role = value;
         }
-        public int Sisa_percobaan_login 
-        { 
-            get => sisa_percobaan_login; 
-            set => sisa_percobaan_login = value; 
+        public int Sisa_percobaan_login
+        {
+            get => sisa_percobaan_login;
+            set => sisa_percobaan_login = value;
         }
-        public string Foto_ktp 
-        { 
+        public string Foto_ktp
+        {
             get => foto_ktp;
-            set => foto_ktp = value; 
+            set => foto_ktp = value;
         }
 
         public static bool CekUsername(string username)
         {
-            string sql = "select username, sisa_percobaan_login from users where username =  '" + AES.Encrypt(username,AES.key)+ "'";
+            string sql = "select username, sisa_percobaan_login from users where username =  '" + AES.Encrypt(username, AES.key) + "'";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            if(hasil.Read() == true)
+            if (hasil.Read() == true)
             {
-                if(hasil.GetInt16(1) == 0)
+                if (hasil.GetInt16(1) == 0)
                 {
                     throw new Exception("Akun tidak aktif");
                 }
@@ -117,7 +117,7 @@ namespace ClassLibrary
         }
         public static User UserLogin(string username, string password)
         {
-            string sql = "select * from users where username = '" + AES.Encrypt(username,AES.key) + "'";
+            string sql = "select * from users where username = '" + AES.Encrypt(username, AES.key) + "'";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             if (hasil.Read())
@@ -144,14 +144,14 @@ namespace ClassLibrary
                 }
                 else
                 {
-                    string sql3 = "update users set sisa_percobaan_login = sisa_percobaan_login - 1 where username = '" + AES.Encrypt(username,AES.key) + "'";
+                    string sql3 = "update users set sisa_percobaan_login = sisa_percobaan_login - 1 where username = '" + AES.Encrypt(username, AES.key) + "'";
                     Koneksi.JalankanPerintahDML(sql3);
                     throw new Exception("Password salah");
                 }
 
             }
             throw new Exception("Username tidak ditemukan");
-            
+
         }
         private static int GenerateIdUser()
         {
@@ -160,7 +160,7 @@ namespace ClassLibrary
 
             if (hasil.Read() == true)
             {
-                if(hasil.GetValue(0) == DBNull.Value)
+                if (hasil.GetValue(0) == DBNull.Value)
                 {
                     return 1;
                 }
@@ -168,34 +168,35 @@ namespace ClassLibrary
             }
             return 1;
         }
-        public static bool Register(User u)
+        public static bool Register(User u, string photo_id_path, string noKtp)
         {
-            u.Id = GenerateIdUser();            
-            string sql = "insert into users(id, email, username, password, nama, saldo, role, sisa_percobaan_login) " +
-                         "values ('" + u.id + "','" + u.email + "', '" + u.username + "','" + u.password +
-                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login  + "')";
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
-            if(jumlahDiubah == 0)
+            u.Id = GenerateIdUser();     
+            if(u.Role == "KONSUMEN")
             {
-                return false;
+                u.Foto_ktp = SimpanGambar(u, photo_id_path, noKtp);
             }
             else
             {
-                return true;
+                u.Foto_ktp = "";
             }
+            string sql = "insert into users(id, email, username, password, nama, saldo, role, sisa_percobaan_login, photo_id_path) " +
+                         "values ('" + u.id + "','" + u.email + "', '" + u.username + "','" + u.password +
+                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login  + "','"+ u.Foto_ktp +"')";
+            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);            
+            
         }
 
         public static List<User> BacaDataUser(string filter = "", string nilai = "")
         {
             string sql = "select * from users where role = 'KONSUMEN'";
-            if(filter != "")
+            if (filter != "")
             {
-                sql += " AND " + filter + " = '" + AES.Encrypt(nilai,AES.key) + "'";
+                sql += " AND " + filter + " = '" + AES.Encrypt(nilai, AES.key) + "'";
             }
-            
+
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             List<User> listUser = new List<User>();
-            while(hasil.Read() == true)
+            while (hasil.Read() == true)
             {
                 User user = new User();
                 user.Id = int.Parse(hasil.GetValue(0).ToString());
@@ -204,7 +205,8 @@ namespace ClassLibrary
                 user.nama = hasil.GetValue(4).ToString();
                 user.saldo = hasil.GetString(5);
                 user.role = hasil.GetValue(6).ToString();
-                user.sisa_percobaan_login = hasil.GetInt16(7);
+                user.Foto_ktp = hasil.GetString(7).ToString();
+                user.sisa_percobaan_login = hasil.GetInt16(8);
 
                 listUser.Add(user);
             }
@@ -215,7 +217,7 @@ namespace ClassLibrary
         {
             string sql = "update users set sisa_percobaan_login = 3 where id = '" + user.Id + "'";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
-            if(jumlahDiubah == 0)
+            if (jumlahDiubah == 0)
             {
                 return false;
             }
@@ -225,24 +227,46 @@ namespace ClassLibrary
             }
         }
 
-        public static string SimpanGambar(User u, Image image)
+        public static string SimpanGambar(User u, string filepath, string noKtp)
         {
             Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSetting"];
+            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSettings"];
 
             var settingSection = userSetting.Sections["ISA_MiniTrojan.DbSettings"] as ClientSettingsSection;
             string path = settingSection.Settings.Get("photo_id_path").Value.ValueXml.InnerText;
 
-            if(image != null)
+            Bitmap img = new Bitmap(filepath);
+
+            for (int i = 0; i < img.Width; i++)
             {
-                image.Save(path + "\\user_" + u.Id);
-                return "user_" + u.Id;
+                for (int j = 0; j < img.Height; j++)
+                {
+                    Color pixel = img.GetPixel(i, j);
+
+                    if (i < 1 && j < noKtp.Length)
+                    {
+                        Console.WriteLine("R = [" + i + "][" + j + "] = " + pixel.R);
+                        Console.WriteLine("G = [" + i + "][" + j + "] = " + pixel.G);
+                        Console.WriteLine("B = [" + i + "][" + j + "] = " + pixel.B);
+
+                        char letter = Convert.ToChar(noKtp.Substring(j, 1));
+                        int value = Convert.ToInt32(letter);
+                        Console.WriteLine("letter : " + letter + " value : " + value);
+
+                        img.SetPixel(i, j, Color.FromArgb(pixel.R, pixel.G, value));
+                    }
+
+                    if (i == img.Width - 1 && j == img.Height - 1)
+                    {
+                        img.SetPixel(i, j, Color.FromArgb(pixel.R, pixel.G, noKtp.Length));
+                    }
+
+                }
             }
-            else
-            {
-                return "";
-            }
+
+            img.Save(path + "\\users_" + u.Id);
+            return "users_" + u.Id;
         }
         public static Image BacaGambar(string imageKtp)
         {
@@ -260,6 +284,28 @@ namespace ClassLibrary
             catch
             {
                 return null;
+            }
+        }
+        public static void TambahGambar(User u, Image image)
+        {
+            u.id = GenerateIdUser();
+
+            using(TransactionScope transcope = new TransactionScope())
+            {
+                try
+                {
+                    Koneksi k = new Koneksi();
+                    u.Foto_ktp = User.SimpanGambar(u, image);
+                    string sql = "insert into users " +
+                                 "values('" + u.id + "','" + u.email + "','" + u.username + "','" + u.password + "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.sisa_percobaan_login + "','" + u.foto_ktp + "')";
+                    Koneksi.JalankanPerintahDML(sql, k);
+                    transcope.Complete();
+                }
+                catch(Exception ex)
+                {
+                    transcope.Dispose();
+                    throw new Exception(ex.Message);
+                }
             }
         }
         public static List<User> BacaDataStaff(string filter = "", string nilai = "")
@@ -304,6 +350,19 @@ namespace ClassLibrary
             {
                 return true;
             }
+        }
+        public static void GantiPassword(User u, string passwordLama, string passwordBaru)
+        {
+            if (UserLogin(u.Username, passwordLama) != null)
+            {
+                string sql = "Update users set password = SHA2('" + passwordBaru + "',512) where id = '" + u.Id + "'";
+                Koneksi.JalankanPerintahDML(sql);
+            }
+            else
+            {
+                throw new Exception("Password Lama Salah");
+            }
+
         }
     }
 }
