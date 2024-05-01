@@ -50,7 +50,7 @@ namespace ISA_MiniTrojan
             if (listTransaksi.Count != 0 || listTransaksi != null)
             {
                 Transaksi selectedTransaksi = listTransaksi[e.RowIndex];
-                if (e.ColumnIndex == dataGridViewInvoice.Columns["buttonDetail"].Index)
+                if (e.ColumnIndex == dataGridViewInvoice.Columns["btnDetail"].Index)
                 {
                     DetailTransaksi form = new DetailTransaksi(selectedTransaksi);
                     form.Owner = this;                    

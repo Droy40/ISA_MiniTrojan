@@ -73,7 +73,7 @@ namespace ISA_MiniTrojan {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Ferdi\\Documents\\GitHub\\ISA_MiniTrojan\\topup_path")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Dustin\\Kuliah\\Semester 4\\ISA\\Project UTS\\ISA_MiniTrojan\\topup_path")]
         public string topup_path {
             get {
                 return ((string)(this["topup_path"]));
@@ -85,7 +85,7 @@ namespace ISA_MiniTrojan {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Ferdi\\Documents\\GitHub\\ISA_MiniTrojan\\photo_id_path")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Dustin\\Kuliah\\Semester 4\\ISA\\Project UTS\\ISA_MiniTrojan\\photo_id_path")]
         public string photo_id_path {
             get {
                 return ((string)(this["photo_id_path"]));

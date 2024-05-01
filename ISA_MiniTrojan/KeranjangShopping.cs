@@ -54,16 +54,16 @@ namespace ISA_MiniTrojan
         {
             if (e.ColumnIndex == dataGridViewKeranjang.Columns["ColumnPilih"].Index)
             {
+                total = 0;
                 for (int i = 0; i < dataGridViewKeranjang.Rows.Count - 1; i++)
                 {
-                    total = 0;
-                    if (dataGridViewKeranjang[0, i] != null)
+                    if (dataGridViewKeranjang[0, i].Value.ToString() == "true")
                     {
                         total += listKeranjang[i].Product.Price * listKeranjang[i].Jumlah;
-                        labelTotal.Text = total.ToString();
                     }
                 }
-            }
+                labelTotal.Text = total.ToString();
+            }            
         }
 
         private void buttonBeli_Click(object sender, EventArgs e)
