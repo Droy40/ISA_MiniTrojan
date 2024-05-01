@@ -105,6 +105,12 @@
     <Compile Include="Invoice.Designer.cs">
       <DependentUpon>Invoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="KeranjangShopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeranjangShopping.Designer.cs">
+      <DependentUpon>KeranjangShopping.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     <EmbeddedResource Include="Invoice.resx">
       <DependentUpon>Invoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KeranjangShopping.resx">
+      <DependentUpon>KeranjangShopping.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +284,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\History-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

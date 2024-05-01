@@ -48,7 +48,7 @@ namespace ClassLibrary
                       " k.jumlah from keranjang as k" +
                       " inner join users as u on k.users_id = u.id" +
                       " inner join produk as p on k.produk_id = p.id" +
-                      " where " + kriteria + " like '%" + nilaiKriteria + "%'";
+                      " where " + kriteria + " = '" + nilaiKriteria + "'";
             }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
             List<Keranjang> listKeranjang = new List<Keranjang>();
@@ -56,14 +56,12 @@ namespace ClassLibrary
             {
                 User u = new User();
                 u.Id = int.Parse(hasil.GetValue(0).ToString());
-                u.Email = hasil.GetValue(1).ToString();
-                u.Username = hasil.GetValue(2).ToString();
-                u.Password = hasil.GetValue(3).ToString();
-                u.Nama = hasil.GetValue(4).ToString();
-                u.Saldo = double.Parse(hasil.GetValue(5).ToString());
+                u.email = hasil.GetValue(1).ToString();
+                u.username = hasil.GetValue(2).ToString();
+                u.nama = hasil.GetValue(4).ToString();
+                u.saldo = hasil.GetValue(5).ToString();
                 u.Role = hasil.GetValue(6).ToString();
                 u.Sisa_percobaan_login = int.Parse(hasil.GetValue(7).ToString());
-                u.Foto_ktp = hasil.GetValue(8).ToString();
 
                 Product p = new Product();
                 p.Id = int.Parse(hasil.GetValue(9).ToString());
