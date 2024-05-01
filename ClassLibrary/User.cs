@@ -28,8 +28,7 @@ namespace ClassLibrary
             Password = "";
             Nama = "";
             Saldo = 0;
-            Role = "";
-            Foto
+            Role = "";            
             Sisa_percobaan_login = 3;
         }
 
