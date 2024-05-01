@@ -45,7 +45,9 @@
             // 
             this.dataGridViewInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnId,
+            this.ColumnNama,
+            this.ColumnIdUser,
+            this.ColumnIdTransaksi,
             this.ColumnTgl,
             this.ColumnTotal,
             this.btnDetail});
@@ -160,7 +162,9 @@
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelNoInvoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdTransaksi;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTgl;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btnDetail;
