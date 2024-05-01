@@ -17,35 +17,25 @@ namespace ISA_MiniTrojan
         {
             InitializeComponent();
         }
-
-        private void buttonRegister_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                User u = new User();
-                u.Email = textBoxEmail.Text;
-                u.Username = textBoxUsername.Text;
-                u.Nama = textBoxNama.Text;
-                u.Password = textBoxPassword.Text;
-                u.Role = "Konsumen"; 
-
-                //u.ImgKtp = upload ktp
-                
-                User.Register(u);
-                MessageBox.Show("Register Berhasil");
-                this.Close();                    
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        public User u;
 
         private void buttonUploadKTP_Click(object sender, EventArgs e)
         {
+            u = new User();
+            u.Email = textBoxEmail.Text;
+            u.Username = textBoxUsername.Text;
+            u.Nama = textBoxNama.Text;
+            u.Password = textBoxPassword.Text;
+            u.Role = "Konsumen";
+
             UploadKTP uploadKTP = new UploadKTP();
             uploadKTP.Owner = this;
             uploadKTP.ShowDialog();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

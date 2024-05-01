@@ -30,7 +30,6 @@
         {
             this.panelDepan = new System.Windows.Forms.Panel();
             this.buttonUploadKTP = new System.Windows.Forms.Button();
-            this.buttonRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
             this.panelDepan.Controls.Add(this.buttonUploadKTP);
-            this.panelDepan.Controls.Add(this.buttonRegister);
             this.panelDepan.Controls.Add(this.label1);
             this.panelDepan.Controls.Add(this.textBoxPassword);
             this.panelDepan.Controls.Add(this.labelPassword);
@@ -83,18 +81,6 @@
             this.buttonUploadKTP.Text = "UPLOAD KTP";
             this.buttonUploadKTP.UseVisualStyleBackColor = false;
             this.buttonUploadKTP.Click += new System.EventHandler(this.buttonUploadKTP_Click);
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.BackColor = System.Drawing.Color.Yellow;
-            this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegister.Location = new System.Drawing.Point(458, 344);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(129, 30);
-            this.buttonRegister.TabIndex = 50;
-            this.buttonRegister.Text = "REGISTER";
-            this.buttonRegister.UseVisualStyleBackColor = false;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // label1
             // 
@@ -242,6 +228,7 @@
             this.Controls.Add(this.panelBlkng);
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.panelDepan.ResumeLayout(false);
             this.panelDepan.PerformLayout();
             this.ResumeLayout(false);
@@ -264,7 +251,6 @@
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Label labelRegister;
         private System.Windows.Forms.Panel panelBlkng;
-        private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Button buttonUploadKTP;
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -18,7 +19,8 @@ namespace ISA_MiniTrojan
         {
             InitializeComponent();
         }
-
+        Register form;
+        public string filePath;
         private void buttonOpenFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
@@ -76,12 +78,31 @@ namespace ISA_MiniTrojan
                 User u = new User();
                 User.SimpanGambar(u, pictureBoxKtp.Image);
                 MessageBox.Show("Photo has been saved!");
+                filePath = textBoxFilePath.Text;
+                buttonEncode.Enabled = false;
+                buttonRegister.Enabled = true;
             }
+            
         }
 
         private void UploadKTP_Load(object sender, EventArgs e)
         {
+            form = (Register)this.Owner;
+            buttonRegister.Enabled = false;
+        }
 
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                User.Register(form.u, filePath);
+                MessageBox.Show("Register Berhasil");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

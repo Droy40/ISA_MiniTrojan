@@ -145,6 +145,7 @@ namespace ISA_MiniTrojan
         private void buttonProfile_Click(object sender, EventArgs e)
         {
             Profile form = new Profile();
+        }
         private void buttonDaftarStaff_Click(object sender, EventArgs e)
         {
             DaftarStaff form = new DaftarStaff();
