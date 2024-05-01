@@ -32,15 +32,9 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.buttonBuy = new System.Windows.Forms.Button();
             this.labelDeskripsi = new System.Windows.Forms.Label();
-            this.labelTotalSaldo = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.labelHargaAkhir = new System.Windows.Forms.Label();
-            this.labelTotalAkhir = new System.Windows.Forms.Label();
-            this.labelDiskonHarga = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.labelHargaTotal = new System.Windows.Forms.Label();
-            this.labelDiskon = new System.Windows.Forms.Label();
-            this.labelSaldo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -77,15 +71,9 @@
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
             this.panel9.Controls.Add(this.buttonBuy);
             this.panel9.Controls.Add(this.labelDeskripsi);
-            this.panel9.Controls.Add(this.labelTotalSaldo);
             this.panel9.Controls.Add(this.label8);
-            this.panel9.Controls.Add(this.labelHargaAkhir);
-            this.panel9.Controls.Add(this.labelTotalAkhir);
-            this.panel9.Controls.Add(this.labelDiskonHarga);
             this.panel9.Controls.Add(this.labelTotal);
             this.panel9.Controls.Add(this.labelHargaTotal);
-            this.panel9.Controls.Add(this.labelDiskon);
-            this.panel9.Controls.Add(this.labelSaldo);
             this.panel9.Location = new System.Drawing.Point(5, 5);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(426, 216);
@@ -101,6 +89,7 @@
             this.buttonBuy.TabIndex = 43;
             this.buttonBuy.Text = "BUY";
             this.buttonBuy.UseVisualStyleBackColor = false;
+            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
             // 
             // labelDeskripsi
             // 
@@ -113,17 +102,6 @@
             this.labelDeskripsi.TabIndex = 42;
             this.labelDeskripsi.Text = "Deskripsi";
             // 
-            // labelTotalSaldo
-            // 
-            this.labelTotalSaldo.AutoSize = true;
-            this.labelTotalSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalSaldo.ForeColor = System.Drawing.Color.White;
-            this.labelTotalSaldo.Location = new System.Drawing.Point(135, 187);
-            this.labelTotalSaldo.Name = "labelTotalSaldo";
-            this.labelTotalSaldo.Size = new System.Drawing.Size(63, 18);
-            this.labelTotalSaldo.TabIndex = 40;
-            this.labelTotalSaldo.Text = "Rp 00,-";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -135,45 +113,12 @@
             this.label8.TabIndex = 41;
             this.label8.Text = "Deskripsi Barang";
             // 
-            // labelHargaAkhir
-            // 
-            this.labelHargaAkhir.AutoSize = true;
-            this.labelHargaAkhir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHargaAkhir.ForeColor = System.Drawing.Color.White;
-            this.labelHargaAkhir.Location = new System.Drawing.Point(135, 154);
-            this.labelHargaAkhir.Name = "labelHargaAkhir";
-            this.labelHargaAkhir.Size = new System.Drawing.Size(63, 18);
-            this.labelHargaAkhir.TabIndex = 39;
-            this.labelHargaAkhir.Text = "Rp 00.-";
-            // 
-            // labelTotalAkhir
-            // 
-            this.labelTotalAkhir.AutoSize = true;
-            this.labelTotalAkhir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalAkhir.ForeColor = System.Drawing.Color.White;
-            this.labelTotalAkhir.Location = new System.Drawing.Point(17, 154);
-            this.labelTotalAkhir.Name = "labelTotalAkhir";
-            this.labelTotalAkhir.Size = new System.Drawing.Size(99, 18);
-            this.labelTotalAkhir.TabIndex = 36;
-            this.labelTotalAkhir.Text = "Total Akhir :";
-            // 
-            // labelDiskonHarga
-            // 
-            this.labelDiskonHarga.AutoSize = true;
-            this.labelDiskonHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDiskonHarga.ForeColor = System.Drawing.Color.White;
-            this.labelDiskonHarga.Location = new System.Drawing.Point(135, 120);
-            this.labelDiskonHarga.Name = "labelDiskonHarga";
-            this.labelDiskonHarga.Size = new System.Drawing.Size(63, 18);
-            this.labelDiskonHarga.TabIndex = 38;
-            this.labelDiskonHarga.Text = "Rp 00,-";
-            // 
             // labelTotal
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotal.ForeColor = System.Drawing.Color.White;
-            this.labelTotal.Location = new System.Drawing.Point(17, 87);
+            this.labelTotal.Location = new System.Drawing.Point(17, 185);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(56, 18);
             this.labelTotal.TabIndex = 34;
@@ -184,33 +129,11 @@
             this.labelHargaTotal.AutoSize = true;
             this.labelHargaTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHargaTotal.ForeColor = System.Drawing.Color.White;
-            this.labelHargaTotal.Location = new System.Drawing.Point(135, 87);
+            this.labelHargaTotal.Location = new System.Drawing.Point(135, 185);
             this.labelHargaTotal.Name = "labelHargaTotal";
             this.labelHargaTotal.Size = new System.Drawing.Size(63, 18);
             this.labelHargaTotal.TabIndex = 30;
             this.labelHargaTotal.Text = "Rp 00,-";
-            // 
-            // labelDiskon
-            // 
-            this.labelDiskon.AutoSize = true;
-            this.labelDiskon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDiskon.ForeColor = System.Drawing.Color.White;
-            this.labelDiskon.Location = new System.Drawing.Point(17, 120);
-            this.labelDiskon.Name = "labelDiskon";
-            this.labelDiskon.Size = new System.Drawing.Size(71, 18);
-            this.labelDiskon.TabIndex = 35;
-            this.labelDiskon.Text = "Diskon :";
-            // 
-            // labelSaldo
-            // 
-            this.labelSaldo.AutoSize = true;
-            this.labelSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSaldo.ForeColor = System.Drawing.Color.White;
-            this.labelSaldo.Location = new System.Drawing.Point(17, 187);
-            this.labelSaldo.Name = "labelSaldo";
-            this.labelSaldo.Size = new System.Drawing.Size(61, 18);
-            this.labelSaldo.TabIndex = 37;
-            this.labelSaldo.Text = "Saldo :";
             // 
             // panel2
             // 
@@ -272,6 +195,7 @@
             this.numericUpDownJumlah.Name = "numericUpDownJumlah";
             this.numericUpDownJumlah.Size = new System.Drawing.Size(196, 22);
             this.numericUpDownJumlah.TabIndex = 36;
+            this.numericUpDownJumlah.ValueChanged += new System.EventHandler(this.numericUpDownJumlah_ValueChanged);
             // 
             // label1
             // 
@@ -355,13 +279,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label labelDeskripsi;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label labelTotalSaldo;
-        private System.Windows.Forms.Label labelHargaAkhir;
-        private System.Windows.Forms.Label labelDiskonHarga;
         private System.Windows.Forms.Label labelHargaTotal;
-        private System.Windows.Forms.Label labelSaldo;
-        private System.Windows.Forms.Label labelTotalAkhir;
-        private System.Windows.Forms.Label labelDiskon;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel8;
