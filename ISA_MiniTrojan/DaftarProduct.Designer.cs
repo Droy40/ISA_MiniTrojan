@@ -135,7 +135,7 @@
             this.pictureBoxBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxBack.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBack.Image")));
-            this.pictureBoxBack.Location = new System.Drawing.Point(29, 465);
+            this.pictureBoxBack.Location = new System.Drawing.Point(29, 463);
             this.pictureBoxBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxBack.Name = "pictureBoxBack";
             this.pictureBoxBack.Size = new System.Drawing.Size(51, 48);
@@ -156,7 +156,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.guna2Button2.Location = new System.Drawing.Point(421, 466);
+            this.guna2Button2.Location = new System.Drawing.Point(422, 465);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(180, 46);
@@ -191,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
-            this.ClientSize = new System.Drawing.Size(631, 523);
+            this.ClientSize = new System.Drawing.Size(630, 523);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.pictureBoxBack);

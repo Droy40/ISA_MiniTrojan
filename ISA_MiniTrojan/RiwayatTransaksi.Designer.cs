@@ -91,7 +91,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
             this.guna2Panel1.Location = new System.Drawing.Point(24, 86);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(690, 51);
+            this.guna2Panel1.Size = new System.Drawing.Size(680, 51);
             this.guna2Panel1.TabIndex = 38;
             // 
             // textBox1
@@ -99,7 +99,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(271, 11);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(392, 27);
+            this.textBox1.Size = new System.Drawing.Size(378, 27);
             this.textBox1.TabIndex = 19;
             // 
             // label1
