@@ -46,10 +46,9 @@
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            
+            
+            
             this.SuspendLayout();
             // 
             // guna2Button2
@@ -232,10 +231,9 @@
             this.ClientSize = new System.Drawing.Size(867, 555);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel6);            
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox5);
+
             this.Controls.Add(this.pictureBox3);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EditProduk";
@@ -244,11 +242,8 @@
             this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();                        
+            
             this.ResumeLayout(false);
 
         }
@@ -269,10 +264,6 @@
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.TextBox textBoxHarga;
-        private System.Windows.Forms.TextBox textBoxStock;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBoxStock;                                
     }
 }
