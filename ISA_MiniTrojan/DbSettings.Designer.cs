@@ -12,7 +12,7 @@ namespace ISA_MiniTrojan {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
     internal sealed partial class DbSettings : global::System.Configuration.ApplicationSettingsBase {
         
         private static DbSettings defaultInstance = ((DbSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new DbSettings())));
@@ -86,12 +86,12 @@ namespace ISA_MiniTrojan {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string product_path {
+        public string photo_id_path {
             get {
-                return ((string)(this["product_path"]));
+                return ((string)(this["photo_id_path"]));
             }
             set {
-                this["product_path"] = value;
+                this["photo_id_path"] = value;
             }
         }
     }
