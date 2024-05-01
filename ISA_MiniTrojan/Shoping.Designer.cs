@@ -35,9 +35,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.labelHargaTotal = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.numericUpDownJumlah = new System.Windows.Forms.NumericUpDown();
@@ -48,9 +45,6 @@
             this.labelJudul = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownJumlah)).BeginInit();
@@ -61,7 +55,7 @@
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.panel5.Controls.Add(this.panel9);
-            this.panel5.Location = new System.Drawing.Point(57, 233);
+            this.panel5.Location = new System.Drawing.Point(50, 233);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(436, 226);
             this.panel5.TabIndex = 25;
@@ -135,42 +129,12 @@
             this.labelHargaTotal.TabIndex = 30;
             this.labelHargaTotal.Text = "Rp 00,-";
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.panel2.Controls.Add(this.panel8);
-            this.panel2.Location = new System.Drawing.Point(514, 13);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(299, 446);
-            this.panel2.TabIndex = 23;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
-            this.panel8.Controls.Add(this.pictureBox2);
-            this.panel8.Location = new System.Drawing.Point(3, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(293, 437);
-            this.panel8.TabIndex = 24;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(293, 437);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.panel1.Controls.Add(this.panel6);
-            this.panel1.Location = new System.Drawing.Point(57, 13);
+            this.panel1.Location = new System.Drawing.Point(50, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(436, 206);
             this.panel1.TabIndex = 22;
@@ -252,9 +216,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
-            this.ClientSize = new System.Drawing.Size(867, 476);
+            this.ClientSize = new System.Drawing.Size(553, 476);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Shoping";
             this.Text = "Shoping";
@@ -262,9 +225,6 @@
             this.panel5.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -281,13 +241,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelHargaTotal;
         private System.Windows.Forms.Label labelTotal;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label labelCinema;
         private System.Windows.Forms.Label labelJudul;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button buttonBuy;
         private System.Windows.Forms.TextBox textBoxHarga;
         private System.Windows.Forms.ComboBox comboBoxBarang;

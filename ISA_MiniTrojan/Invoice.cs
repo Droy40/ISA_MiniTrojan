@@ -14,7 +14,7 @@ namespace ISA_MiniTrojan
     public partial class Invoice : Form
     {        
         private User user;
-        private List<Transaksi> listTransaksi;
+        public List<Transaksi> listTransaksi;
         public Invoice(User u)
         {
             InitializeComponent();
@@ -76,7 +76,7 @@ namespace ISA_MiniTrojan
             {
                 if (t.Id.ToString().Contains(filterIdTransaksi))
                 {
-                    dataGridViewInvoice.Rows.Add(t.Id, t.Date, t.Total);
+                    dataGridViewInvoice.Rows.Add(t.Id, t.Date.ToString("yyyy-MM-dd HH:mm:ss"), t.Total);
                 }
             }
         }

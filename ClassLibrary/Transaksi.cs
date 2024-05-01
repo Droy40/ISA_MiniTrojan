@@ -76,7 +76,7 @@ namespace ClassLibrary
                        
                 }
                 string sql1 = "INSERT INTO `minitrojan`.`transaksi` (`id`, `date`, `total`, `users_id`) " +
-                        "VALUES ('"+t.Id+"', '"+t.Date+"', '"+t.Total+"', '"+t.User.Id+"');";
+                        "VALUES ('"+t.Id+"', now(), '"+t.Total+"', '"+t.User.Id+"');";
                 Koneksi.JalankanPerintahDML(sql1);
 
                 foreach (DetailTransaksi dt in t.DetailTransaksiList)

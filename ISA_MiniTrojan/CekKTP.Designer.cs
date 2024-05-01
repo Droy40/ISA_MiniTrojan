@@ -75,10 +75,12 @@
             // 
             // pictureBoxKtp
             // 
+            this.pictureBoxKtp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxKtp.Location = new System.Drawing.Point(173, 122);
             this.pictureBoxKtp.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxKtp.Name = "pictureBoxKtp";
             this.pictureBoxKtp.Size = new System.Drawing.Size(476, 280);
+            this.pictureBoxKtp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxKtp.TabIndex = 53;
             this.pictureBoxKtp.TabStop = false;
             // 

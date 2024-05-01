@@ -51,7 +51,6 @@
     <Compile Include="Chat.cs" />
     <Compile Include="CustomPrint.cs" />
     <Compile Include="DetailTransaksi.cs" />
-    <Compile Include="HistorySaldo.cs" />
     <Compile Include="Keranjang.cs" />
     <Compile Include="Laporan.cs" />
     <Compile Include="Product.cs" />

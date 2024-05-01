@@ -38,5 +38,10 @@ namespace ISA_MiniTrojan
         {
 
         }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            Laporan.PrintLaporan1(transaksi.Id);
+        }
     }
 }

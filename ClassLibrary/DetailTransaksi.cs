@@ -23,8 +23,8 @@ namespace ClassLibrary
         }
         public DetailTransaksi()
         {
-            Transactions = null;
-            Product = null;
+            Transactions = new Transaksi();
+            Product = new Product();
             Quantity = 0;
             Harga = 0;
         }

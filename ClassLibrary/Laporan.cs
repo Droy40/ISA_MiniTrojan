@@ -22,10 +22,12 @@ namespace ClassLibrary
             Transaksi t = new Transaksi();
             if (hasil.Read())
             {
+                User u = new User();
+                u.username = hasil.GetString(3);
                 t.Id = hasil.GetInt32(0);
                 t.Date = DateTime.Parse(hasil.GetValue(1).ToString());
                 t.Total = double.Parse(hasil.GetValue(2).ToString());
-                t.User.username = hasil.GetString(3);
+                t.User = u;
             }
 
             string sql2 = "select p.nama, dt.quantity, dt.harga from detail_transaksi as dt " +
@@ -38,9 +40,9 @@ namespace ClassLibrary
             {
                 DetailTransaksi dt = new DetailTransaksi();
                 dt.Transactions.Id = t.Id;
-                dt.Product.Name = hasil.GetString(0);
-                dt.Quantity = hasil.GetInt16(1);
-                dt.Harga = hasil.GetDouble(2);
+                dt.Product.Name = hasil2.GetString(0);
+                dt.Quantity = hasil2.GetInt16(1);
+                dt.Harga = hasil2.GetDouble(2);
                 listDetailTransaksi.Add(dt);
             }
             t.DetailTransaksiList = listDetailTransaksi;
@@ -61,22 +63,21 @@ namespace ClassLibrary
 
             Transaksi t = Laporan.BacaDataInvoice(idTransaksi);
             tempFile.WriteLine("Transactions ID: " + t.Id.ToString());
-            tempFile.WriteLine("Date: " + t.Date.ToShortDateString());
+            tempFile.WriteLine("Date: " + t.Date.ToString("yyyy-MM-dd HH:mm:ss"));
             tempFile.WriteLine("Total: " + t.Total.ToString());
-            tempFile.WriteLine("Username: " + t.User.username);
+            tempFile.WriteLine("Username: " + t.User.Username);
             tempFile.WriteLine("=".PadRight(50, '='));
 
             tempFile.WriteLine("================Transaction's Detail====================");
-            tempFile.WriteLine("Transactions ID: " + t.DetailTransaksiList[0].ToString());
-            double subtotal = 0;
+            tempFile.WriteLine("");
             foreach (DetailTransaksi dt in t.DetailTransaksiList)
             {
                 tempFile.WriteLine("Product Name : " + dt.Product.Name);
                 tempFile.WriteLine("Quantity : " + dt.Quantity);
-                tempFile.WriteLine("Product Name : " + dt.Harga);
-                subtotal += dt.Harga;
+                tempFile.WriteLine("Price : " + dt.Harga);
+                tempFile.WriteLine("");
             }
-            double total = subtotal;
+            double total = t.Total;
             tempFile.WriteLine("=".PadRight(50, '='));
             tempFile.WriteLine("Total: " + total.ToString());
             tempFile.WriteLine("=".PadRight(50, '='));

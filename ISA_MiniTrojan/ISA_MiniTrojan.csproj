@@ -143,18 +143,6 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Report.Designer.cs">
-      <DependentUpon>Report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RiwayatTransaksi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RiwayatTransaksi.Designer.cs">
-      <DependentUpon>RiwayatTransaksi.cs</DependentUpon>
-    </Compile>
     <Compile Include="Shoping.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,12 +172,6 @@
     </Compile>
     <Compile Include="TopUp.Designer.cs">
       <DependentUpon>TopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UploadKTP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UploadKTP.Designer.cs">
-      <DependentUpon>UploadKTP.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CekKTP.resx">
       <DependentUpon>CekKTP.cs</DependentUpon>
@@ -243,12 +225,6 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report.resx">
-      <DependentUpon>Report.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RiwayatTransaksi.resx">
-      <DependentUpon>RiwayatTransaksi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Shoping.resx">
       <DependentUpon>Shoping.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,9 +239,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TopUp.resx">
       <DependentUpon>TopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UploadKTP.resx">
-      <DependentUpon>UploadKTP.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DbSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

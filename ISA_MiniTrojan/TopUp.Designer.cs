@@ -82,10 +82,12 @@
             // 
             // pictureBoxBukti
             // 
+            this.pictureBoxBukti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxBukti.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBukti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxBukti.Name = "pictureBoxBukti";
             this.pictureBoxBukti.Size = new System.Drawing.Size(293, 386);
+            this.pictureBoxBukti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBukti.TabIndex = 0;
             this.pictureBoxBukti.TabStop = false;
             // 
