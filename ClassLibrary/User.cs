@@ -279,7 +279,7 @@ namespace ClassLibrary
             img.Save(path + "\\users_" + u.Id);
             return "users_" + u.Id;
         }
-        public static Image BacaGambar(string imageKtp)
+        public static Image BacaGambar(string fileKtp)
         {
             Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
@@ -288,11 +288,11 @@ namespace ClassLibrary
             var settingSection = userSetting.Sections["ISA_MiniTrojan.DbSettings"] as ClientSettingsSection;
             string path = settingSection.Settings.Get("photo_id_path").Value.ValueXml?.InnerText;
             try
-            {
-                Image image_Ktp = Image.FromFile(path + "\\" + imageKtp);
+            {                
+                Image image_Ktp = Bitmap.FromFile(path + "\\" + fileKtp);
                 return image_Ktp;
             }
-            catch
+            catch(Exception ex)
             {
                 return null;
             }
