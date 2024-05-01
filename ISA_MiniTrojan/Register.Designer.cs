@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelDepan = new System.Windows.Forms.Panel();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonUploadKTP = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.labelRegister = new System.Windows.Forms.Label();
             this.panelBlkng = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelDepan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDepan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
-            this.panelDepan.Controls.Add(this.button1);
+            this.panelDepan.Controls.Add(this.buttonRegister);
             this.panelDepan.Controls.Add(this.pictureBox1);
             this.panelDepan.Controls.Add(this.buttonUploadKTP);
             this.panelDepan.Controls.Add(this.label1);
@@ -75,6 +75,18 @@
             this.panelDepan.Name = "panelDepan";
             this.panelDepan.Size = new System.Drawing.Size(565, 561);
             this.panelDepan.TabIndex = 6;
+            // 
+            // buttonRegister
+            // 
+            this.buttonRegister.BackColor = System.Drawing.Color.Yellow;
+            this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegister.Location = new System.Drawing.Point(443, 500);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(98, 28);
+            this.buttonRegister.TabIndex = 53;
+            this.buttonRegister.Text = "REGISTER";
+            this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -238,16 +250,6 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(466, 505);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -285,6 +287,6 @@
         private System.Windows.Forms.Button buttonUploadKTP;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRegister;
     }
 }
