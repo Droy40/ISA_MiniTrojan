@@ -31,20 +31,18 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonDaftarTopup = new System.Windows.Forms.Button();
             this.buttonDaftarStaff = new System.Windows.Forms.Button();
             this.buttonCekSteganography = new System.Windows.Forms.Button();
-            this.buttonDaftarChat = new System.Windows.Forms.Button();
             this.buttonDaftarProduk = new System.Windows.Forms.Button();
             this.buttonDaftarInvoice = new System.Windows.Forms.Button();
             this.buttonDaftarKonsumen = new System.Windows.Forms.Button();
             this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.btnTopUp = new System.Windows.Forms.Button();
-            this.btnChatAdmin = new System.Windows.Forms.Button();
             this.btnInvoice = new System.Windows.Forms.Button();
             this.btnKeranjang = new System.Windows.Forms.Button();
             this.btnProduk = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,17 +69,15 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
-            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.buttonDaftarTopup);
             this.panelMenu.Controls.Add(this.buttonDaftarStaff);
             this.panelMenu.Controls.Add(this.buttonCekSteganography);
-            this.panelMenu.Controls.Add(this.buttonDaftarChat);
             this.panelMenu.Controls.Add(this.buttonDaftarProduk);
             this.panelMenu.Controls.Add(this.buttonDaftarInvoice);
             this.panelMenu.Controls.Add(this.buttonDaftarKonsumen);
             this.panelMenu.Controls.Add(this.buttonProfile);
             this.panelMenu.Controls.Add(this.buttonLogout);
             this.panelMenu.Controls.Add(this.btnTopUp);
-            this.panelMenu.Controls.Add(this.btnChatAdmin);
             this.panelMenu.Controls.Add(this.btnInvoice);
             this.panelMenu.Controls.Add(this.btnKeranjang);
             this.panelMenu.Controls.Add(this.btnProduk);
@@ -92,6 +88,23 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 673);
             this.panelMenu.TabIndex = 4;
             // 
+            // buttonDaftarTopup
+            // 
+            this.buttonDaftarTopup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDaftarTopup.FlatAppearance.BorderSize = 0;
+            this.buttonDaftarTopup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDaftarTopup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.buttonDaftarTopup.ForeColor = System.Drawing.Color.White;
+            this.buttonDaftarTopup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDaftarTopup.Location = new System.Drawing.Point(0, 616);
+            this.buttonDaftarTopup.Name = "buttonDaftarTopup";
+            this.buttonDaftarTopup.Size = new System.Drawing.Size(179, 60);
+            this.buttonDaftarTopup.TabIndex = 24;
+            this.buttonDaftarTopup.Text = "Top-up";
+            this.buttonDaftarTopup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDaftarTopup.UseVisualStyleBackColor = true;
+            this.buttonDaftarTopup.Click += new System.EventHandler(this.buttonDaftarTopup_Click);
+            // 
             // buttonDaftarStaff
             // 
             this.buttonDaftarStaff.Dock = System.Windows.Forms.DockStyle.Top;
@@ -100,7 +113,7 @@
             this.buttonDaftarStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.buttonDaftarStaff.ForeColor = System.Drawing.Color.White;
             this.buttonDaftarStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarStaff.Location = new System.Drawing.Point(0, 676);
+            this.buttonDaftarStaff.Location = new System.Drawing.Point(0, 556);
             this.buttonDaftarStaff.Name = "buttonDaftarStaff";
             this.buttonDaftarStaff.Size = new System.Drawing.Size(179, 60);
             this.buttonDaftarStaff.TabIndex = 23;
@@ -117,7 +130,7 @@
             this.buttonCekSteganography.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.buttonCekSteganography.ForeColor = System.Drawing.Color.White;
             this.buttonCekSteganography.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCekSteganography.Location = new System.Drawing.Point(0, 616);
+            this.buttonCekSteganography.Location = new System.Drawing.Point(0, 496);
             this.buttonCekSteganography.Name = "buttonCekSteganography";
             this.buttonCekSteganography.Size = new System.Drawing.Size(179, 60);
             this.buttonCekSteganography.TabIndex = 22;
@@ -125,22 +138,6 @@
             this.buttonCekSteganography.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCekSteganography.UseVisualStyleBackColor = true;
             this.buttonCekSteganography.Click += new System.EventHandler(this.buttonCekSteganography_Click);
-            // 
-            // buttonDaftarChat
-            // 
-            this.buttonDaftarChat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDaftarChat.FlatAppearance.BorderSize = 0;
-            this.buttonDaftarChat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDaftarChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.buttonDaftarChat.ForeColor = System.Drawing.Color.White;
-            this.buttonDaftarChat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarChat.Location = new System.Drawing.Point(0, 556);
-            this.buttonDaftarChat.Name = "buttonDaftarChat";
-            this.buttonDaftarChat.Size = new System.Drawing.Size(179, 60);
-            this.buttonDaftarChat.TabIndex = 21;
-            this.buttonDaftarChat.Text = "Chat";
-            this.buttonDaftarChat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDaftarChat.UseVisualStyleBackColor = true;
             // 
             // buttonDaftarProduk
             // 
@@ -150,7 +147,7 @@
             this.buttonDaftarProduk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.buttonDaftarProduk.ForeColor = System.Drawing.Color.White;
             this.buttonDaftarProduk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarProduk.Location = new System.Drawing.Point(0, 496);
+            this.buttonDaftarProduk.Location = new System.Drawing.Point(0, 436);
             this.buttonDaftarProduk.Name = "buttonDaftarProduk";
             this.buttonDaftarProduk.Size = new System.Drawing.Size(179, 60);
             this.buttonDaftarProduk.TabIndex = 20;
@@ -167,7 +164,7 @@
             this.buttonDaftarInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.buttonDaftarInvoice.ForeColor = System.Drawing.Color.White;
             this.buttonDaftarInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarInvoice.Location = new System.Drawing.Point(0, 436);
+            this.buttonDaftarInvoice.Location = new System.Drawing.Point(0, 376);
             this.buttonDaftarInvoice.Name = "buttonDaftarInvoice";
             this.buttonDaftarInvoice.Size = new System.Drawing.Size(179, 60);
             this.buttonDaftarInvoice.TabIndex = 19;
@@ -183,7 +180,7 @@
             this.buttonDaftarKonsumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.buttonDaftarKonsumen.ForeColor = System.Drawing.Color.White;
             this.buttonDaftarKonsumen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDaftarKonsumen.Location = new System.Drawing.Point(0, 376);
+            this.buttonDaftarKonsumen.Location = new System.Drawing.Point(0, 316);
             this.buttonDaftarKonsumen.Name = "buttonDaftarKonsumen";
             this.buttonDaftarKonsumen.Size = new System.Drawing.Size(179, 60);
             this.buttonDaftarKonsumen.TabIndex = 18;
@@ -195,7 +192,7 @@
             // buttonProfile
             // 
             this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonProfile.Location = new System.Drawing.Point(0, 796);
+            this.buttonProfile.Location = new System.Drawing.Point(0, 676);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Padding = new System.Windows.Forms.Padding(3);
             this.buttonProfile.Size = new System.Drawing.Size(179, 31);
@@ -207,7 +204,7 @@
             // buttonLogout
             // 
             this.buttonLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonLogout.Location = new System.Drawing.Point(0, 827);
+            this.buttonLogout.Location = new System.Drawing.Point(0, 707);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Padding = new System.Windows.Forms.Padding(3);
             this.buttonLogout.Size = new System.Drawing.Size(179, 31);
@@ -224,30 +221,14 @@
             this.btnTopUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnTopUp.ForeColor = System.Drawing.Color.White;
             this.btnTopUp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTopUp.Location = new System.Drawing.Point(0, 316);
+            this.btnTopUp.Location = new System.Drawing.Point(0, 256);
             this.btnTopUp.Name = "btnTopUp";
             this.btnTopUp.Size = new System.Drawing.Size(179, 60);
             this.btnTopUp.TabIndex = 16;
             this.btnTopUp.Text = "Top Up";
             this.btnTopUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTopUp.UseVisualStyleBackColor = true;
-            
-            // 
-            // btnChatAdmin
-            // 
-            this.btnChatAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChatAdmin.FlatAppearance.BorderSize = 0;
-            this.btnChatAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChatAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnChatAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnChatAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChatAdmin.Location = new System.Drawing.Point(0, 256);
-            this.btnChatAdmin.Name = "btnChatAdmin";
-            this.btnChatAdmin.Size = new System.Drawing.Size(179, 60);
-            this.btnChatAdmin.TabIndex = 7;
-            this.btnChatAdmin.Text = "Chat Admin";
-            this.btnChatAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChatAdmin.UseVisualStyleBackColor = true;
+            this.btnTopUp.Click += new System.EventHandler(this.btnTopUp_Click);
             // 
             // btnInvoice
             // 
@@ -299,22 +280,6 @@
             this.btnProduk.UseVisualStyleBackColor = true;
             this.btnProduk.Click += new System.EventHandler(this.btnProduk_Click);
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 736);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 60);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Top-up";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -338,7 +303,6 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button btnChatAdmin;
         private System.Windows.Forms.Button btnInvoice;
         private System.Windows.Forms.Button btnKeranjang;
         private System.Windows.Forms.Button btnTopUp;
@@ -347,11 +311,10 @@
         private System.Windows.Forms.Button buttonProfile;
         private System.Windows.Forms.Button buttonDaftarStaff;
         private System.Windows.Forms.Button buttonCekSteganography;
-        private System.Windows.Forms.Button buttonDaftarChat;
         private System.Windows.Forms.Button buttonDaftarProduk;
         private System.Windows.Forms.Button buttonDaftarInvoice;
         private System.Windows.Forms.Button buttonDaftarKonsumen;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonDaftarTopup;
     }
 }
 

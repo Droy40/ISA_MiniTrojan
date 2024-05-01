@@ -15,7 +15,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="topup_path" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">C:\Dustin\Kuliah\Semester 4\ISA\Project UTS\ISA_MiniTrojan\topup_path</Value>
     </Setting>
     <Setting Name="photo_id_path" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Dustin\Kuliah\Semester 4\ISA\Project UTS\ISA_MiniTrojan\photo_id_path</Value>

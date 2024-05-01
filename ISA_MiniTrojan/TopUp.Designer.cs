@@ -40,6 +40,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSubmit = new Guna.UI2.WinForms.Guna2Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBukti)).BeginInit();
@@ -119,6 +120,7 @@
             this.buttonOpen.Size = new System.Drawing.Size(146, 41);
             this.buttonOpen.TabIndex = 44;
             this.buttonOpen.Text = "Open File";
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
             // textBoxNominal
             // 
@@ -198,6 +200,11 @@
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // TopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -239,5 +246,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Button buttonSubmit;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -87,6 +87,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>DbSettings.settings</DependentUpon>
     </Compile>
+    <Compile Include="DetailTopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailTopUp.Designer.cs">
+      <DependentUpon>DetailTopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetailTransaksi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailTopUp.resx">
+      <DependentUpon>DetailTopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetailTransaksi.resx">
       <DependentUpon>DetailTransaksi.cs</DependentUpon>

@@ -195,6 +195,27 @@ namespace ClassLibrary
             }
 
         }
+        public static User BacaDataUserById(int id)
+        {
+            string sql = "select * from users where role = 'KONSUMEN' and id = '" + id +"'";
+
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            User u = new User();
+            if (hasil.Read() == true)
+            {             
+                u.Id = int.Parse(hasil.GetValue(0).ToString());
+                u.email = hasil.GetValue(1).ToString();
+                u.username = hasil.GetValue(2).ToString();
+                u.nama = hasil.GetValue(4).ToString();
+                u.saldo = hasil.GetString(5);
+                u.role = hasil.GetValue(6).ToString();
+                u.Sisa_percobaan_login = hasil.GetInt16(7);
+                u.Foto_ktp = hasil.GetValue(8).ToString();
+                
+            }
+            return u;
+        }
 
         public static List<User> BacaDataUser(string filter = "", string nilai = "")
         {

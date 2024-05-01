@@ -28,44 +28,41 @@ namespace ISA_MiniTrojan
                 case "ADMIN":
                     btnProduk.Visible = false;
                     btnKeranjang.Visible = false;
-                    btnInvoice.Visible = false;
-                    btnChatAdmin.Visible = false;
+                    btnInvoice.Visible = false;                    
                     btnTopUp.Visible = false;
 
                     buttonDaftarKonsumen.Visible = true;
                     buttonDaftarInvoice.Visible = true;
-                    buttonDaftarProduk.Visible = true;
-                    buttonDaftarChat.Visible = true;
+                    buttonDaftarProduk.Visible = true;                    
                     buttonCekSteganography.Visible = true;
-                    buttonDaftarStaff.Visible = true;                    
+                    buttonDaftarStaff.Visible = true;     
+                    buttonDaftarTopup.Visible = true;
                     break;
                 case "STAFF":
                     btnProduk.Visible = false;
                     btnKeranjang.Visible = false;
-                    btnInvoice.Visible = false;
-                    btnChatAdmin.Visible = false;
+                    btnInvoice.Visible = false;                    
                     btnTopUp.Visible = false;
 
                     buttonDaftarKonsumen.Visible = true;
                     buttonDaftarInvoice.Visible = true;
                     buttonDaftarProduk.Visible = true;
-                    buttonDaftarChat.Visible = true;
                     buttonCekSteganography.Visible = true;
                     buttonDaftarStaff.Visible = false;
+                    buttonDaftarTopup.Visible = true;
                     break;
                 case "KONSUMEN":
                     btnProduk.Visible = true;
                     btnKeranjang.Visible = true;
-                    btnInvoice.Visible = true;
-                    btnChatAdmin.Visible = true;
+                    btnInvoice.Visible = true;                   
                     btnTopUp.Visible = true;
 
                     buttonDaftarKonsumen.Visible = false;
                     buttonDaftarInvoice.Visible = false;
-                    buttonDaftarProduk.Visible = false;
-                    buttonDaftarChat.Visible = false;
+                    buttonDaftarProduk.Visible = false;                    
                     buttonCekSteganography.Visible = false;
                     buttonDaftarStaff.Visible = false;
+                    buttonDaftarTopup.Visible = false;
                     break;
             }
         }
@@ -167,6 +164,20 @@ namespace ISA_MiniTrojan
         private void buttonCekSteganography_Click(object sender, EventArgs e)
         {
             CekKTP form = new CekKTP();
+            form.Owner = this;
+            OpenForm(form);
+        }
+
+        private void btnTopUp_Click(object sender, EventArgs e)
+        {
+            TopUp form = new TopUp();
+            form.Owner = this;
+            OpenForm(form);
+        }
+
+        private void buttonDaftarTopup_Click(object sender, EventArgs e)
+        {
+            DaftarTopUp form = new DaftarTopUp();
             form.Owner = this;
             OpenForm(form);
         }

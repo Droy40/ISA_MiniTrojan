@@ -30,13 +30,27 @@
         {
             this.dataGridViewTopUp = new System.Windows.Forms.DataGridView();
             this.labelNoInvoice = new System.Windows.Forms.Label();
-            this.buttonTopUp = new Guna.UI2.WinForms.Guna2Button();
+            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTopUpDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNominal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStaffId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTopUp)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewTopUp
             // 
             this.dataGridViewTopUp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTopUp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnId,
+            this.ColumnUserId,
+            this.ColumnTopUpDate,
+            this.ColumnNominal,
+            this.ColumnStatus,
+            this.ColumnStaffId,
+            this.btnDetail});
             this.dataGridViewTopUp.Location = new System.Drawing.Point(12, 66);
             this.dataGridViewTopUp.Name = "dataGridViewTopUp";
             this.dataGridViewTopUp.RowHeadersWidth = 51;
@@ -57,26 +71,63 @@
             this.labelNoInvoice.Text = "Top-Up";
             this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonTopUp
+            // ColumnId
             // 
-            this.buttonTopUp.AutoRoundedCorners = true;
-            this.buttonTopUp.BackColor = System.Drawing.Color.Transparent;
-            this.buttonTopUp.BorderColor = System.Drawing.Color.Firebrick;
-            this.buttonTopUp.BorderRadius = 22;
-            this.buttonTopUp.BorderThickness = 2;
-            this.buttonTopUp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonTopUp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonTopUp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonTopUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonTopUp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.buttonTopUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTopUp.ForeColor = System.Drawing.Color.Firebrick;
-            this.buttonTopUp.Location = new System.Drawing.Point(554, 419);
-            this.buttonTopUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonTopUp.Name = "buttonTopUp";
-            this.buttonTopUp.Size = new System.Drawing.Size(180, 46);
-            this.buttonTopUp.TabIndex = 43;
-            this.buttonTopUp.Text = "Top-Up";
+            this.ColumnId.HeaderText = "ID";
+            this.ColumnId.MinimumWidth = 6;
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Width = 125;
+            // 
+            // ColumnUserId
+            // 
+            this.ColumnUserId.HeaderText = "User Id";
+            this.ColumnUserId.MinimumWidth = 6;
+            this.ColumnUserId.Name = "ColumnUserId";
+            this.ColumnUserId.ReadOnly = true;
+            this.ColumnUserId.Width = 125;
+            // 
+            // ColumnTopUpDate
+            // 
+            this.ColumnTopUpDate.HeaderText = "Topup Date";
+            this.ColumnTopUpDate.MinimumWidth = 6;
+            this.ColumnTopUpDate.Name = "ColumnTopUpDate";
+            this.ColumnTopUpDate.ReadOnly = true;
+            this.ColumnTopUpDate.Width = 125;
+            // 
+            // ColumnNominal
+            // 
+            this.ColumnNominal.HeaderText = "Nominal";
+            this.ColumnNominal.MinimumWidth = 6;
+            this.ColumnNominal.Name = "ColumnNominal";
+            this.ColumnNominal.ReadOnly = true;
+            this.ColumnNominal.Width = 125;
+            // 
+            // ColumnStatus
+            // 
+            this.ColumnStatus.HeaderText = "Status";
+            this.ColumnStatus.MinimumWidth = 6;
+            this.ColumnStatus.Name = "ColumnStatus";
+            this.ColumnStatus.ReadOnly = true;
+            this.ColumnStatus.Width = 125;
+            // 
+            // ColumnStaffId
+            // 
+            this.ColumnStaffId.HeaderText = "Staff ID";
+            this.ColumnStaffId.MinimumWidth = 6;
+            this.ColumnStaffId.Name = "ColumnStaffId";
+            this.ColumnStaffId.ReadOnly = true;
+            this.ColumnStaffId.Width = 125;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.HeaderText = "Aksi";
+            this.btnDetail.MinimumWidth = 6;
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.ReadOnly = true;
+            this.btnDetail.Text = "Detail";
+            this.btnDetail.UseColumnTextForButtonValue = true;
+            this.btnDetail.Width = 125;
             // 
             // DaftarTopUp
             // 
@@ -85,7 +136,6 @@
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(746, 476);
-            this.Controls.Add(this.buttonTopUp);
             this.Controls.Add(this.labelNoInvoice);
             this.Controls.Add(this.dataGridViewTopUp);
             this.DoubleBuffered = true;
@@ -101,6 +151,12 @@
 
         private System.Windows.Forms.DataGridView dataGridViewTopUp;
         private System.Windows.Forms.Label labelNoInvoice;
-        private Guna.UI2.WinForms.Guna2Button buttonTopUp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUserId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTopUpDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNominal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStaffId;
+        private System.Windows.Forms.DataGridViewButtonColumn btnDetail;
     }
 }

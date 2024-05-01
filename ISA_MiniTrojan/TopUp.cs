@@ -27,7 +27,7 @@ namespace ISA_MiniTrojan
                 topup.User = dashboard.user;
                 topup.Nominal = double.Parse(textBoxNominal.Text);
 
-                if (Topup.TambahData(topup))
+                if (Topup.TambahData(topup,pictureBoxBukti.Image))
                 {
                     MessageBox.Show("Topup berhasil");
                 }
@@ -47,6 +47,16 @@ namespace ISA_MiniTrojan
         private void TopUp_Load(object sender, EventArgs e)
         {
             dashboard = (Dashboard)this.Owner;
+        }
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            pictureBoxBukti.ImageLocation = openFileDialog1.FileName;
         }
     }
 }
