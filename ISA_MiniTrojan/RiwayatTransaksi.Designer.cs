@@ -36,6 +36,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewInvoice = new System.Windows.Forms.DataGridView();
+            this.ColumnIdHistory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTgl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNominal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnJenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnIdTransaksi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -46,7 +51,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.panel3.Controls.Add(this.labelRegister);
-            this.panel3.Location = new System.Drawing.Point(236, 12);
+            this.panel3.Location = new System.Drawing.Point(219, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(318, 60);
             this.panel3.TabIndex = 34;
@@ -69,7 +74,7 @@
             this.pictureBoxBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxBack.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBack.Image")));
-            this.pictureBoxBack.Location = new System.Drawing.Point(105, 457);
+            this.pictureBoxBack.Location = new System.Drawing.Point(24, 450);
             this.pictureBoxBack.Name = "pictureBoxBack";
             this.pictureBoxBack.Size = new System.Drawing.Size(51, 48);
             this.pictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -84,9 +89,9 @@
             this.guna2Panel1.Controls.Add(this.textBox1);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(105, 93);
+            this.guna2Panel1.Location = new System.Drawing.Point(24, 86);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(573, 51);
+            this.guna2Panel1.Size = new System.Drawing.Size(690, 51);
             this.guna2Panel1.TabIndex = 38;
             // 
             // textBox1
@@ -94,7 +99,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(271, 11);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 27);
+            this.textBox1.Size = new System.Drawing.Size(392, 27);
             this.textBox1.TabIndex = 19;
             // 
             // label1
@@ -111,12 +116,59 @@
             // dataGridViewInvoice
             // 
             this.dataGridViewInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInvoice.Location = new System.Drawing.Point(105, 157);
+            this.dataGridViewInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnIdHistory,
+            this.ColumnTgl,
+            this.ColumnNominal,
+            this.ColumnJenis,
+            this.ColumnIdTransaksi});
+            this.dataGridViewInvoice.Location = new System.Drawing.Point(24, 150);
             this.dataGridViewInvoice.Name = "dataGridViewInvoice";
             this.dataGridViewInvoice.RowHeadersWidth = 51;
             this.dataGridViewInvoice.RowTemplate.Height = 24;
-            this.dataGridViewInvoice.Size = new System.Drawing.Size(573, 294);
+            this.dataGridViewInvoice.Size = new System.Drawing.Size(680, 294);
             this.dataGridViewInvoice.TabIndex = 37;
+            this.dataGridViewInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInvoice_CellContentClick);
+            // 
+            // ColumnIdHistory
+            // 
+            this.ColumnIdHistory.HeaderText = "Id History";
+            this.ColumnIdHistory.MinimumWidth = 6;
+            this.ColumnIdHistory.Name = "ColumnIdHistory";
+            this.ColumnIdHistory.ReadOnly = true;
+            this.ColumnIdHistory.Width = 125;
+            // 
+            // ColumnTgl
+            // 
+            this.ColumnTgl.HeaderText = "Tanggal Transaksi";
+            this.ColumnTgl.MinimumWidth = 6;
+            this.ColumnTgl.Name = "ColumnTgl";
+            this.ColumnTgl.ReadOnly = true;
+            this.ColumnTgl.Width = 125;
+            // 
+            // ColumnNominal
+            // 
+            this.ColumnNominal.HeaderText = "Nominal Transaksi";
+            this.ColumnNominal.MinimumWidth = 6;
+            this.ColumnNominal.Name = "ColumnNominal";
+            this.ColumnNominal.ReadOnly = true;
+            this.ColumnNominal.Width = 125;
+            // 
+            // ColumnJenis
+            // 
+            this.ColumnJenis.HeaderText = "Jenis Transaksi";
+            this.ColumnJenis.MinimumWidth = 6;
+            this.ColumnJenis.Name = "ColumnJenis";
+            this.ColumnJenis.ReadOnly = true;
+            this.ColumnJenis.Width = 125;
+            // 
+            // ColumnIdTransaksi
+            // 
+            this.ColumnIdTransaksi.HeaderText = "Id Transaksi";
+            this.ColumnIdTransaksi.MinimumWidth = 6;
+            this.ColumnIdTransaksi.Name = "ColumnIdTransaksi";
+            this.ColumnIdTransaksi.ReadOnly = true;
+            this.ColumnIdTransaksi.Width = 125;
             // 
             // RiwayatTransaksi
             // 
@@ -124,7 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 547);
+            this.ClientSize = new System.Drawing.Size(726, 547);
             this.Controls.Add(this.pictureBoxBack);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dataGridViewInvoice);
@@ -151,5 +203,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewInvoice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdHistory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTgl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNominal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnJenis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIdTransaksi;
     }
 }
