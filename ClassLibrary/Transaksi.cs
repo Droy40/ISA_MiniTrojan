@@ -116,7 +116,7 @@ namespace ClassLibrary
             string sql;
             if(filter == "")
             {
-                sql = "select * from Transaksi";
+                sql = "select t.*, u.* from Transaksi t inner join Users u on t.users_id=u.id";
             }
             else if (filter=="u.id")
             {

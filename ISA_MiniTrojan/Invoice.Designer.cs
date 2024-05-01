@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridViewInvoice = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelNoInvoice = new System.Windows.Forms.Label();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTgl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelNoInvoice = new System.Windows.Forms.Label();
+            this.buttonPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoice)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,9 +46,7 @@
             // 
             this.dataGridViewInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            //this.ColumnNama,
             this.ColumnId,
-            //this.ColumnIdTransaksi,
             this.ColumnTgl,
             this.ColumnTotal,
             this.btnDetail});
@@ -59,6 +58,39 @@
             this.dataGridViewInvoice.Size = new System.Drawing.Size(741, 294);
             this.dataGridViewInvoice.TabIndex = 26;
             this.dataGridViewInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInvoice_CellContentClick);
+            // 
+            // ColumnId
+            // 
+            this.ColumnId.HeaderText = "Id";
+            this.ColumnId.MinimumWidth = 6;
+            this.ColumnId.Name = "ColumnId";
+            this.ColumnId.ReadOnly = true;
+            this.ColumnId.Width = 125;
+            // 
+            // ColumnTgl
+            // 
+            this.ColumnTgl.HeaderText = "Tanggal Transaksi";
+            this.ColumnTgl.MinimumWidth = 6;
+            this.ColumnTgl.Name = "ColumnTgl";
+            this.ColumnTgl.ReadOnly = true;
+            this.ColumnTgl.Width = 125;
+            // 
+            // ColumnTotal
+            // 
+            this.ColumnTotal.HeaderText = "Total Transaksi";
+            this.ColumnTotal.MinimumWidth = 6;
+            this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
+            this.ColumnTotal.Width = 125;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.HeaderText = "Detail";
+            this.btnDetail.MinimumWidth = 6;
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Text = "Lihat";
+            this.btnDetail.UseColumnTextForButtonValue = true;
+            this.btnDetail.Width = 125;
             // 
             // panel1
             // 
@@ -102,38 +134,17 @@
             this.labelNoInvoice.Text = "Invoices";
             this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ColumnId
+            // buttonPrint
             // 
-            this.ColumnId.HeaderText = "Id";
-            this.ColumnId.MinimumWidth = 6;
-            this.ColumnId.Name = "ColumnId";
-            this.ColumnId.ReadOnly = true;
-            this.ColumnId.Width = 125;
-            // 
-            // ColumnTgl
-            // 
-            this.ColumnTgl.HeaderText = "Tanggal Transaksi";
-            this.ColumnTgl.MinimumWidth = 6;
-            this.ColumnTgl.Name = "ColumnTgl";
-            this.ColumnTgl.ReadOnly = true;
-            this.ColumnTgl.Width = 125;
-            // 
-            // ColumnTotal
-            // 
-            this.ColumnTotal.HeaderText = "Total Transaksi";
-            this.ColumnTotal.MinimumWidth = 6;
-            this.ColumnTotal.Name = "ColumnTotal";
-            this.ColumnTotal.ReadOnly = true;
-            this.ColumnTotal.Width = 125;
-            // 
-            // btnDetail
-            // 
-            this.btnDetail.HeaderText = "Detail";
-            this.btnDetail.MinimumWidth = 6;
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Text = "Lihat";
-            this.btnDetail.UseColumnTextForButtonValue = true;
-            this.btnDetail.Width = 125;
+            this.buttonPrint.BackColor = System.Drawing.Color.Yellow;
+            this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrint.Location = new System.Drawing.Point(677, 393);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(75, 28);
+            this.buttonPrint.TabIndex = 27;
+            this.buttonPrint.Text = "PRINT";
+            this.buttonPrint.UseVisualStyleBackColor = false;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // Invoice
             // 
@@ -141,6 +152,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.dataGridViewInvoice);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelNoInvoice);
@@ -168,6 +180,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTgl;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btnDetail;
-
+        private System.Windows.Forms.Button buttonPrint;
     }
 }
