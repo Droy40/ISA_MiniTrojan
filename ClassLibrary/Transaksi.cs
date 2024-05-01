@@ -44,24 +44,78 @@ namespace ClassLibrary
 
             if (hasil.Read() == true)
             {
+                if (hasil.GetValue(0) == DBNull.Value)
+                {
+                    return 1;
+                }
                 return int.Parse(hasil.GetValue(0).ToString()) + 1;
             }
             return 1;
         }
-        public static bool TambahData(Transaksi t)
+        public static void TambahData(Transaksi t)
         {
             t.Id = GenerateIdTransaksi();
-            string sql = "insert into transaksi(id, date, total, users_id) " +
-                         "values ('" + t.Id + "','" + t.Date + "','" + t.Total + "', '" + t.User + "')";
-            int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
-            if(jumlahDiubah == 0)
+            string sqlUser = "select saldo from users where id='" + t.User.Id + "';";
+            MySqlDataReader hasilUser = Koneksi.JalankanPerintahQuery(sqlUser);
+            if (hasilUser.Read())
             {
-                return false;
+                t.User.saldo = hasilUser.GetString(0);
             }
             else
             {
-                return true;
+                throw new Exception("User tidak ditemukan");
             }
+            if (t.Total <= t.User.Saldo)
+            {
+                foreach(DetailTransaksi dt in t.DetailTransaksiList)
+                {
+                    if (dt.Quantity >= dt.Product.Stock)
+                    {
+                        throw new Exception("stok " + dt.Product.Name + " tidak cukup");
+                    }
+                       
+                }
+                string sql1 = "INSERT INTO `minitrojan`.`transaksi` (`id`, `date`, `total`, `users_id`) " +
+                        "VALUES ('"+t.Id+"', '"+t.Date+"', '"+t.Total+"', '"+t.User.Id+"');";
+                Koneksi.JalankanPerintahDML(sql1);
+
+                foreach (DetailTransaksi dt in t.DetailTransaksiList)
+                {
+                    string sql = "INSERT INTO `minitrojan`.`detail_transaksi` (`transaksi_id`, `products_id`, `quantity`, `harga`) " +
+                    "VALUES ('" + t.Id + "', '" + dt.Product.Id + "', '" + dt.Quantity + "', '" + dt.Product.Price + "');";
+                    Koneksi.JalankanPerintahDML(sql);
+                    string sqlStock = "UPDATE `minitrojan`.`produk` SET `stock` = stock-" + dt.Quantity + " WHERE (`id` = '" + dt.Product.Id + "');";
+                    Koneksi.JalankanPerintahDML(sqlStock);
+                    string sqlKeranjang = "delete from keranjang " +
+                        "where users_id ='" + t.User.Id + "' and produk_id='" + dt.Product.Id + "'";
+                }
+                double saldoAkhir = t.User.Saldo - t.Total;
+                string sqlSaldo = "UPDATE `minitrojan`.`users` SET `saldo` = '"+AES.Encrypt(saldoAkhir.ToString(),AES.key)+"' WHERE (`id` = '" + t.User.Id + "');";
+                Koneksi.JalankanPerintahDML(sqlSaldo);
+
+                HistorySaldo h = new HistorySaldo();
+                h.User = t.User;
+                h.Nominal = t.Total;
+                h.Jenis = "Beli";
+                h.Transaksi = t;
+                HistorySaldo.TambahData(h);
+
+
+            }
+            else
+            {
+                throw new Exception("saldo tidak cukup");
+            }
+            
+            //int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
+            //if(jumlahDiubah == 0)
+            //{
+            //    return false;
+            //}
+            //else
+            //{
+            //    return true;
+            //}
         }
 
         public static List<Transaksi> BacaData(string filter = "", string nilai = "")

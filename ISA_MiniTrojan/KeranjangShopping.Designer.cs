@@ -69,6 +69,7 @@
             this.dataGridViewKeranjang.RowTemplate.Height = 24;
             this.dataGridViewKeranjang.Size = new System.Drawing.Size(796, 284);
             this.dataGridViewKeranjang.TabIndex = 28;
+            this.dataGridViewKeranjang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKeranjang_CellContentClick);
             // 
             // label1
             // 
@@ -149,12 +150,15 @@
             this.buttonBeli.Size = new System.Drawing.Size(180, 45);
             this.buttonBeli.TabIndex = 36;
             this.buttonBeli.Text = "Purchase";
+            this.buttonBeli.Click += new System.EventHandler(this.buttonBeli_Click);
             // 
             // ColumnPilih
             // 
+            this.ColumnPilih.FalseValue = "false";
             this.ColumnPilih.HeaderText = "Pilih";
             this.ColumnPilih.MinimumWidth = 6;
             this.ColumnPilih.Name = "ColumnPilih";
+            this.ColumnPilih.TrueValue = "true";
             this.ColumnPilih.Width = 125;
             // 
             // CollumnNama

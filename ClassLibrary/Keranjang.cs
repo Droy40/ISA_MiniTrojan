@@ -111,7 +111,7 @@ namespace ClassLibrary
         public static bool HapusData(Keranjang k)
         {
             string sql = "delete from keranjang " +
-                         "where users_id ='" + k.User.Id + "'";
+                         "where users_id ='" + k.User.Id + "' and produk_id='"+k.Product.Id+"'";
             int jumlahDataBerubah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDataBerubah == 0)
             {
