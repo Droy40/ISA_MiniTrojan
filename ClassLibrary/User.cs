@@ -216,7 +216,7 @@ namespace ClassLibrary
                 user.saldo = hasil.GetString(5);
                 user.role = hasil.GetValue(6).ToString();
                 user.Sisa_percobaan_login = hasil.GetInt16(7);
-                user.Foto_ktp = hasil.GetString(8).ToString();
+                user.Foto_ktp = hasil.GetValue(8).ToString();
                 
 
                 listUser.Add(user);
