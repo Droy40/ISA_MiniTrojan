@@ -26,10 +26,17 @@ namespace ISA_MiniTrojan
             DisplayData();
             if (dataGridViewUser.ColumnCount == 6)
             {
+                DataGridViewButtonColumn bcol1 = new DataGridViewButtonColumn();
+                bcol1.HeaderText = "Aksi";
+                bcol1.Text = "DELETE";
+                bcol1.Name = "btnDeleteGrid";
+                bcol1.UseColumnTextForButtonValue = true;
+                dataGridViewUser.Columns.Add(bcol1);
+
                 DataGridViewButtonColumn bcol2 = new DataGridViewButtonColumn();
                 bcol2.HeaderText = "Aksi";
-                bcol2.Text = "DELETE";
-                bcol2.Name = "btnDeleteGrid";
+                bcol2.Text = "AKTIVASI";
+                bcol2.Name = "btnAktivasi";
                 bcol2.UseColumnTextForButtonValue = true;
                 dataGridViewUser.Columns.Add(bcol2);
             }
@@ -65,7 +72,22 @@ namespace ISA_MiniTrojan
                     }
                 }
             }
-
+            else if (e.ColumnIndex == dataGridViewUser.Columns["btnAktivasi"].Index)
+            {
+                DialogResult hasil = MessageBox.Show("Yakin mengaktifkan akun " + listHasil[e.RowIndex].Id.ToString() + " ?", "AKFITKAN", MessageBoxButtons.YesNo);
+                if (hasil == DialogResult.Yes)
+                {
+                    if (User.AktivasiUser(listHasil[e.RowIndex]))
+                    {
+                        MessageBox.Show("aktivasi berhasil");
+                    }
+                    else
+                    {
+                        MessageBox.Show("aktivasi gagal");
+                    }
+                    DisplayData();
+                }
+            }
             else
             {
                 MessageBox.Show("Data tidak ditemukan");
