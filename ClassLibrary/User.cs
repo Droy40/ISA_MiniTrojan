@@ -182,7 +182,7 @@ namespace ClassLibrary
             }
             string sql = "insert into users(id, email, username, password, nama, saldo, role, sisa_percobaan_login, photo_id_path) " +
                          "values ('" + u.id + "','" + u.email + "', '" + u.username + "','" + u.password +
-                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login  + "','"+ u.Foto_ktp +"')";
+                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login  + "','"+ u.Foto_ktp +"')"; 
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
 
             if (jumlahDiubah == 0)
@@ -353,7 +353,33 @@ namespace ClassLibrary
             }
 
         }
+        public static string Decode(Image image)
+        {
+            Bitmap img = new Bitmap(image);
+            string message = "";
 
+            Color lastpixel = img.GetPixel(img.Width - 1, img.Height - 1);
+            int msgLength = lastpixel.B;
+
+            for (int i = 0; i < img.Width; i++)
+            {
+                for (int j = 0; j < img.Height; j++)
+                {
+                    Color pixel = img.GetPixel(i, j);
+
+                    if (i < 1 && j < msgLength)
+                    {
+                        int value = pixel.B;
+                        char c = Convert.ToChar(value);
+                        string letter = System.Text.Encoding.ASCII.GetString(new byte[] { Convert.ToByte(c) });
+
+                        message = message + letter;
+                    }
+                }
+            }
+
+            return message;
+        }
        
     }
 }

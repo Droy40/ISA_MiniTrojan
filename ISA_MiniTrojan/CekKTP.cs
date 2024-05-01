@@ -30,30 +30,7 @@ namespace ISA_MiniTrojan
 
         private void buttonDecode_Click(object sender, EventArgs e)
         {
-            Bitmap img = new Bitmap(pictureBoxKtp.Image);
-            string message = "";
-
-            Color lastpixel = img.GetPixel(img.Width - 1, img.Height - 1);
-            int msgLength = lastpixel.B;
-
-            for (int i = 0; i < img.Width; i++)
-            {
-                for (int j = 0; j < img.Height; j++)
-                {
-                    Color pixel = img.GetPixel(i, j);
-
-                    if (i < 1 && j < msgLength)
-                    {
-                        int value = pixel.B;
-                        char c = Convert.ToChar(value);
-                        string letter = System.Text.Encoding.ASCII.GetString(new byte[] { Convert.ToByte(c) });
-
-                        message = message + letter;
-                    }
-                }
-            }
-
-            textBoxHasilDecode.Text = message;
+            textBoxHasilDecode.Text = User.Decode(pictureBoxKtp.Image);
         }
 
         private void CekKTP_Load(object sender, EventArgs e)
