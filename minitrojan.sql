@@ -18,36 +18,6 @@ USE `minitrojan`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `chats`
---
-
-DROP TABLE IF EXISTS `chats`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `chats` (
-  `id` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `pesan` text NOT NULL,
-  `pengirim` int(11) NOT NULL,
-  `Penerima` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_Chats_users1_idx` (`pengirim`),
-  KEY `fk_Chats_users2_idx` (`Penerima`),
-  CONSTRAINT `fk_Chats_users1` FOREIGN KEY (`pengirim`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Chats_users2` FOREIGN KEY (`Penerima`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `chats`
---
-
-LOCK TABLES `chats` WRITE;
-/*!40000 ALTER TABLE `chats` DISABLE KEYS */;
-/*!40000 ALTER TABLE `chats` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `detail_transaksi`
 --
 
@@ -74,37 +44,6 @@ CREATE TABLE `detail_transaksi` (
 LOCK TABLES `detail_transaksi` WRITE;
 /*!40000 ALTER TABLE `detail_transaksi` DISABLE KEYS */;
 /*!40000 ALTER TABLE `detail_transaksi` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `history_saldo`
---
-
-DROP TABLE IF EXISTS `history_saldo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `history_saldo` (
-  `id` int(11) NOT NULL,
-  `users_id` int(11) NOT NULL,
-  `transaction_date` datetime NOT NULL,
-  `nominal` double NOT NULL,
-  `jenis` enum('Topup','Beli') NOT NULL,
-  `transactions_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_history_saldo_users1_idx` (`users_id`),
-  KEY `fk_history_saldo_transactions1_idx` (`transactions_id`),
-  CONSTRAINT `fk_history_saldo_transactions1` FOREIGN KEY (`transactions_id`) REFERENCES `transaksi` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_history_saldo_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `history_saldo`
---
-
-LOCK TABLES `history_saldo` WRITE;
-/*!40000 ALTER TABLE `history_saldo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `history_saldo` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -158,7 +97,6 @@ CREATE TABLE `produk` (
 
 LOCK TABLES `produk` WRITE;
 /*!40000 ALTER TABLE `produk` DISABLE KEYS */;
-INSERT INTO `produk` VALUES (1,'QWEQWE','QEWWQEWQWEQEQEQWEQWE',10000,15);
 /*!40000 ALTER TABLE `produk` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,6 +110,7 @@ DROP TABLE IF EXISTS `topups`;
 CREATE TABLE `topups` (
   `id` int(11) NOT NULL,
   `users_id` int(11) NOT NULL,
+  `topup_date` date NOT NULL,
   `nominal` text NOT NULL,
   `status` enum('SUKSES','PENDING','GAGAL') NOT NULL,
   `bukti_transfer` varchar(45) NOT NULL,
@@ -247,7 +186,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'AAAAAAAAAAAAAAAAAAAAAOHuQTRe0aShgJlBpx1WEPo=','AAAAAAAAAAAAAAAAAAAAAOHuQTRe0aShgJlBpx1WEPo=','835d6dc88b708bc646d6db82c853ef4182fabbd4a8de59c213f2b5ab3ae7d9be','AAAAAAAAAAAAAAAAAAAAAOHuQTRe0aShgJlBpx1WEPo=','AAAAAAAAAAAAAAAAAAAAAMdt3coCo0X9H/L4SD/EuDo=','ADMIN','3',NULL),(2,'AAAAAAAAAAAAAAAAAAAAAL0v0XYXBHmYVT+oESHDYQo=','AAAAAAAAAAAAAAAAAAAAAL0v0XYXBHmYVT+oESHDYQo=','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3','AAAAAAAAAAAAAAAAAAAAAL0v0XYXBHmYVT+oESHDYQo=','AAAAAAAAAAAAAAAAAAAAAMdt3coCo0X9H/L4SD/EuDo=','KONSUMEN','3',NULL),(3,'AAAAAAAAAAAAAAAAAAAAAM936QQhZSjkK089sm3/ZOk=','AAAAAAAAAAAAAAAAAAAAAM936QQhZSjkK089sm3/ZOk=','6025d18fe48abd45168528f18a82e265dd98d421a7084aa09f61b341703901a3','AAAAAAAAAAAAAAAAAAAAAM936QQhZSjkK089sm3/ZOk=','AAAAAAAAAAAAAAAAAAAAAMdt3coCo0X9H/L4SD/EuDo=','KONSUMEN','3',NULL);
+INSERT INTO `users` VALUES (1,'AAAAAAAAAAAAAAAAAAAAAOHuQTRe0aShgJlBpx1WEPo=','AAAAAAAAAAAAAAAAAAAAAOHuQTRe0aShgJlBpx1WEPo=','835d6dc88b708bc646d6db82c853ef4182fabbd4a8de59c213f2b5ab3ae7d9be','AAAAAAAAAAAAAAAAAAAAAOHuQTRe0aShgJlBpx1WEPo=','AAAAAAAAAAAAAAAAAAAAAMdt3coCo0X9H/L4SD/EuDo=','ADMIN','3',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -260,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-01 15:06:58
+-- Dump completed on 2024-05-02  4:21:15
