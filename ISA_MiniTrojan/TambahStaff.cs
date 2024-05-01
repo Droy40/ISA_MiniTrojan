@@ -43,7 +43,7 @@ namespace ISA_MiniTrojan
                 staff.Nama = textBoxNama.Text;
                 staff.Role = "Staff";
 
-                User.Register(staff);
+                User.Register(staff,"","");
                 MessageBox.Show("tambah data berhasil");
                 DialogResult = DialogResult.OK;
                 this.Close();

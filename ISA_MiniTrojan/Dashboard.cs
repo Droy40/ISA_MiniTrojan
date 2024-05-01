@@ -143,5 +143,10 @@ namespace ISA_MiniTrojan
             form.Owner = this;
             OpenForm(form);
         }
+
+        private void btnTopUp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -168,12 +168,20 @@ namespace ClassLibrary
             }
             return 1;
         }
-        public static bool Register(User u)
+        public static bool Register(User u, string photo_id_path, string noKtp)
         {
-            u.Id = GenerateIdUser();            
-            string sql = "insert into users(id, email, username, password, nama, saldo, role, sisa_percobaan_login) " +
+            u.Id = GenerateIdUser();     
+            if(u.Role == "KONSUMEN")
+            {
+                u.Foto_ktp = SimpanGambar(u, photo_id_path, noKtp);
+            }
+            else
+            {
+                u.Foto_ktp = "";
+            }
+            string sql = "insert into users(id, email, username, password, nama, saldo, role, sisa_percobaan_login, photo_id_path) " +
                          "values ('" + u.id + "','" + u.email + "', '" + u.username + "','" + u.password +
-                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login  + "')";
+                         "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.Sisa_percobaan_login  + "','"+ u.Foto_ktp +"')";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if(jumlahDiubah == 0)
             {
@@ -225,24 +233,46 @@ namespace ClassLibrary
             }
         }
 
-        public static string SimpanGambar(User u, Image image)
+        public static string SimpanGambar(User u, string filepath, string noKtp)
         {
             Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSetting"];
+            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSettings"];
 
             var settingSection = userSetting.Sections["ISA_MiniTrojan.DbSettings"] as ClientSettingsSection;
             string path = settingSection.Settings.Get("photo_id_path").Value.ValueXml.InnerText;
 
-            if(image != null)
+            Bitmap img = new Bitmap(filepath);
+
+            for (int i = 0; i < img.Width; i++)
             {
-                image.Save(path + "\\user_" + u.Id);
-                return "user_" + u.Id;
+                for (int j = 0; j < img.Height; j++)
+                {
+                    Color pixel = img.GetPixel(i, j);
+
+                    if (i < 1 && j < noKtp.Length)
+                    {
+                        Console.WriteLine("R = [" + i + "][" + j + "] = " + pixel.R);
+                        Console.WriteLine("G = [" + i + "][" + j + "] = " + pixel.G);
+                        Console.WriteLine("B = [" + i + "][" + j + "] = " + pixel.B);
+
+                        char letter = Convert.ToChar(noKtp.Substring(j, 1));
+                        int value = Convert.ToInt32(letter);
+                        Console.WriteLine("letter : " + letter + " value : " + value);
+
+                        img.SetPixel(i, j, Color.FromArgb(pixel.R, pixel.G, value));
+                    }
+
+                    if (i == img.Width - 1 && j == img.Height - 1)
+                    {
+                        img.SetPixel(i, j, Color.FromArgb(pixel.R, pixel.G, noKtp.Length));
+                    }
+
+                }
             }
-            else
-            {
-                return "";
-            }
+
+            img.Save(path + "\\users_" + u.Id);
+            return "users_" + u.Id;
         }
         public static Image BacaGambar(string imageKtp)
         {

@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ISA_MiniTrojan
 {
-    public partial class TopUpLanjutan : Form
+    public partial class DaftarTopUp : Form
     {
-        public TopUpLanjutan()
+        public DaftarTopUp()
         {
             InitializeComponent();
+        }
+
+        private void TopUp_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewTopUp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
