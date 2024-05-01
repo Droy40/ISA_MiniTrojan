@@ -13,7 +13,6 @@ namespace ISA_MiniTrojan
     public partial class EditProduk : Form
     {
         Product product;
-        
         public EditProduk(Product p)
         {
             InitializeComponent();
@@ -40,18 +39,13 @@ namespace ISA_MiniTrojan
                 product.Description = labelDescription.Text;                
 
                 Product.UbahData(product) ;
-                MessageBox.Show("Ubah data konsumen berhasil");
-                this.DialogResult = DialogResult.OK;
+                MessageBox.Show("Ubah data Produk berhasil");               
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

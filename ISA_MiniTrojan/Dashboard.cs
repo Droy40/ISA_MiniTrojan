@@ -47,7 +47,7 @@ namespace ISA_MiniTrojan
                     btnTopUp.Visible = false;
 
                     buttonDaftarKonsumen.Visible = true;
-                    buttonDaftarInvoice.Visible = false;
+                    buttonDaftarInvoice.Visible = true;
                     buttonDaftarProduk.Visible = true;
                     buttonDaftarChat.Visible = true;
                     buttonDaftarTopup.Visible = true;
@@ -121,6 +121,20 @@ namespace ISA_MiniTrojan
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             buttonLogout_Click(sender, e);
+        }
+
+        private void buttonDaftarKonsumen_Click(object sender, EventArgs e)
+        {
+            DaftarUser form = new DaftarUser();
+            form.Owner = this;
+            OpenForm(form);            
+        }
+
+        private void buttonDaftarProduk_Click(object sender, EventArgs e)
+        {
+            DaftarProduct form = new DaftarProduct();
+            form.Owner = this;
+            OpenForm(form);
         }
     }
 }

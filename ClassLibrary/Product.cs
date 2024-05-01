@@ -42,9 +42,12 @@ namespace ClassLibrary
             string sql = "select max(id) from produk";
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            if(hasil.Read() == true)
-            {
-                return hasil.GetInt32(0) +1;
+            if(hasil.Read())
+            {                
+                if(hasil.GetValue(0).ToString() != "")
+                {
+                    return hasil.GetInt16(0) + 1;
+                }
             }
             return 1;
 
@@ -53,7 +56,7 @@ namespace ClassLibrary
         public static bool TambahData(Product p)
         {
             p.Id = GenerateIdProduct();
-            string sql = "insert into produk(id,name,description,price,stock,photo_path) " +
+            string sql = "insert into produk(id,nama,deskripsi,harga,stock) " +
                          "values ('" + p.Id + "','" + p.Name + "','" + p.Description + "','" + p.Price + "','" +
                          p.Stock + "')";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql); 
@@ -68,8 +71,7 @@ namespace ClassLibrary
         }
         public static bool UbahData(Product p)
         {
-            string sql = "UPDATE produk SET id='" + p.Id.ToString() + "', nama='" + p.Name + "', " +
-                                               "deskripsi= '" + p.Description + "', harga='" + p.Price.ToString() + "', stock='" + p.Stock.ToString() + "', WHERE id='" + p.Id.ToString() + "';";
+            string sql = "UPDATE produk SET harga='" + p.Price.ToString() + "', stock='" + p.Stock.ToString() + "' WHERE id='" + p.Id.ToString() + "';";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDiubah == 0)
             {
@@ -82,7 +84,7 @@ namespace ClassLibrary
         }
         public static bool HapusData(Product p)
         {
-            string sql = "DELETE FROM products" +
+            string sql = "DELETE FROM produk" +
                          " where id='" + p.Id + "';";
             int jumlahDiubah = Koneksi.JalankanPerintahDML(sql);
             if (jumlahDiubah == 0)
@@ -99,11 +101,11 @@ namespace ClassLibrary
             string sql;
             if(filter == "")
             {
-                sql = "select * from products";
+                sql = "select * from produk";
             }
             else
             {
-                sql = "select * from products" +
+                sql = "select * from produk" +
                       " where " + filter + " like '%'" + nilai + "%'";
             }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);

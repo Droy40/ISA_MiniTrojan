@@ -12,65 +12,64 @@ using System.Windows.Forms;
 namespace ISA_MiniTrojan
 {
     public partial class Invoice : Form
-    {
-        public Invoice()
+    {        
+        private User user;
+        private List<Transaksi> listTransaksi;
+        public Invoice(User u)
         {
             InitializeComponent();
+            user = u;
         }
-        public string kodeUser;
-        DaftarUser parent;
         private void Invoice_Load(object sender, EventArgs e)
-        {
-            parent = (DaftarUser)this.Parent.Parent;
-            List<Transaksi> listHasil = Transaksi.BacaData("u.id", kodeUser);
-            dataGridViewInvoice.Rows.Clear();
-            foreach (Transaksi t in listHasil)
-            {
-                dataGridViewInvoice.Rows.Add(t.Id, t.Date, t.Total);
-            }
-
-            if (dataGridViewInvoice.ColumnCount == 3)
-            {
-                DataGridViewButtonColumn btnDetail = new DataGridViewButtonColumn();
-                btnDetail.HeaderText = "Detail Transaksi";
-                btnDetail.Text = "Lihat";
-                btnDetail.Name = "buttonDetail";
-                btnDetail.UseColumnTextForButtonValue = true;
-                dataGridViewInvoice.Columns.Add(btnDetail);
-            }
+        {            
+            listTransaksi = Transaksi.BacaData("u.id", user.Id.ToString());
+            DisplayData();
         }
 
         private void textBoxId_TextChanged(object sender, EventArgs e)
         {
-            List<Transaksi> listHasil = Transaksi.BacaData("t.id", textBoxId.Text);
-            dataGridViewInvoice.Rows.Clear();
-            foreach (Transaksi t in listHasil)
+            if(textBoxId.Text != "")
             {
-                dataGridViewInvoice.Rows.Add(t.Id, t.Date, t.Total);
+                DisplayDataFilter(textBoxId.Text);
             }
-
-            if (dataGridViewInvoice.ColumnCount == 3)
+            else
             {
-                DataGridViewButtonColumn btnDetail = new DataGridViewButtonColumn();
-                btnDetail.HeaderText = "Detail Transaksi";
-                btnDetail.Text = "Lihat";
-                btnDetail.Name = "buttonDetail";
-                btnDetail.UseColumnTextForButtonValue = true;
-                dataGridViewInvoice.Columns.Add(btnDetail);
+                DisplayData();
             }
         }
 
         private void dataGridViewInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string kodeTransaksi = dataGridViewInvoice.CurrentRow.Cells["ColumnId"].Value.ToString();
-            if (e.ColumnIndex == dataGridViewInvoice.Columns["buttonDetail"].Index)
+            if (listTransaksi.Count != 0 || listTransaksi != null)
             {
-                DetailTransaksi form = new DetailTransaksi();
-                form.Owner = this;
-                form.selectedTransaksi = kodeTransaksi;
-                form.ShowDialog();
+                Transaksi selectedTransaksi = listTransaksi[e.RowIndex];
+                if (e.ColumnIndex == dataGridViewInvoice.Columns["buttonDetail"].Index)
+                {
+                    DetailTransaksi form = new DetailTransaksi(selectedTransaksi);
+                    form.Owner = this;                    
+                    form.ShowDialog();                
+                }
+            }
+        }
 
-                Invoice_Load(this, e);
+        private void DisplayData()
+        {
+            dataGridViewInvoice.Rows.Clear();
+            foreach (Transaksi t in listTransaksi)
+            {
+                dataGridViewInvoice.Rows.Add(t.Id, t.Date, t.Total);
+            }
+        }
+
+        private void DisplayDataFilter(string filterIdTransaksi)
+        {
+            dataGridViewInvoice.Rows.Clear();
+            foreach (Transaksi t in listTransaksi)
+            {
+                if (t.Id.ToString().Contains(filterIdTransaksi))
+                {
+                    dataGridViewInvoice.Rows.Add(t.Id, t.Date, t.Total);
+                }
             }
         }
     }

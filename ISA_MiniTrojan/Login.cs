@@ -90,6 +90,7 @@ namespace ISA_MiniTrojan
             textBoxPassword.Visible = false;
             buttonBack.Visible = false;
             textBoxUser.Enabled = true;
+            textBoxPassword.Clear();
 
             buttonLogin.Text = "Lanjut";
 

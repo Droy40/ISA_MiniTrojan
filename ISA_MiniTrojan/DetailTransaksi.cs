@@ -13,23 +13,29 @@ namespace ISA_MiniTrojan
 {
     public partial class DetailTransaksi : Form
     {
-        public DetailTransaksi()
+        private Transaksi transaksi;
+        public DetailTransaksi(Transaksi t)
         {
             InitializeComponent();
-        }
-        Invoice parent;
-        public string selectedTransaksi;
+        }        
+        
         private void DetailTransaksi_Load(object sender, EventArgs e)
-        {
-            parent = (Invoice)this.Parent.Parent.Parent;
-            List<Transaksi> listHasil = Transaksi.BacaData("u.id", selectedTransaksi);
-            Transaksi pilih = listHasil[0];
-            List<ClassLibrary.DetailTransaksi> listDetail = pilih.DetailTransaksiList;
+        { 
             dataGridViewInvoice.Rows.Clear();
-            foreach (ClassLibrary.DetailTransaksi dt in listDetail)
+            labelNama.Text = transaksi.User.Nama;
+            labelId.Text = transaksi.Id.ToString();
+            labelTanggal.Text = transaksi.Date.ToString("yyyy-MMMM-dd HH:mm:ss");
+            labelNominal.Text = transaksi.Total.ToString();
+
+            foreach (ClassLibrary.DetailTransaksi dt in transaksi.DetailTransaksiList)
             {
                 dataGridViewInvoice.Rows.Add(dt.Product.Name, dt.Quantity, dt.Harga);
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

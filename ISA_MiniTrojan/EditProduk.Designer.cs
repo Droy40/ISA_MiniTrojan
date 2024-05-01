@@ -37,6 +37,8 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.textBoxHarga = new System.Windows.Forms.TextBox();
+            this.textBoxStock = new System.Windows.Forms.TextBox();
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelNama = new System.Windows.Forms.Label();
             this.labelCinema = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBoxStock = new System.Windows.Forms.TextBox();
-            this.textBoxHarga = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +75,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(180, 46);
             this.guna2Button2.TabIndex = 42;
             this.guna2Button2.Text = "Confirm";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.guna2Button2.Click += new System.EventHandler(this.pictureBoxTambah_Click);
             // 
             // label3
             // 
@@ -170,6 +170,20 @@
             this.panel6.Size = new System.Drawing.Size(363, 292);
             this.panel6.TabIndex = 36;
             // 
+            // textBoxHarga
+            // 
+            this.textBoxHarga.Location = new System.Drawing.Point(147, 56);
+            this.textBoxHarga.Name = "textBoxHarga";
+            this.textBoxHarga.Size = new System.Drawing.Size(174, 22);
+            this.textBoxHarga.TabIndex = 46;
+            // 
+            // textBoxStock
+            // 
+            this.textBoxStock.Location = new System.Drawing.Point(115, 91);
+            this.textBoxStock.Name = "textBoxStock";
+            this.textBoxStock.Size = new System.Drawing.Size(174, 22);
+            this.textBoxStock.TabIndex = 45;
+            // 
             // labelDescription
             // 
             this.labelDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -253,20 +267,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 37;
             this.pictureBox3.TabStop = false;
-            // 
-            // textBoxStock
-            // 
-            this.textBoxStock.Location = new System.Drawing.Point(115, 91);
-            this.textBoxStock.Name = "textBoxStock";
-            this.textBoxStock.Size = new System.Drawing.Size(174, 22);
-            this.textBoxStock.TabIndex = 45;
-            // 
-            // textBoxHarga
-            // 
-            this.textBoxHarga.Location = new System.Drawing.Point(147, 56);
-            this.textBoxHarga.Name = "textBoxHarga";
-            this.textBoxHarga.Size = new System.Drawing.Size(174, 22);
-            this.textBoxHarga.TabIndex = 46;
             // 
             // EditProduk
             // 
