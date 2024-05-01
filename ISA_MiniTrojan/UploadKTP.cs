@@ -25,7 +25,7 @@ namespace ISA_MiniTrojan
         {
             OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.Filter = "Image Files (*.png, *.jpg) | *.png; *.jpg";
-            openDialog.InitialDirectory = @"C:\github\ISA_MiniTrojan";
+            openDialog.InitialDirectory = @"C:\github\ISA_MiniTrojan\KTP";
 
             if (openDialog.ShowDialog() == DialogResult.OK)
             {
@@ -65,23 +65,41 @@ namespace ISA_MiniTrojan
             //    }
             //}
 
+<<<<<<< Updated upstream
             //SaveFileDialog saveFile = new SaveFileDialog();
             //saveFile.Filter = "Image Files (*.png, *.jpg) | *.png; *.jpg";
             //saveFile.InitialDirectory = @"C:\github\ISA_MiniTrojan";
+=======
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "Image Files (*.png, *.jpg) | *.png; *.jpg";
+            saveFile.InitialDirectory = @"C:\github\ISA_MiniTrojan\KTP";
+>>>>>>> Stashed changes
 
             //if (saveFile.ShowDialog() == DialogResult.OK)
             //{
             //    textBoxFilePath.Text = saveFile.FileName.ToString();
             //    pictureBoxKtp.ImageLocation = textBoxFilePath.Text;
 
+<<<<<<< Updated upstream
             //    img.Save(textBoxFilePath.Text);
             //    User u = new User();
             //    User.SimpanGambar(u, pictureBoxKtp.Image);
             //    MessageBox.Show("Photo has been saved!");
             //}
+=======
+                img.Save(textBoxFilePath.Text);
+                User u = new User();
+                User.SimpanGambar(u, pictureBoxKtp.Image);
+                MessageBox.Show("Photo has been saved!");
+                filePath = textBoxFilePath.Text;
+                buttonEncode.Enabled = false;
+                buttonRegister.Enabled = true;
+            }
+
+>>>>>>> Stashed changes
         }
 
-        private void UploadKTP_Load(object sender, EventArgs e)
+    private void UploadKTP_Load(object sender, EventArgs e)
         {
             form = (Register)this.Owner;
             buttonRegister.Enabled = false;

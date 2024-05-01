@@ -17,13 +17,14 @@ namespace ISA_MiniTrojan
         {
             InitializeComponent();
         }
-
+        List<User> listOfUsers;
         private void comboBoxUser_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(comboBoxUser.SelectedIndex != -1)
             {
                 User selectedUser = (User)(comboBoxUser.SelectedItem);
                 pictureBoxKtp.Image = User.BacaGambar(selectedUser.Foto_ktp);
+                
             }
         }
 
@@ -53,6 +54,13 @@ namespace ISA_MiniTrojan
             }
 
             textBoxHasilDecode.Text = message;
+        }
+
+        private void CekKTP_Load(object sender, EventArgs e)
+        {
+            listOfUsers = User.BacaDataUser();
+            comboBoxUser.DataSource = listOfUsers;
+            comboBoxUser.DisplayMember = "nama";
         }
     }
 }

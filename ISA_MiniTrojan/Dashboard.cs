@@ -36,7 +36,7 @@ namespace ISA_MiniTrojan
                     buttonDaftarInvoice.Visible = true;
                     buttonDaftarProduk.Visible = true;
                     buttonDaftarChat.Visible = true;
-                    buttonDaftarTopup.Visible = true;
+                    buttonCekSteganography.Visible = true;
                     buttonDaftarStaff.Visible = true;                    
                     break;
                 case "STAFF":
@@ -50,7 +50,7 @@ namespace ISA_MiniTrojan
                     buttonDaftarInvoice.Visible = true;
                     buttonDaftarProduk.Visible = true;
                     buttonDaftarChat.Visible = true;
-                    buttonDaftarTopup.Visible = true;
+                    buttonCekSteganography.Visible = true;
                     buttonDaftarStaff.Visible = false;
                     break;
                 case "KONSUMEN":
@@ -64,7 +64,7 @@ namespace ISA_MiniTrojan
                     buttonDaftarInvoice.Visible = false;
                     buttonDaftarProduk.Visible = false;
                     buttonDaftarChat.Visible = false;
-                    buttonDaftarTopup.Visible = false;
+                    buttonCekSteganography.Visible = false;
                     buttonDaftarStaff.Visible = false;
                     break;
             }
@@ -163,5 +163,12 @@ namespace ISA_MiniTrojan
             form.Owner = this;
             OpenForm(form);
         }
+
+        private void buttonCekSteganography_Click(object sender, EventArgs e)
+        {
+            CekKTP form = new CekKTP();
+            form.Owner = this;
+            OpenForm(form);
+        }
     }
-    }
+}

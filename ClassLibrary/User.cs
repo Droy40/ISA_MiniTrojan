@@ -9,6 +9,7 @@ using MySql.Data.MySqlClient;
 using System.Transactions;
 using System.Configuration;
 
+
 namespace ClassLibrary
 {
     public class User
@@ -205,8 +206,9 @@ namespace ClassLibrary
                 user.nama = hasil.GetValue(4).ToString();
                 user.saldo = hasil.GetString(5);
                 user.role = hasil.GetValue(6).ToString();
-                user.Foto_ktp = hasil.GetString(7).ToString();
-                user.sisa_percobaan_login = hasil.GetInt16(8);
+                user.Sisa_percobaan_login = hasil.GetInt16(7);
+                user.Foto_ktp = hasil.GetString(8).ToString();
+                
 
                 listUser.Add(user);
             }
@@ -272,7 +274,7 @@ namespace ClassLibrary
         {
             Configuration myConf = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
-            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSetting"];
+            ConfigurationSectionGroup userSetting = myConf.SectionGroups["userSettings"];
 
             var settingSection = userSetting.Sections["ISA_MiniTrojan.DbSettings"] as ClientSettingsSection;
             string path = settingSection.Settings.Get("photo_id_path").Value.ValueXml?.InnerText;
@@ -284,28 +286,6 @@ namespace ClassLibrary
             catch
             {
                 return null;
-            }
-        }
-        public static void TambahGambar(User u, Image image)
-        {
-            u.id = GenerateIdUser();
-
-            using(TransactionScope transcope = new TransactionScope())
-            {
-                try
-                {
-                    Koneksi k = new Koneksi();
-                    u.Foto_ktp = User.SimpanGambar(u, image);
-                    string sql = "insert into users " +
-                                 "values('" + u.id + "','" + u.email + "','" + u.username + "','" + u.password + "','" + u.nama + "','" + u.saldo + "','" + u.role + "','" + u.sisa_percobaan_login + "','" + u.foto_ktp + "')";
-                    Koneksi.JalankanPerintahDML(sql, k);
-                    transcope.Complete();
-                }
-                catch(Exception ex)
-                {
-                    transcope.Dispose();
-                    throw new Exception(ex.Message);
-                }
             }
         }
         public static List<User> BacaDataStaff(string filter = "", string nilai = "")
@@ -364,5 +344,7 @@ namespace ClassLibrary
             }
 
         }
+
+       
     }
 }

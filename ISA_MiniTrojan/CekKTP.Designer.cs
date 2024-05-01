@@ -118,6 +118,7 @@
             this.Controls.Add(this.pictureBoxKtp);
             this.Name = "CekKTP";
             this.Text = "CekKTP";
+            this.Load += new System.EventHandler(this.CekKTP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKtp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
