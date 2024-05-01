@@ -17,7 +17,6 @@ namespace ISA_MiniTrojan
         public DetailTransaksi(Transaksi t)
         {
             InitializeComponent();
-            transaksi = t;
         }        
         
         private void DetailTransaksi_Load(object sender, EventArgs e)

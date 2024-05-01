@@ -30,16 +30,16 @@
         {
             this.labelNoInvoice = new System.Windows.Forms.Label();
             this.dataGridViewKeranjang = new System.Windows.Forms.DataGridView();
+            this.ColumnPilih = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.CollumnNama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnHarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnJumlah = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.labelItems = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.buttonBeli = new Guna.UI2.WinForms.Guna2Button();
-            this.ColumnPilih = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.CollumnNama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnHarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnJumlah = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKeranjang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,9 +48,10 @@
             this.labelNoInvoice.BackColor = System.Drawing.Color.Firebrick;
             this.labelNoInvoice.Font = new System.Drawing.Font("Magneto", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelNoInvoice.Location = new System.Drawing.Point(0, 0);
+            this.labelNoInvoice.Location = new System.Drawing.Point(167, 26);
+            this.labelNoInvoice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNoInvoice.Name = "labelNoInvoice";
-            this.labelNoInvoice.Size = new System.Drawing.Size(429, 54);
+            this.labelNoInvoice.Size = new System.Drawing.Size(322, 44);
             this.labelNoInvoice.TabIndex = 27;
             this.labelNoInvoice.Text = "Shopping Cart";
             this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -63,94 +64,14 @@
             this.CollumnNama,
             this.ColumnHarga,
             this.ColumnJumlah});
-            this.dataGridViewKeranjang.Location = new System.Drawing.Point(39, 112);
+            this.dataGridViewKeranjang.Location = new System.Drawing.Point(29, 91);
+            this.dataGridViewKeranjang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewKeranjang.Name = "dataGridViewKeranjang";
             this.dataGridViewKeranjang.RowHeadersWidth = 51;
             this.dataGridViewKeranjang.RowTemplate.Height = 24;
-            this.dataGridViewKeranjang.Size = new System.Drawing.Size(796, 284);
+            this.dataGridViewKeranjang.Size = new System.Drawing.Size(597, 231);
             this.dataGridViewKeranjang.TabIndex = 28;
             this.dataGridViewKeranjang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKeranjang_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Firebrick;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label1.Location = new System.Drawing.Point(715, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 29);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Items";
-            // 
-            // labelItems
-            // 
-            this.labelItems.BackColor = System.Drawing.Color.Firebrick;
-            this.labelItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelItems.Location = new System.Drawing.Point(685, 80);
-            this.labelItems.Name = "labelItems";
-            this.labelItems.Size = new System.Drawing.Size(40, 29);
-            this.labelItems.TabIndex = 30;
-            this.labelItems.Text = "22";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Firebrick;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label2.Location = new System.Drawing.Point(641, 399);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 29);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Rp";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Firebrick;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label3.Location = new System.Drawing.Point(490, 399);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 29);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Total Bayar :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // labelTotal
-            // 
-            this.labelTotal.AutoSize = true;
-            this.labelTotal.BackColor = System.Drawing.Color.Firebrick;
-            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelTotal.Location = new System.Drawing.Point(681, 399);
-            this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(91, 29);
-            this.labelTotal.TabIndex = 33;
-            this.labelTotal.Text = "000000";
-            // 
-            // buttonBeli
-            // 
-            this.buttonBeli.AutoRoundedCorners = true;
-            this.buttonBeli.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBeli.BorderColor = System.Drawing.Color.Firebrick;
-            this.buttonBeli.BorderRadius = 21;
-            this.buttonBeli.BorderThickness = 2;
-            this.buttonBeli.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonBeli.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonBeli.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonBeli.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonBeli.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.buttonBeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBeli.ForeColor = System.Drawing.Color.Firebrick;
-            this.buttonBeli.Location = new System.Drawing.Point(655, 460);
-            this.buttonBeli.Name = "buttonBeli";
-            this.buttonBeli.Size = new System.Drawing.Size(180, 45);
-            this.buttonBeli.TabIndex = 36;
-            this.buttonBeli.Text = "Purchase";
-            this.buttonBeli.Click += new System.EventHandler(this.buttonBeli_Click);
             // 
             // ColumnPilih
             // 
@@ -185,13 +106,100 @@
             this.ColumnJumlah.ReadOnly = true;
             this.ColumnJumlah.Width = 125;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Firebrick;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.label1.Location = new System.Drawing.Point(536, 65);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 24);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Items";
+            // 
+            // labelItems
+            // 
+            this.labelItems.BackColor = System.Drawing.Color.Firebrick;
+            this.labelItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.labelItems.Location = new System.Drawing.Point(514, 65);
+            this.labelItems.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelItems.Name = "labelItems";
+            this.labelItems.Size = new System.Drawing.Size(30, 24);
+            this.labelItems.TabIndex = 30;
+            this.labelItems.Text = "22";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Firebrick;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.label2.Location = new System.Drawing.Point(481, 324);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 24);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Rp";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Firebrick;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.label3.Location = new System.Drawing.Point(368, 324);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 24);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Total Bayar :";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.BackColor = System.Drawing.Color.Firebrick;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.labelTotal.Location = new System.Drawing.Point(511, 324);
+            this.labelTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(70, 24);
+            this.labelTotal.TabIndex = 33;
+            this.labelTotal.Text = "000000";
+            // 
+            // buttonBeli
+            // 
+            this.buttonBeli.AutoRoundedCorners = true;
+            this.buttonBeli.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBeli.BorderColor = System.Drawing.Color.Firebrick;
+            this.buttonBeli.BorderRadius = 17;
+            this.buttonBeli.BorderThickness = 2;
+            this.buttonBeli.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonBeli.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonBeli.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonBeli.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonBeli.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
+            this.buttonBeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBeli.ForeColor = System.Drawing.Color.Firebrick;
+            this.buttonBeli.Location = new System.Drawing.Point(491, 374);
+            this.buttonBeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonBeli.Name = "buttonBeli";
+            this.buttonBeli.Size = new System.Drawing.Size(135, 37);
+            this.buttonBeli.TabIndex = 36;
+            this.buttonBeli.Text = "Purchase";
+            this.buttonBeli.Click += new System.EventHandler(this.buttonBeli_Click);
+            // 
             // KeranjangShopping
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(873, 531);
+            this.ClientSize = new System.Drawing.Size(655, 431);
             this.Controls.Add(this.buttonBeli);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.label2);
@@ -201,6 +209,7 @@
             this.Controls.Add(this.dataGridViewKeranjang);
             this.Controls.Add(this.labelNoInvoice);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "KeranjangShopping";
             this.Text = "KeranjangShopping";
             this.Load += new System.EventHandler(this.KeranjangShopping_Load);

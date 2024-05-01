@@ -51,11 +51,12 @@
             // labelNoInvoice
             // 
             this.labelNoInvoice.BackColor = System.Drawing.Color.Firebrick;
-            this.labelNoInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoInvoice.Font = new System.Drawing.Font("Magneto", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelNoInvoice.Location = new System.Drawing.Point(-3, 9);
+            this.labelNoInvoice.Location = new System.Drawing.Point(-30, 9);
+            this.labelNoInvoice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNoInvoice.Name = "labelNoInvoice";
-            this.labelNoInvoice.Size = new System.Drawing.Size(595, 54);
+            this.labelNoInvoice.Size = new System.Drawing.Size(502, 44);
             this.labelNoInvoice.TabIndex = 25;
             this.labelNoInvoice.Text = "Upload Bukti Top-Up";
             this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -64,38 +65,38 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.panel2.Controls.Add(this.panel8);
-            this.panel2.Location = new System.Drawing.Point(159, 76);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(119, 62);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(299, 401);
+            this.panel2.Size = new System.Drawing.Size(224, 326);
             this.panel2.TabIndex = 42;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(7)))), ((int)(((byte)(10)))));
             this.panel8.Controls.Add(this.pictureBoxBukti);
-            this.panel8.Location = new System.Drawing.Point(3, 6);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel8.Location = new System.Drawing.Point(2, 5);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(293, 390);
+            this.panel8.Size = new System.Drawing.Size(220, 317);
             this.panel8.TabIndex = 24;
             // 
             // pictureBoxBukti
             // 
             this.pictureBoxBukti.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxBukti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxBukti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxBukti.Name = "pictureBoxBukti";
-            this.pictureBoxBukti.Size = new System.Drawing.Size(293, 386);
+            this.pictureBoxBukti.Size = new System.Drawing.Size(220, 314);
             this.pictureBoxBukti.TabIndex = 0;
             this.pictureBoxBukti.TabStop = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Location = new System.Drawing.Point(190, 113);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox5.Location = new System.Drawing.Point(142, 92);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(207, 186);
+            this.pictureBox5.Size = new System.Drawing.Size(155, 151);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 41;
             this.pictureBox5.TabStop = false;
@@ -105,7 +106,7 @@
             this.buttonOpen.AutoRoundedCorners = true;
             this.buttonOpen.BackColor = System.Drawing.Color.Transparent;
             this.buttonOpen.BorderColor = System.Drawing.Color.Firebrick;
-            this.buttonOpen.BorderRadius = 19;
+            this.buttonOpen.BorderRadius = 15;
             this.buttonOpen.BorderThickness = 2;
             this.buttonOpen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonOpen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -114,10 +115,10 @@
             this.buttonOpen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.buttonOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOpen.ForeColor = System.Drawing.Color.Firebrick;
-            this.buttonOpen.Location = new System.Drawing.Point(241, 481);
-            this.buttonOpen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonOpen.Location = new System.Drawing.Point(181, 391);
+            this.buttonOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(146, 41);
+            this.buttonOpen.Size = new System.Drawing.Size(110, 33);
             this.buttonOpen.TabIndex = 44;
             this.buttonOpen.Text = "Open File";
             this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
@@ -125,9 +126,10 @@
             // textBoxNominal
             // 
             this.textBoxNominal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNominal.Location = new System.Drawing.Point(149, 3);
+            this.textBoxNominal.Location = new System.Drawing.Point(112, 2);
+            this.textBoxNominal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxNominal.Name = "textBoxNominal";
-            this.textBoxNominal.Size = new System.Drawing.Size(287, 28);
+            this.textBoxNominal.Size = new System.Drawing.Size(216, 24);
             this.textBoxNominal.TabIndex = 45;
             // 
             // label1
@@ -136,9 +138,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label1.Location = new System.Drawing.Point(10, 6);
+            this.label1.Location = new System.Drawing.Point(8, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 22);
+            this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 46;
             this.label1.Text = "Nominal";
             // 
@@ -148,9 +151,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label2.Location = new System.Drawing.Point(108, 6);
+            this.label2.Location = new System.Drawing.Point(81, 5);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 22);
+            this.label2.Size = new System.Drawing.Size(29, 18);
             this.label2.TabIndex = 47;
             this.label2.Text = "Rp";
             // 
@@ -161,9 +165,10 @@
             this.panel1.Controls.Add(this.textBoxNominal);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(85, 527);
+            this.panel1.Location = new System.Drawing.Point(64, 428);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(441, 70);
+            this.panel1.Size = new System.Drawing.Size(331, 57);
             this.panel1.TabIndex = 48;
             // 
             // label4
@@ -172,9 +177,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.label4.Location = new System.Drawing.Point(10, 40);
+            this.label4.Location = new System.Drawing.Point(8, 32);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(426, 22);
+            this.label4.Size = new System.Drawing.Size(355, 18);
             this.label4.TabIndex = 49;
             this.label4.Text = "No. Rekening : 0934718482 a.n. Dustin Delroy";
             // 
@@ -183,7 +189,7 @@
             this.buttonSubmit.AutoRoundedCorners = true;
             this.buttonSubmit.BackColor = System.Drawing.Color.Transparent;
             this.buttonSubmit.BorderColor = System.Drawing.Color.Firebrick;
-            this.buttonSubmit.BorderRadius = 19;
+            this.buttonSubmit.BorderRadius = 15;
             this.buttonSubmit.BorderThickness = 2;
             this.buttonSubmit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonSubmit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -192,10 +198,10 @@
             this.buttonSubmit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
             this.buttonSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.ForeColor = System.Drawing.Color.Firebrick;
-            this.buttonSubmit.Location = new System.Drawing.Point(426, 647);
-            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSubmit.Location = new System.Drawing.Point(320, 526);
+            this.buttonSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(146, 41);
+            this.buttonSubmit.Size = new System.Drawing.Size(110, 33);
             this.buttonSubmit.TabIndex = 49;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
@@ -207,11 +213,11 @@
             // 
             // TopUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ISA_MiniTrojan.Properties.Resources.backgroundFix;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(584, 699);
+            this.ClientSize = new System.Drawing.Size(438, 568);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonOpen);
@@ -219,6 +225,7 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.labelNoInvoice);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TopUp";
             this.Text = "TopUpLanjutan";
             this.Load += new System.EventHandler(this.TopUp_Load);

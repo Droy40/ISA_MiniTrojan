@@ -233,12 +233,12 @@
             this.labelNoInvoice.BackColor = System.Drawing.Color.Firebrick;
             this.labelNoInvoice.Font = new System.Drawing.Font("Magneto", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(191)))), ((int)(((byte)(10)))));
-            this.labelNoInvoice.Location = new System.Drawing.Point(88, 17);
+            this.labelNoInvoice.Location = new System.Drawing.Point(63, 17);
             this.labelNoInvoice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNoInvoice.Name = "labelNoInvoice";
-            this.labelNoInvoice.Size = new System.Drawing.Size(314, 44);
+            this.labelNoInvoice.Size = new System.Drawing.Size(359, 44);
             this.labelNoInvoice.TabIndex = 38;
-            this.labelNoInvoice.Text = "Daftar Produk";
+            this.labelNoInvoice.Text = "Detail Transaksi";
             this.labelNoInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DetailTransaksi

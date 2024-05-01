@@ -35,6 +35,7 @@ namespace ISA_MiniTrojan
                 {
                     MessageBox.Show("Topup gagal");
                 }
+                ClearForm();
 
             }
             catch(Exception ex)
@@ -57,6 +58,11 @@ namespace ISA_MiniTrojan
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             pictureBoxBukti.ImageLocation = openFileDialog1.FileName;
+        }
+        private void ClearForm()
+        {
+            pictureBoxBukti.Image = null;
+            textBoxNominal.Text = "";
         }
     }
 }
